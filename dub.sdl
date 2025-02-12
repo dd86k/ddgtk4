@@ -1,0 +1,43 @@
+name "ddgtk4"
+description "Minimal GTK4/WebKitGTK dynamic bindings"
+authors "dd86k <dd@dax.moe>"
+copyright "Copyright © 2025, dd86k <dd@dax.moe>"
+license "ISC"
+
+dependency "ddloader" repository="git+https://github.com/dd86k/ddloader.git" version="04f0909dfe3346a51fcb7751c8bdf60adb0d15ae"
+
+subPackage { # Example: Basic app
+	dependency "ddgtk4" path=".."
+	name "basic"
+	targetName "example-basic"
+	targetType "executable"
+	importPaths "examples/basic"
+	mainSourceFile "examples/basic/main.d"
+}
+
+subPackage { # Example: Form with a few controls
+	dependency "ddgtk4" path=".."
+	name "form"
+	targetName "example-form"
+	targetType "executable"
+	importPaths "examples/form"
+	mainSourceFile "examples/form/main.d"
+}
+
+subPackage { # Example: HeaderBar
+	dependency "ddgtk4" path=".."
+	name "header"
+	targetName "example-header"
+	targetType "executable"
+	importPaths "examples/header"
+	mainSourceFile "examples/header/main.d"
+}
+
+subPackage { # Example: WebKit
+	dependency "ddgtk4" path=".."
+	name "webkit"
+	targetName "example-webkit"
+	targetType "executable"
+	importPaths "examples/webkit"
+	mainSourceFile "examples/webkit/main.d"
+}

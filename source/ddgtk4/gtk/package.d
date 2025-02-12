@@ -1,0 +1,25 @@
+module ddgtk4.gtk;
+
+public import
+    ddgtk4.gtk.gtk,
+    ddgtk4.gtk.gtkenums,
+    ddgtk4.gtk.gtkapplication,
+    ddgtk4.gtk.gtkapplicationwindow,
+    ddgtk4.gtk.gtkbutton,
+    ddgtk4.gtk.gtkwidget,
+    ddgtk4.gtk.gtkgrid,
+    ddgtk4.gtk.gtknotebook,
+    ddgtk4.gtk.gtkbox,
+    ddgtk4.gtk.gtkframe,
+    ddgtk4.gtk.gtklabel,
+    ddgtk4.gtk.gtkprogressbar,
+    ddgtk4.gtk.gtklevelbar,
+    ddgtk4.gtk.gtkaboutdialog,
+    ddgtk4.gtk.gtkspinner,
+    ddgtk4.gtk.gtktogglebutton,
+    ddgtk4.gtk.gtkswitch,
+    ddgtk4.gtk.gtkdropdown,
+    ddgtk4.gtk.gtkheaderbar,
+    ddgtk4.gtk.gtkmenubutton,
+    ddgtk4.gtk.gtkpopovermenu,
+    ddgtk4.gtk.gtkwindow;
