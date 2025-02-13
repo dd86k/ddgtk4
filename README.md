@@ -37,6 +37,6 @@ You can run and example using `dub run :EXAMPLE --compiler=COMPILER -- ARGS`, wh
 Available examples:
 - `basic`: Features one button that prints "Hello" via from the command-line.
 - `form`: Features a few tabs in a NoteBook, and some controls.
-- `header`: Features a HeaderBar with a Button and MenuButton.
+- `header`: Features a HeaderBar with a Button and MenuButton, and vertical Paned.
 - `webkit`: Features an example with WebKitGTK.
   - By default, it connects to `https://example.org/`. You can specify a site using `--site=`.

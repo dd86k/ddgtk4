@@ -136,6 +136,15 @@ void initgtk4()
     libraryBind(libgtk, cast(void**)&gtk_frame_set_label, "gtk_frame_set_label");
     libraryBind(libgtk, cast(void**)&gtk_frame_set_child, "gtk_frame_set_child");
     
+    // GtkPaned
+    libraryBind(libgtk, cast(void**)&gtk_paned_new, "gtk_paned_new");
+    libraryBind(libgtk, cast(void**)&gtk_paned_set_start_child, "gtk_paned_set_start_child");
+    libraryBind(libgtk, cast(void**)&gtk_paned_set_end_child, "gtk_paned_set_end_child");
+    libraryBind(libgtk, cast(void**)&gtk_paned_set_shrink_end_child, "gtk_paned_set_shrink_end_child");
+    libraryBind(libgtk, cast(void**)&gtk_paned_set_resize_end_child, "gtk_paned_set_resize_end_child");
+    libraryBind(libgtk, cast(void**)&gtk_paned_set_resize_start_child, "gtk_paned_set_resize_start_child");
+    libraryBind(libgtk, cast(void**)&gtk_paned_set_shrink_start_child, "gtk_paned_set_shrink_start_child");
+    
     // GtkBox
     libraryBind(libgtk, cast(void**)&gtk_box_new, "gtk_box_new");
     libraryBind(libgtk, cast(void**)&gtk_box_append, "gtk_box_append");

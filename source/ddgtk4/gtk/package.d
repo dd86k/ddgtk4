@@ -22,4 +22,5 @@ public import
     ddgtk4.gtk.gtkheaderbar,
     ddgtk4.gtk.gtkmenubutton,
     ddgtk4.gtk.gtkpopovermenu,
+    ddgtk4.gtk.gtkpaned,
     ddgtk4.gtk.gtkwindow;
