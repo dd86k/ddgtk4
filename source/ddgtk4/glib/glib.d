@@ -12,9 +12,7 @@ __gshared
 {
     // gboolean g_main_context_iteration (GMainContext *context,
     //                                    gboolean      may_block);
-    alias A_g_main_context_iteration =
-        gboolean function(GMainContext*, gboolean);
-    A_g_main_context_iteration g_main_context_iteration;
+    gboolean function(GMainContext*, gboolean) g_main_context_iteration;
 }
 
 version (Windows)
@@ -45,5 +43,8 @@ void initglib()
     libglib = libraryLoad(libNamesGLib);
     
     libraryBind(libglib, cast(void**)&g_print, "g_print");
+    libraryBind(libglib, cast(void**)&g_printerr, "g_printerr");
+    libraryBind(libglib, cast(void**)&g_log, "g_log");
+    libraryBind(libglib, cast(void**)&g_logv, "g_logv");
     libraryBind(libglib, cast(void**)&g_main_context_iteration, "g_main_context_iteration");
 }
