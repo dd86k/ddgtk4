@@ -9,41 +9,7 @@ module ddgtk4.webkitgtk.webkitgtk;
 // function definitions depend on GObject types (like gchar) and
 // GTK types (like GtkWidget*), which don't need to be initiated.
 import ddloader;
-import ddgtk4.gtk;
-public import ddgtk4.glib.gtypes;
-public import ddgtk4.gtk.gtkwidget; // For GtkWidget
-
-struct WebKitWebView;
-struct WebKitURIRequest;
-
-// Macros
-pragma(inline, true)
-{
-    // Usually takes from GtkWidget* webkit_web_view_new();
-    WebKitWebView* WEBKIT_WEB_VIEW(GtkWidget *w)
-    {
-        return cast(WebKitWebView*)w;
-    }
-}
-
-// Functions
-extern (C)
-__gshared
-{
-    // WebView
-    alias A_webkit_web_view_new =
-        GtkWidget* function();
-    A_webkit_web_view_new webkit_web_view_new;
-    
-    alias A_webkit_web_view_load_uri =
-        void function(WebKitWebView*, const(gchar) *uri);
-    A_webkit_web_view_load_uri webkit_web_view_load_uri;
-    
-    // URIRequest
-    alias A_webkit_uri_request_new =
-        WebKitURIRequest* function(const(gchar) *uri);
-    A_webkit_uri_request_new webkit_uri_request_new;
-}
+import ddgtk4.webkitgtk;
 
 version (Windows)
 {
@@ -55,18 +21,22 @@ else version (OSX)
     private immutable string[] libNamesWebKitGTK = [
     ];
 }
-else
+else version (Posix)
 {
     private immutable string[] libNamesWebKitGTK = [
-        //"libwebkit2gtk-4.1.so.0", // Needs package libwebkit2gtk-4.1-0 on Ubuntu
         "libwebkitgtk-6.0.so.4",    // Needs package libwebkitgtk-6.0-4 on Ubuntu
+        //"libwebkit2gtk-4.1.so.0", // Needs package libwebkit2gtk-4.1-0 on Ubuntu
     ];
 }
+else
+    static assert(false, "Implement webkitgtk.d");
 
 // libwebkit2gtk-4.1.so.0
 private __gshared DynamicLibrary libwebkitgtk;
 void initwebkitgtk()
 {
+    // This approach, as opposed to using a static assert,
+    // allows compiling.
     if (libNamesWebKitGTK.length == 0)
         throw new Exception("Unsupported platform");
     
@@ -75,7 +45,14 @@ void initwebkitgtk()
     
     // WebView
     libraryBind(libwebkitgtk, cast(void**)&webkit_web_view_new, "webkit_web_view_new");
+    libraryBind(libwebkitgtk, cast(void**)&webkit_web_view_set_settings, "webkit_web_view_set_settings");
     libraryBind(libwebkitgtk, cast(void**)&webkit_web_view_load_uri, "webkit_web_view_load_uri");
+    libraryBind(libwebkitgtk, cast(void**)&webkit_web_view_get_uri, "webkit_web_view_get_uri");
+    
+    // WebSettings
+    libraryBind(libwebkitgtk, cast(void**)&webkit_settings_new, "webkit_settings_new");
+    libraryBind(libwebkitgtk, cast(void**)&webkit_settings_set_javascript_can_open_windows_automatically, "webkit_settings_set_javascript_can_open_windows_automatically");
+    libraryBind(libwebkitgtk, cast(void**)&webkit_settings_get_javascript_can_open_windows_automatically, "webkit_settings_get_javascript_can_open_windows_automatically");
     
     // URIRequest
     libraryBind(libwebkitgtk, cast(void**)&webkit_uri_request_new, "webkit_uri_request_new");

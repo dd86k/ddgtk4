@@ -1,0 +1,14 @@
+module ddgtk4.webkitgtk.webkitnavigationaction;
+
+alias WebKitNavigationType = int;
+enum : WebKitNavigationType
+{
+    WEBKIT_NAVIGATION_TYPE_LINK_CLICKED,
+    WEBKIT_NAVIGATION_TYPE_FORM_SUBMITTED,
+    WEBKIT_NAVIGATION_TYPE_BACK_FORWARD,
+    WEBKIT_NAVIGATION_TYPE_RELOAD,
+    WEBKIT_NAVIGATION_TYPE_FORM_RESUBMITTED,
+    WEBKIT_NAVIGATION_TYPE_OTHER
+}
+
+struct WebKitNavigationAction;
