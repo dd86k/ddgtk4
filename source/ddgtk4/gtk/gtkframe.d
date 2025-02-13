@@ -17,7 +17,7 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
-    GtkWidget* function()                  gtk_frame_new;
+    GtkWidget* function(const(char)*)      gtk_frame_new;
     void function(GtkFrame*, const(char)*) gtk_frame_set_label;
     void function(GtkFrame*, GtkWidget*)   gtk_frame_set_child;
 }

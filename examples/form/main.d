@@ -109,8 +109,7 @@ activate(GtkApplication *app, gpointer user_data)
     
     // Create a Frame container and add it to our notebook
     {
-        GtkFrame *frame = GTK_FRAME( gtk_frame_new() );
-        gtk_frame_set_label( frame, "Frame name" ); // required, otherwise garbage printed
+        GtkFrame *frame = GTK_FRAME( gtk_frame_new("Frame name") );
         
         GtkWidget *btnPrintHi = gtk_button_new_with_label( `Print "Hi"` );
         g_signal_connect( btnPrintHi, "clicked", G_CALLBACK(&btnPrintHi_clicked), null );
