@@ -99,4 +99,6 @@ __gshared
     void function(WebKitWebView*, const(gchar) *uri) webkit_web_view_load_uri;
     
     const(gchar)* function(WebKitWebView*) webkit_web_view_get_uri;
+    
+    void function(WebKitWebView*) webkit_web_view_try_close;
 }

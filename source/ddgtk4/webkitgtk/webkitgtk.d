@@ -48,6 +48,7 @@ void initwebkitgtk()
     libraryBind(libwebkitgtk, cast(void**)&webkit_web_view_set_settings, "webkit_web_view_set_settings");
     libraryBind(libwebkitgtk, cast(void**)&webkit_web_view_load_uri, "webkit_web_view_load_uri");
     libraryBind(libwebkitgtk, cast(void**)&webkit_web_view_get_uri, "webkit_web_view_get_uri");
+    libraryBind(libwebkitgtk, cast(void**)&webkit_web_view_try_close, "webkit_web_view_try_close");
     
     // WebSettings
     libraryBind(libwebkitgtk, cast(void**)&webkit_settings_new, "webkit_settings_new");
