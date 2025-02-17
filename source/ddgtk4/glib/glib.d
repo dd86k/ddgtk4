@@ -37,7 +37,7 @@ else
 }
 
 private __gshared DynamicLibrary libglib;
-void initglib()
+void loadglib()
 {
     // Let caller catch exceptions
     libglib = libraryLoad(libNamesGLib);

@@ -33,7 +33,8 @@ else
 
 // libwebkit2gtk-4.1.so.0
 private __gshared DynamicLibrary libwebkitgtk;
-void initwebkitgtk()
+/// Load the WebKitGTK library.
+void loadwebkitgtk()
 {
     // This approach, as opposed to using a static assert,
     // allows compiling.
@@ -58,3 +59,5 @@ void initwebkitgtk()
     // URIRequest
     libraryBind(libwebkitgtk, cast(void**)&webkit_uri_request_new, "webkit_uri_request_new");
 }
+deprecated("Use loadwebkitgtk")
+alias initwebkitgtk = loadwebkitgtk;

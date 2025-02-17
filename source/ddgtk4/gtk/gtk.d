@@ -44,7 +44,7 @@ else
 }
 
 private __gshared DynamicLibrary libgtk;
-void initgtk4()
+void loadgtk4()
 {
     // Let caller catch exceptions
     libgtk = libraryLoad(libNamesGTK4);

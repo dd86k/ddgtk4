@@ -25,7 +25,7 @@ else
 }
 
 private __gshared DynamicLibrary libgio;
-void initgio()
+void loadgio()
 {
     // Let caller catch exceptions
     libgio = libraryLoad(libNamesGio);

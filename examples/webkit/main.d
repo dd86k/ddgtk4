@@ -37,8 +37,8 @@ int main(string[] args)
         return EXIT_FAILURE;
     }
     
-    initddgtk4();
-    initwebkitgtk();
+    loadgtk4all();
+    loadwebkitgtk();
     
     GtkApplication *app = gtk_application_new( "org.gtk.example", G_APPLICATION_DEFAULT_FLAGS );
     g_signal_connect( app, "activate", G_CALLBACK(&activate), cast(void*)toStringz(osite) );

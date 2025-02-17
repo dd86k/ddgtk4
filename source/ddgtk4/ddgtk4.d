@@ -5,13 +5,16 @@ public import ddgtk4.gtk;
 public import ddgtk4.gio;
 public import ddgtk4.gobject;
 
-void initddgtk4()
+/// Load GObject, Gio, GLib, and GTK4 libraries.
+void loadgtk4all()
 {
-    initgobject();
-    initgio();
-    initglib();
-    initgtk4();
+    loadgobject();
+    loadgio();
+    loadglib();
+    loadgtk4();
 }
+deprecated("Use loadgtk4all")
+alias initddgtk4 = loadgtk4all;
 
 //
 // Example (unittest)
@@ -47,7 +50,7 @@ version(unittest)
 
 unittest
 {
-    initddgtk4();
+    loadgtk4all();
     
     // https://www.gtk.org/docs/getting-started/hello-world/
     // #include <gtk/gtk.h>

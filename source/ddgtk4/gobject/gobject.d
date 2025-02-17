@@ -36,7 +36,7 @@ else
 }
 
 private __gshared DynamicLibrary libgobject;
-void initgobject()
+void loadgobject()
 {
     // Let caller catch exceptions
     libgobject = libraryLoad(libNamesGObject);
