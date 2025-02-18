@@ -145,6 +145,12 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_paned_set_resize_start_child, "gtk_paned_set_resize_start_child");
     libraryBind(libgtk, cast(void**)&gtk_paned_set_shrink_start_child, "gtk_paned_set_shrink_start_child");
     
+    // GtkScrolledWindow
+    libraryBind(libgtk, cast(void**)&gtk_scrolled_window_new, "gtk_scrolled_window_new");
+    libraryBind(libgtk, cast(void**)&gtk_scrolled_window_set_child, "gtk_scrolled_window_set_child");
+    libraryBind(libgtk, cast(void**)&gtk_scrolled_window_set_policy, "gtk_scrolled_window_set_policy");
+    libraryBind(libgtk, cast(void**)&gtk_scrolled_window_set_overlay_scrolling, "gtk_scrolled_window_set_overlay_scrolling");
+    
     // GtkBox
     libraryBind(libgtk, cast(void**)&gtk_box_new, "gtk_box_new");
     libraryBind(libgtk, cast(void**)&gtk_box_append, "gtk_box_append");

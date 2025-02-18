@@ -19,15 +19,9 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
-    alias A_gtk_box_new =
-        GtkWidget* function(GtkOrientation, int);
-    A_gtk_box_new gtk_box_new;
+    GtkWidget* function(GtkOrientation, int) gtk_box_new;
     
-    alias A_gtk_box_append =
-        void function(GtkBox*, GtkWidget*);
-    A_gtk_box_append gtk_box_append;
+    void function(GtkBox*, GtkWidget*) gtk_box_append;
     
-    alias A_gtk_box_set_homogeneous =
-        void function(GtkBox* box, gboolean homogeneous);
-    A_gtk_box_set_homogeneous gtk_box_set_homogeneous;
+    void function(GtkBox* box, gboolean homogeneous) gtk_box_set_homogeneous;
 }
