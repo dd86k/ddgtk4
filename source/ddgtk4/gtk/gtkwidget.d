@@ -28,4 +28,7 @@ __gshared
     void function(GtkWidget*, int) gtk_widget_set_margin_end;
     
     void function(GtkWidget*, GtkWidget*) gtk_widget_set_parent;
+    
+    void function(GtkWidget*, gboolean) gtk_widget_set_hexpand;
+    void function(GtkWidget*, gboolean) gtk_widget_set_vexpand;
 }

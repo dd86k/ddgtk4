@@ -64,6 +64,8 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_widget_set_margin_start, "gtk_widget_set_margin_start");
     libraryBind(libgtk, cast(void**)&gtk_widget_set_margin_end, "gtk_widget_set_margin_end");
     libraryBind(libgtk, cast(void**)&gtk_widget_set_parent, "gtk_widget_set_parent");
+    libraryBind(libgtk, cast(void**)&gtk_widget_set_hexpand, "gtk_widget_set_hexpand");
+    libraryBind(libgtk, cast(void**)&gtk_widget_set_vexpand, "gtk_widget_set_vexpand");
     
     // GtkApplication
     libraryBind(libgtk, cast(void**)&gtk_application_new, "gtk_application_new");
