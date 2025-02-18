@@ -18,7 +18,7 @@ Issues:
 - Does not offer OOP wrappers.
 - GDK and GSK bindings are missing.
 - Windows dependencies are a bit messy.
-  - MSYS2 does not offer WebKitGTK binaries for Windows.
+  - WebKitGTK is generally unavailable on Windows. MSYS2 does not offer binaries.
 
 Requirements:
 - D compiler.
@@ -40,3 +40,25 @@ Available examples:
 - `header`: Features a HeaderBar with a Button and MenuButton, and vertical Paned.
 - `webkit`: Features an example with WebKitGTK.
   - By default, it connects to `https://example.org/`. You can specify a site using `--site=`.
+
+## Usage
+
+You can import this repo as a DUB package by commit.
+
+SDL:
+```sdl
+dependency "ddgtk4" repository="git+https://github.com/dd86k/ddgtk4.git" version="b733b6b24c6e56deafab608fd394ee4e0aaa2ef9"
+```
+
+JSON:
+```json
+"dependencies": {
+  "ddgtk4": {
+    "repository": "git+https://github.com/dd86k/ddgtk4.git",
+    "version": "b733b6b24c6e56deafab608fd394ee4e0aaa2ef9"
+  }
+}
+```
+
+In code, you will need to `import ddgtk4;` and call `loadgtk4all();` before
+using functions.
