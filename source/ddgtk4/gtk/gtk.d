@@ -66,6 +66,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_widget_set_parent, "gtk_widget_set_parent");
     libraryBind(libgtk, cast(void**)&gtk_widget_set_hexpand, "gtk_widget_set_hexpand");
     libraryBind(libgtk, cast(void**)&gtk_widget_set_vexpand, "gtk_widget_set_vexpand");
+    libraryBind(libgtk, cast(void**)&gtk_widget_get_first_child, "gtk_widget_get_first_child");
     
     // GtkApplication
     libraryBind(libgtk, cast(void**)&gtk_application_new, "gtk_application_new");
@@ -157,6 +158,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_box_new, "gtk_box_new");
     libraryBind(libgtk, cast(void**)&gtk_box_append, "gtk_box_append");
     libraryBind(libgtk, cast(void**)&gtk_box_set_homogeneous, "gtk_box_set_homogeneous");
+    libraryBind(libgtk, cast(void**)&gtk_box_remove, "gtk_box_remove");
     
     // GtkLabel
     libraryBind(libgtk, cast(void**)&gtk_label_new, "gtk_label_new");

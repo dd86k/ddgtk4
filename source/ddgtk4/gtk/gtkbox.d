@@ -23,5 +23,7 @@ __gshared
     
     void function(GtkBox*, GtkWidget*) gtk_box_append;
     
-    void function(GtkBox* box, gboolean homogeneous) gtk_box_set_homogeneous;
+    void function(GtkBox*, gboolean) gtk_box_set_homogeneous;
+    
+    void function(GtkBox*, GtkWidget*) gtk_box_remove;
 }

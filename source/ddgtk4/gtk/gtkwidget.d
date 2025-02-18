@@ -31,4 +31,6 @@ __gshared
     
     void function(GtkWidget*, gboolean) gtk_widget_set_hexpand;
     void function(GtkWidget*, gboolean) gtk_widget_set_vexpand;
+    
+    GtkWidget* function(GtkWidget*) gtk_widget_get_first_child;
 }
