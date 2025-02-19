@@ -1,17 +1,21 @@
 module ddgtk4.gobject.gobject;
 
 import ddloader;
-import ddgtk4.gobject.gsignal;
-import ddgtk4.gobject.gclosure;
-import ddgtk4.glib.gtypes : gpointer;
+import ddgtk4.gobject;
+import ddgtk4.glib.gtypes   : gpointer, gchar;
+
+ struct GObject;
+ struct GObjectClass;
+ struct GInitiallyUnowned;
+ struct GInitiallyUnownedClass;
+ struct GObjectConstructParam;
 
 // Functions
 extern (C)
 __gshared
 {
-    alias A_g_object_unref =
-        void function(gpointer obj);
-    A_g_object_unref g_object_unref;
+    void function(gpointer obj) g_object_unref;
+    void function(GObject*, const(gchar)*, const(GValue)*) g_object_set_property;
 }
 
 version (Windows)
@@ -43,6 +47,7 @@ void loadgobject()
     
     // gobject
     libraryBind(libgobject, cast(void**)&g_object_unref, "g_object_unref");
+    libraryBind(libgobject, cast(void**)&g_object_set_property, "g_object_set_property");
     // gsignal
     libraryBind(libgobject, cast(void**)&g_signal_connect_data, "g_signal_connect_data");
 }
