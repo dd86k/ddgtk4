@@ -1,8 +1,8 @@
 module ddgtk4.gtk.gtkpaned;
 
 import ddgtk4.gtk.gtkwidget;
-import ddgtk4.gtk.gtkenums : GtkOrientation;
-import ddgtk4.glib.gtypes : gboolean;
+public import ddgtk4.gtk.gtkenums : GtkOrientation;
+public import ddgtk4.glib.gtypes : gboolean;
 
 struct GtkPaned;
 

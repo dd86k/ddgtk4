@@ -1,7 +1,7 @@
 module ddgtk4.gobject.gtype;
 
 import ddgtk4.glib.gmacros : guintptr, gsize;
-import ddgtk4.glib.gtypes  : gulong;
+import ddgtk4.glib.gtypes;
 import core.stdc.config    : c_long;
 
 //#if     GLIB_SIZEOF_VOID_P > GLIB_SIZEOF_SIZE_T
@@ -18,7 +18,46 @@ else static if (size_t.sizeof != c_long.sizeof)
 else
     alias GType = gulong;
 
-struct GValue;
+//struct GValue;
+/+
+struct _GValue
+{
+  /*< private >*/
+  GType		g_type;
+
+  /* public for GTypeValueTable methods */
+  union {
+    gint	v_int;
+    guint	v_uint;
+    glong	v_long;
+    gulong	v_ulong;
+    gint64      v_int64;
+    guint64     v_uint64;
+    gfloat	v_float;
+    gdouble	v_double;
+    gpointer	v_pointer;
+  } data[2];
+};
++/
+struct GValue
+{
+  /*< private >*/
+  GType		g_type;
+
+  /* public for GTypeValueTable methods */
+  union _ {
+    gint        v_int;
+    guint       v_uint;
+    glong       v_long;
+    gulong      v_ulong;
+    gint64      v_int64;
+    guint64     v_uint64;
+    gfloat      v_float;
+    gdouble     v_double;
+    gpointer    v_pointer;
+  } _[2] data;
+}
+
 union  GTypeCValue;
 struct GTypePlugin;
 struct GTypeClass;

@@ -8,8 +8,8 @@ enum : GConnectFlags
 {
     //G_CONNECT_DEFAULT
     GOBJECT_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
-    G_CONNECT_AFTER	= 1 << 0,
-    G_CONNECT_SWAPPED	= 1 << 1
+    G_CONNECT_AFTER     = 1 << 0,
+    G_CONNECT_SWAPPED   = 1 << 1
 }
 
 // Macros

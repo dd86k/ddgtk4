@@ -9,4 +9,5 @@ public import
 	ddgtk4.gio.gsimpleaction,
 	ddgtk4.gio.gmenu,
 	ddgtk4.gio.gmenumodel,
+	ddgtk4.gio.gsettings,
 	ddgtk4.gio.glistmodel;

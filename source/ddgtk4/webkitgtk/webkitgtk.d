@@ -7,9 +7,14 @@ module ddgtk4.webkitgtk.webkitgtk;
 
 // While WebKitGTK itself depends on GObject, Gio, GTK, and Soup,
 // function definitions depend on GObject types (like gchar) and
-// GTK types (like GtkWidget*), which don't need to be initiated.
+// GTK types (like GtkWidget*), which don't need to be initiated
+// explicitly, the library maps the function pointers for its own
+// use.
 import ddloader;
-import ddgtk4.webkitgtk;
+public import ddgtk4.webkitgtk.settings;
+public import ddgtk4.webkitgtk.urirequest;
+public import ddgtk4.webkitgtk.webkitnavigationaction;
+public import ddgtk4.webkitgtk.webview;
 
 version (Windows)
 {
@@ -29,7 +34,10 @@ else version (Posix)
     ];
 }
 else
-    static assert(false, "Implement webkitgtk.d");
+{
+    private immutable string[] libNamesWebKitGTK = [
+    ];
+}
 
 // libwebkit2gtk-4.1.so.0
 private __gshared DynamicLibrary libwebkitgtk;
@@ -37,7 +45,7 @@ private __gshared DynamicLibrary libwebkitgtk;
 void loadwebkitgtk()
 {
     // This approach, as opposed to using a static assert,
-    // allows compiling.
+    // allows compiling for unsupported platforms.
     if (libNamesWebKitGTK.length == 0)
         throw new Exception("Unsupported platform");
     

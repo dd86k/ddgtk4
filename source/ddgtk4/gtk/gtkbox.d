@@ -1,8 +1,8 @@
 module ddgtk4.gtk.gtkbox;
 
-import ddgtk4.gtk.gtkwidget : GtkWidget;
-import ddgtk4.gtk.gtkenums : GtkOrientation;
-import ddgtk4.glib.gtypes : gboolean;
+public import ddgtk4.gtk.gtkwidget : GtkWidget;
+public import ddgtk4.gtk.gtkenums : GtkOrientation;
+public import ddgtk4.glib.gtypes : gboolean;
 
 struct GtkBox;
 

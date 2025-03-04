@@ -1,9 +1,9 @@
 module ddgtk4.gtk.gtkmenubutton;
 
-import ddgtk4.gtk.gtkwidget : GtkWidget;
-import ddgtk4.gtk.gtkenums  : GtkArrowType;
-import ddgtk4.glib.gtypes   : gboolean;
-import ddgtk4.gio.giotypes  : GMenuModel;
+public import ddgtk4.gtk.gtkwidget : GtkWidget;
+public import ddgtk4.gtk.gtkenums  : GtkArrowType;
+public import ddgtk4.glib.gtypes   : gboolean;
+public import ddgtk4.gio.giotypes  : GMenuModel;
 
 struct GtkMenuButton;
 

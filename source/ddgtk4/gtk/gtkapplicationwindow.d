@@ -1,14 +1,11 @@
 module ddgtk4.gtk.gtkapplicationwindow;
 
-import ddgtk4.gtk.gtkapplication;
-import ddgtk4.gtk.gtkwidget;
-
-alias A_gtk_application_window_new =
-    GtkWidget* function(GtkApplication *application);
+public import ddgtk4.gtk.gtkapplication : GtkApplication;
+public import ddgtk4.gtk.gtkwidget : GtkWidget;
 
 // Functions
 extern (C)
 __gshared
 {
-    A_gtk_application_window_new gtk_application_window_new;
+    GtkWidget* function(GtkApplication*) gtk_application_window_new;
 }

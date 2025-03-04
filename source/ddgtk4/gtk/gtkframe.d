@@ -1,6 +1,6 @@
 module ddgtk4.gtk.gtkframe;
 
-import ddgtk4.gtk.gtkwidget : GtkWidget;
+public import ddgtk4.gtk.gtkwidget : GtkWidget;
 
 struct GtkFrame;
 

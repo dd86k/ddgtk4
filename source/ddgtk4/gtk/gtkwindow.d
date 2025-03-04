@@ -1,8 +1,8 @@
 module ddgtk4.gtk.gtkwindow;
 
 import ddgtk4.gtk.gtkwidget;
-import ddgtk4.gio.glistmodel : GListModel;
-import ddgtk4.glib.gtypes : gboolean;
+public import ddgtk4.gio.glistmodel : GListModel;
+public import ddgtk4.glib.gtypes : gboolean;
 
 struct GtkWindow;
 

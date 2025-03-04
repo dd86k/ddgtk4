@@ -1,7 +1,7 @@
 module ddgtk4.gtk.gtkspinner;
 
-import ddgtk4.gtk.gtkwidget : GtkWidget;
-import ddgtk4.glib.gtypes : gboolean;
+public import ddgtk4.gtk.gtkwidget : GtkWidget;
+public import ddgtk4.glib.gtypes : gboolean;
 
 struct GtkSpinner;
 

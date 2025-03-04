@@ -14,6 +14,7 @@ import ddgtk4.glib.gtypes   : gpointer, gchar;
 extern (C)
 __gshared
 {
+    void function(gpointer, const(gchar)*, ...) g_object_set;
     void function(gpointer obj) g_object_unref;
     void function(GObject*, const(gchar)*, const(GValue)*) g_object_set_property;
 }
@@ -46,6 +47,7 @@ void loadgobject()
     libgobject = libraryLoad(libNamesGObject);
     
     // gobject
+    libraryBind(libgobject, cast(void**)&g_object_set, "g_object_set");
     libraryBind(libgobject, cast(void**)&g_object_unref, "g_object_unref");
     libraryBind(libgobject, cast(void**)&g_object_set_property, "g_object_set_property");
     // gsignal

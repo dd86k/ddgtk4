@@ -2,6 +2,10 @@ module ddgtk4.glib.gtypes;
 
 import core.stdc.config : c_long, c_ulong;
 
+// These two are in glibconfig but seem better fit here.
+alias gint64 = long;
+alias guint64 = ulong;
+
 alias gchar = char;
 alias gshort = short;
 alias glong = c_long;

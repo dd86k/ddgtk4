@@ -18,7 +18,8 @@ enum : GApplicationFlags
     G_APPLICATION_ALLOW_REPLACEMENT = 128,
     G_APPLICATION_REPLACE = 256,
 }
-deprecated("Deprecated for G_APPLICATION_DEFAULT_FLAGS since 2.74") enum G_APPLICATION_FLAGS_NONE = 0;
+deprecated("Deprecated for G_APPLICATION_DEFAULT_FLAGS since 2.74")
+enum G_APPLICATION_FLAGS_NONE = 0;
 
 // Macros
 pragma(inline, true)
@@ -33,9 +34,7 @@ __gshared
 /*GDK_AVAILABLE_IN_ALL
 GtkApplication * gtk_application_new           (const char        *application_id,
                                                 GApplicationFlags  flags);*/
-    alias A_gtk_application_new =
-        GtkApplication* function(
-            const(char) *application_id,
-            GApplicationFlags flags);
-    A_gtk_application_new gtk_application_new;
+    GtkApplication* function(
+        const(char) *application_id,
+        GApplicationFlags flags) gtk_application_new;
 }

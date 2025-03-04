@@ -42,6 +42,11 @@ void loadgio()
     // GListModel
     libraryBind(libgio, cast(void**)&g_list_model_get_n_items, "g_list_model_get_n_items");
     
+    // GSettings
+    libraryBind(libgio, cast(void**)&g_settings_set_value, "g_settings_set_value");
+    libraryBind(libgio, cast(void**)&g_settings_set, "g_settings_set");
+    libraryBind(libgio, cast(void**)&g_settings_set_boolean, "g_settings_set_boolean");
+    
     // GMenu
     libraryBind(libgio, cast(void**)&g_menu_new, "g_menu_new");
     libraryBind(libgio, cast(void**)&g_menu_insert_item, "g_menu_insert_item");

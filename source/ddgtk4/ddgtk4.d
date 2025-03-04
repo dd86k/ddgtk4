@@ -1,9 +1,9 @@
 module ddgtk4.ddgtk4;
 
-public import ddgtk4.glib;
-public import ddgtk4.gtk;
-public import ddgtk4.gio;
-public import ddgtk4.gobject;
+import ddgtk4.gobject : loadgobject;
+import ddgtk4.gio : loadgio;
+import ddgtk4.glib : loadglib;
+import ddgtk4.gtk : loadgtk4;
 
 /// Load GObject, Gio, GLib, and GTK4 libraries.
 void loadgtk4all()
@@ -23,6 +23,7 @@ alias initddgtk4 = loadgtk4all;
 version(unittest)
 {
     import core.stdc.stdlib : exit;
+    import ddgtk4;
     
     extern (C)
     static void
@@ -55,7 +56,7 @@ unittest
     // https://www.gtk.org/docs/getting-started/hello-world/
     // #include <gtk/gtk.h>
     // Example is supposed to be in main(), so emulate that here
-    static int argc = 1;
+    static immutable int argc = 1;
     static immutable const(char)*[] argv = [ "app" ];
     
     GtkApplication *app = gtk_application_new ("org.gtk.example", G_APPLICATION_DEFAULT_FLAGS);
@@ -64,35 +65,4 @@ unittest
     g_object_unref (app);
     
     exit (status);
-    
-    // Another example (https://docs.gtk.org/gtk4/initialization.html)
-    /*
-    int main (int argc, char **argv)
-    {
-    GtkWidget *window;
-    // Initialize i18n support with bindtextdomain(), etc.
-
-    // ...
-
-    // Initialize the widget set
-    gtk_init ();
-
-    // Create the main window
-    window = gtk_window_new ();
-
-    // Set up our GUI elements
-
-    // ...
-
-    // Show the application window
-    gtk_window_present (GTK_WINDOW (window));
-
-    // Enter the main event loop, and wait for user interaction
-    while (!done)
-        g_main_context_iteration (NULL, TRUE);
-
-    // The user lost interest
-    return 0;
-    }
-    */
 }

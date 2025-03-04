@@ -67,6 +67,9 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_widget_set_hexpand, "gtk_widget_set_hexpand");
     libraryBind(libgtk, cast(void**)&gtk_widget_set_vexpand, "gtk_widget_set_vexpand");
     libraryBind(libgtk, cast(void**)&gtk_widget_get_first_child, "gtk_widget_get_first_child");
+    libraryBind(libgtk, cast(void**)&gtk_widget_set_direction, "gtk_widget_set_direction");
+    libraryBind(libgtk, cast(void**)&gtk_widget_get_direction, "gtk_widget_get_direction");
+    libraryBind(libgtk, cast(void**)&gtk_widget_set_default_direction, "gtk_widget_set_default_direction");
     
     // GtkApplication
     libraryBind(libgtk, cast(void**)&gtk_application_new, "gtk_application_new");
@@ -98,6 +101,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_button_new_with_label, "gtk_button_new_with_label");
     libraryBind(libgtk, cast(void**)&gtk_button_new_from_icon_name, "gtk_button_new_from_icon_name");
     libraryBind(libgtk, cast(void**)&gtk_button_set_icon_name, "gtk_button_set_icon_name");
+    libraryBind(libgtk, cast(void**)&gtk_button_set_has_frame, "gtk_button_set_has_frame");
     
     // GtkToggleButton
     libraryBind(libgtk, cast(void**)&gtk_toggle_button_new, "gtk_toggle_button_new");
@@ -186,6 +190,9 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_popover_menu_bar_new_from_model, "gtk_popover_menu_bar_new_from_model");
     libraryBind(libgtk, cast(void**)&gtk_popover_menu_new_from_model_full, "gtk_popover_menu_new_from_model_full");
     libraryBind(libgtk, cast(void**)&gtk_popover_menu_add_child, "gtk_popover_menu_add_child");
+    
+    // GtkSettings
+    libraryBind(libgtk, cast(void**)&gtk_widget_get_settings, "gtk_widget_get_settings");
     
     // AboutDialog
     libraryBind(libgtk, cast(void**)&gtk_about_dialog_new, "gtk_about_dialog_new");

@@ -1,7 +1,7 @@
 module ddgtk4.gtk.gtkgrid;
 
-import ddgtk4.gtk.gtkwidget : GtkWidget;
-import ddgtk4.glib.gtypes : gboolean, guint;
+public import ddgtk4.gtk.gtkwidget : GtkWidget;
+public import ddgtk4.glib.gtypes : gboolean, guint;
 
 struct GtkGrid;
 

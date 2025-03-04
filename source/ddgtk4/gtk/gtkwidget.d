@@ -1,8 +1,10 @@
 module ddgtk4.gtk.gtkwidget;
 
-import ddgtk4.glib.gtypes : gboolean;
+public import ddgtk4.glib.gtypes : gboolean;
+public import ddgtk4.gtk.gtkenums : GtkTextDirection;
 
 struct GtkWidget;
+struct GtkSettings; // lazy
 
 // Macros
 pragma(inline, true)
@@ -33,4 +35,10 @@ __gshared
     void function(GtkWidget*, gboolean) gtk_widget_set_vexpand;
     
     GtkWidget* function(GtkWidget*) gtk_widget_get_first_child;
+    
+    GtkSettings* function(GtkWidget*) gtk_widget_get_settings;
+    
+    void function(GtkTextDirection) gtk_widget_set_default_direction;
+    void function(GtkWidget*, GtkTextDirection) gtk_widget_set_direction;
+    GtkTextDirection function(GtkWidget*) gtk_widget_get_direction;
 }

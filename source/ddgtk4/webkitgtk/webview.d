@@ -52,6 +52,7 @@ enum : WebKitSnapshotRegion
     WEBKIT_SNAPSHOT_REGION_VISIBLE = 0,
     WEBKIT_SNAPSHOT_REGION_FULL_DOCUMENT,
 }
+// otherwise, it's WPE (Apple's) interface
 //#endif
 
 alias WebKitWebProcessTerminationReason = int;

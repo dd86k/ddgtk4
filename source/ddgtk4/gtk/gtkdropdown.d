@@ -1,9 +1,9 @@
 module ddgtk4.gtk.gtkdropdown;
 
-import ddgtk4.gtk.gtkwidget : GtkWidget;
-import ddgtk4.gtk.gtkexpression : GtkExpression;
-import ddgtk4.glib.gtypes : gboolean, guint;
-import ddgtk4.gio.glistmodel : GListModel;
+public import ddgtk4.gtk.gtkwidget : GtkWidget;
+public import ddgtk4.gtk.gtkexpression : GtkExpression;
+public import ddgtk4.glib.gtypes : gboolean, guint;
+public import ddgtk4.gio.glistmodel : GListModel;
 
 struct GtkDropDown;
 

@@ -1,6 +1,6 @@
 module ddgtk4.gtk.gtkheaderbar;
 
-import ddgtk4.gtk.gtkwidget : GtkWidget;
+public import ddgtk4.gtk.gtkwidget : GtkWidget;
 
 struct GtkHeaderBar;
 
