@@ -11,7 +11,7 @@ subPackage { # Example: Basic app
 	name "basic"
 	targetName "example-basic"
 	targetType "executable"
-	importPaths "examples/basic"
+	sourcePaths "examples/basic"
 	mainSourceFile "examples/basic/main.d"
 }
 
@@ -20,7 +20,7 @@ subPackage { # Example: Form with a few controls
 	name "form"
 	targetName "example-form"
 	targetType "executable"
-	importPaths "examples/form"
+	sourcePaths "examples/form"
 	mainSourceFile "examples/form/main.d"
 }
 
@@ -29,7 +29,7 @@ subPackage { # Example: HeaderBar
 	name "header"
 	targetName "example-header"
 	targetType "executable"
-	importPaths "examples/header"
+	sourcePaths "examples/header"
 	mainSourceFile "examples/header/main.d"
 }
 
@@ -38,6 +38,6 @@ subPackage { # Example: WebKit
 	name "webkit"
 	targetName "example-webkit"
 	targetType "executable"
-	importPaths "examples/webkit"
+	sourcePaths "examples/webkit"
 	mainSourceFile "examples/webkit/main.d"
 }

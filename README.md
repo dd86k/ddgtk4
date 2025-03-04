@@ -1,5 +1,7 @@
 Minimal dynamic bindings for GLib, GObject, Gio, GTK4, and WebKitGTK.
 
+Support for Libadwaita sooner or later.
+
 Work in progress.
 
 Why?
@@ -10,14 +12,15 @@ Why?
 - Up-to-date GTK4/WebKitGTK bindings.
   - GtkD states supporting 3.24 while it loads gtk4, so I'm a little confused.
 
-Issues:
-- **Important**: Does not work with DMD (tested on 2.106.1+cc-13.3.0+linux64). GDC and LDC are fine.
+Notes:
+- **Important**: Does not work with DMD (tested on 2.106.1+cc-13.3.0+linux64).
 - **Important**: Bindings are added incrementally by hand. There are a lot of missing bindings.
 - **Important**: Does not offer version target bindings.
   - e.g., stuff added/deprecated in certain versions, GTK 4.10 being rather a big update.
 - Does not offer OOP wrappers.
+- Does not (yet) offer static bindings.
 - GDK and GSK bindings are missing.
-- Windows dependencies are a bit messy.
+- Windows dependencies are a bit messy, due to FFI.
   - WebKitGTK is generally unavailable on Windows. MSYS2 does not offer binaries.
 
 Requirements:
