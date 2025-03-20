@@ -4,7 +4,7 @@ public import ddgtk4.glib.gtypes : gboolean;
 public import ddgtk4.gtk.gtkenums : GtkTextDirection;
 
 struct GtkWidget;
-struct GtkSettings; // lazy
+struct GtkSettings; // temp until its own module
 
 // Macros
 pragma(inline, true)

@@ -17,6 +17,7 @@ Notes:
 - **Important**: Bindings are added incrementally by hand. There are a lot of missing bindings.
 - **Important**: Does not offer version target bindings.
   - e.g., stuff added/deprecated in certain versions, GTK 4.10 being rather a big update.
+- Does not offer bindings to deprecated symbols.
 - Does not offer OOP wrappers.
 - Does not (yet) offer static bindings.
 - GDK and GSK bindings are missing.
@@ -46,7 +47,7 @@ Available examples:
 
 ## Usage
 
-You can import this repo as a DUB package by commit.
+Until a stable release comes out, you can import this repo as a DUB package by commit.
 
 SDL:
 ```sdl

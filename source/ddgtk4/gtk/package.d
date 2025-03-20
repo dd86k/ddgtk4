@@ -24,4 +24,9 @@ public import
     ddgtk4.gtk.gtkpopovermenu,
     ddgtk4.gtk.gtkscrolledwindow,
     ddgtk4.gtk.gtkpaned,
+    ddgtk4.gtk.gtklistitem,
+    ddgtk4.gtk.gtklistitemfactory,
+    ddgtk4.gtk.gtklistview,
+    ddgtk4.gtk.gtkselectionmodel,
+    ddgtk4.gtk.gtksingleselection,
     ddgtk4.gtk.gtkwindow;

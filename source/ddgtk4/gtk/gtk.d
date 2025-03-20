@@ -194,6 +194,63 @@ void loadgtk4()
     // GtkSettings
     libraryBind(libgtk, cast(void**)&gtk_widget_get_settings, "gtk_widget_get_settings");
     
+    // GtkListView
+    libraryBind(libgtk, cast(void**)&gtk_list_view_new, "gtk_list_view_new");
+    libraryBind(libgtk, cast(void**)&gtk_list_view_get_model, "gtk_list_view_get_model");
+    libraryBind(libgtk, cast(void**)&gtk_list_view_set_model, "gtk_list_view_set_model");
+    libraryBind(libgtk, cast(void**)&gtk_list_view_set_factory, "gtk_list_view_set_factory");
+    libraryBind(libgtk, cast(void**)&gtk_list_view_get_factory, "gtk_list_view_get_factory");
+    libraryBind(libgtk, cast(void**)&gtk_list_view_set_show_separators, "gtk_list_view_set_show_separators");
+    libraryBind(libgtk, cast(void**)&gtk_list_view_get_show_separators, "gtk_list_view_get_show_separators");
+    libraryBind(libgtk, cast(void**)&gtk_list_view_set_single_click_activate, "gtk_list_view_set_single_click_activate");
+    libraryBind(libgtk, cast(void**)&gtk_list_view_get_single_click_activate, "gtk_list_view_get_single_click_activate");
+    libraryBind(libgtk, cast(void**)&gtk_list_view_set_enable_rubberband, "gtk_list_view_set_enable_rubberband");
+    libraryBind(libgtk, cast(void**)&gtk_list_view_get_enable_rubberband, "gtk_list_view_get_enable_rubberband");
+    
+    // GtkListItem
+    libraryBind(libgtk, cast(void**)&gtk_list_item_get_item, "gtk_list_item_get_item");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_get_position, "gtk_list_item_get_position");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_get_selected, "gtk_list_item_get_selected");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_get_selectable, "gtk_list_item_get_selectable");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_set_selectable, "gtk_list_item_set_selectable");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_get_activatable, "gtk_list_item_get_activatable");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_set_activatable, "gtk_list_item_set_activatable");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_get_focusable, "gtk_list_item_get_focusable");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_set_focusable, "gtk_list_item_set_focusable");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_set_child, "gtk_list_item_set_child");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_get_child, "gtk_list_item_get_child");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_set_accessible_description, "gtk_list_item_set_accessible_description");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_get_accessible_description, "gtk_list_item_get_accessible_description");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_set_accessible_label, "gtk_list_item_set_accessible_label");
+    libraryBind(libgtk, cast(void**)&gtk_list_item_get_accessible_label, "gtk_list_item_get_accessible_label");
+    
+    // GtkSelectionModel
+    libraryBind(libgtk, cast(void**)&gtk_selection_model_is_selected, "gtk_selection_model_is_selected");
+    libraryBind(libgtk, cast(void**)&gtk_selection_model_get_selection, "gtk_selection_model_get_selection");
+    libraryBind(libgtk, cast(void**)&gtk_selection_model_get_selection_in_range, "gtk_selection_model_get_selection_in_range");
+    libraryBind(libgtk, cast(void**)&gtk_selection_model_select_item, "gtk_selection_model_select_item");
+    libraryBind(libgtk, cast(void**)&gtk_selection_model_unselect_item, "gtk_selection_model_unselect_item");
+    libraryBind(libgtk, cast(void**)&gtk_selection_model_select_range, "gtk_selection_model_select_range");
+    libraryBind(libgtk, cast(void**)&gtk_selection_model_unselect_range, "gtk_selection_model_unselect_range");
+    libraryBind(libgtk, cast(void**)&gtk_selection_model_select_all, "gtk_selection_model_select_all");
+    libraryBind(libgtk, cast(void**)&gtk_selection_model_unselect_all, "gtk_selection_model_unselect_all");
+    libraryBind(libgtk, cast(void**)&gtk_selection_model_set_selection, "gtk_selection_model_set_selection");
+    
+    // GtkSignalListItemFactory
+    libraryBind(libgtk, cast(void**)&gtk_signal_list_item_factory_new, "gtk_signal_list_item_factory_new");
+    
+    // GtkSingleSelection
+    libraryBind(libgtk, cast(void**)&gtk_single_selection_new, "gtk_single_selection_new");
+    libraryBind(libgtk, cast(void**)&gtk_single_selection_get_model, "gtk_single_selection_get_model");
+    libraryBind(libgtk, cast(void**)&gtk_single_selection_set_model, "gtk_single_selection_set_model");
+    libraryBind(libgtk, cast(void**)&gtk_single_selection_get_selected, "gtk_single_selection_get_selected");
+    libraryBind(libgtk, cast(void**)&gtk_single_selection_set_selected, "gtk_single_selection_set_selected");
+    libraryBind(libgtk, cast(void**)&gtk_single_selection_get_selected_item, "gtk_single_selection_get_selected_item");
+    libraryBind(libgtk, cast(void**)&gtk_single_selection_get_autoselect, "gtk_single_selection_get_autoselect");
+    libraryBind(libgtk, cast(void**)&gtk_single_selection_set_autoselect, "gtk_single_selection_set_autoselect");
+    libraryBind(libgtk, cast(void**)&gtk_single_selection_get_can_unselect, "gtk_single_selection_get_can_unselect");
+    libraryBind(libgtk, cast(void**)&gtk_single_selection_set_can_unselect, "gtk_single_selection_set_can_unselect");
+    
     // AboutDialog
     libraryBind(libgtk, cast(void**)&gtk_about_dialog_new, "gtk_about_dialog_new");
     libraryBind(libgtk, cast(void**)&gtk_about_dialog_set_comments, "gtk_about_dialog_set_comments");

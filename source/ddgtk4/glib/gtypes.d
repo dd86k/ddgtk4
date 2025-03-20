@@ -2,22 +2,28 @@ module ddgtk4.glib.gtypes;
 
 import core.stdc.config : c_long, c_ulong;
 
-// These two are in glibconfig but seem better fit here.
-alias gint64 = long;
+// glibconfig, but seem better fit here.
+alias gint8   = byte;
+alias guint8  = ubyte;
+alias gint16  = short;
+alias guint16 = ushort;
+alias gint32  = int;
+alias guint32 = uint;
+alias gint64  = long;
 alias guint64 = ulong;
 
-alias gchar = char;
-alias gshort = short;
-alias glong = c_long;
-alias gint = int;
+alias gchar    = char;
+alias gshort   = short;
+alias glong    = c_long;
+alias gint     = int;
 alias gboolean = gint;
 
-alias guchar = ubyte;
+alias guchar  = ubyte;
 alias gushort = ushort;
-alias gulong = c_ulong;
-alias guint = uint;
+alias gulong  = c_ulong;
+alias guint   = uint;
 
-alias gfloat = float;
+alias gfloat  = float;
 alias gdouble = double;
 
 alias gpointer = void*;

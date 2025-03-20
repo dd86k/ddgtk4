@@ -1,7 +1,7 @@
 module ddgtk4.gio.giotypes;
 
 struct GAppLaunchContext;
-struct GAppInfo; /* Dummy typedef */
+//struct GAppInfo; /* Dummy typedef */
 struct GAsyncResult; /* Dummy typedef */
 struct GAsyncInitable;
 struct GBufferedInputStream;
