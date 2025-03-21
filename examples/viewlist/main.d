@@ -10,7 +10,16 @@ factory_setup_item_cb(GtkListItemFactory *factory,
                       GtkListItem        *list_item)
 {
     writeln("factory_setup_item_cb");
-    gtk_list_item_set_child (list_item, gtk_label_new (null));
+    
+    GtkLabel *label = GTK_LABEL (gtk_label_new (null));
+    
+    enum ITEM_PADDING = 5;
+    gtk_widget_set_margin_bottom( GTK_WIDGET(label), ITEM_PADDING );
+    gtk_widget_set_margin_top( GTK_WIDGET(label), ITEM_PADDING );
+    gtk_widget_set_margin_start( GTK_WIDGET(label), ITEM_PADDING );
+    gtk_widget_set_margin_end( GTK_WIDGET(label), ITEM_PADDING );
+    
+    gtk_list_item_set_child (list_item, GTK_WIDGET (label));
 }
 
 // Bind (update) the item for the list
@@ -36,9 +45,19 @@ viewlist_activate_cb(GtkListView  *list,
 // The item is selected via notify::selected from the selection model
 extern (C)
 static void
-viewlist_selection_changed(GObject *object, GParamSpec *pspec, gpointer p)
+selection_changed(GObject *object, GParamSpec *pspec, GListModel *list)
 {
-    writeln("viewlist_selection_changed");
+    writeln("selection_changed");
+    
+    // Get "selected" index out of emitter - GtkSelectionModel
+    GValue value;
+    g_object_get_property( object, "selected", &value);
+    guint index = g_value_get_uint( &value );
+    if (index == GTK_INVALID_LIST_POSITION)
+        return;
+    
+    ExampleItem *item = cast(ExampleItem*) g_list_model_get_item( list, index );
+    writefln("selected=%s", fromStringz(item.name));
 }
 
 // Defining custom type
@@ -93,8 +112,8 @@ example_list_item_get_type()
             0, // n_preallocs
             cast(void function(void*,void*))&example_item_init, // instance_init
         };
+        type = g_type_register_static (G_TYPE_OBJECT, "ExampleItem", &gtypeinfo, 0);
         */
-        //type = g_type_register_static (G_TYPE_OBJECT, "ExampleItem", &gtypeinfo, 0);
         type = g_type_register_static_simple (G_TYPE_OBJECT,
             "ExampleItem",
             cast(guint) ExampleItemClass.sizeof,
@@ -149,11 +168,15 @@ activate(GtkApplication *app, gpointer user_data)
     GtkListItemFactory *factory = gtk_signal_list_item_factory_new();
     g_signal_connect (factory, "setup", G_CALLBACK(&factory_setup_item_cb), null);
     g_signal_connect (factory, "bind",  G_CALLBACK(&factory_bind_item_cb), null);
-
-    GtkSelectionModel *selectionmodel = GTK_SELECTION_MODEL (gtk_single_selection_new(model));
-    g_signal_connect (selectionmodel, "notify::selected", G_CALLBACK(&viewlist_selection_changed), null);
     
+    GtkSingleSelection *singleselection = gtk_single_selection_new(model);
+    gtk_single_selection_set_autoselect (singleselection, FALSE); // Useful for later items
+    gtk_single_selection_set_selected (singleselection, GTK_INVALID_LIST_POSITION); // Useful now
+    g_signal_connect (singleselection, "notify::selected", G_CALLBACK(&selection_changed), model);
+    
+    GtkSelectionModel *selectionmodel = GTK_SELECTION_MODEL (singleselection);
     GtkListView *list = GTK_LIST_VIEW (gtk_list_view_new (selectionmodel, factory));
+    // Activate isn't really needed, unless you want a double-click feature
     g_signal_connect (list, "activate", G_CALLBACK (&viewlist_activate_cb), null);
     // Set single clicks *and* select on hover.
     // This is why the selection model has the notify::selected signal connection
