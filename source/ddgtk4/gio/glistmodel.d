@@ -8,6 +8,9 @@ public import ddgtk4.gobject.gobject : GObject;
 
 struct GListModel;
 
+// In gtktypes.h, but it's rather empty
+enum guint GTK_INVALID_LIST_POSITION = 0xffffffff;
+
 // Macros
 pragma(inline, true)
 {

@@ -70,6 +70,8 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_widget_set_direction, "gtk_widget_set_direction");
     libraryBind(libgtk, cast(void**)&gtk_widget_get_direction, "gtk_widget_get_direction");
     libraryBind(libgtk, cast(void**)&gtk_widget_set_default_direction, "gtk_widget_set_default_direction");
+    libraryBind(libgtk, cast(void**)&gtk_widget_get_halign, "gtk_widget_get_halign");
+    libraryBind(libgtk, cast(void**)&gtk_widget_set_halign, "gtk_widget_set_halign");
     
     // GtkApplication
     libraryBind(libgtk, cast(void**)&gtk_application_new, "gtk_application_new");
@@ -167,6 +169,10 @@ void loadgtk4()
     // GtkLabel
     libraryBind(libgtk, cast(void**)&gtk_label_new, "gtk_label_new");
     libraryBind(libgtk, cast(void**)&gtk_label_set_text, "gtk_label_set_text");
+    libraryBind(libgtk, cast(void**)&gtk_label_set_justify, "gtk_label_set_justify");
+    libraryBind(libgtk, cast(void**)&gtk_label_get_justify, "gtk_label_get_justify");
+    libraryBind(libgtk, cast(void**)&gtk_label_get_xalign, "gtk_label_get_xalign");
+    libraryBind(libgtk, cast(void**)&gtk_label_set_xalign, "gtk_label_set_xalign");
     
     // GtkDropDown
     libraryBind(libgtk, cast(void**)&gtk_drop_down_new, "gtk_drop_down_new");

@@ -106,6 +106,7 @@ __gshared
     void function(gpointer, const(gchar)*, ...) g_object_set;
     void function(gpointer) g_object_unref;
     void function(GObject*, const(gchar)*, const(GValue)*) g_object_set_property;
+    void function(GObject*, const(gchar)*, const(GValue)*) g_object_get_property;
     
     void function(GObjectClass*, guint, GParamSpec*) g_object_class_install_property;
 }
@@ -144,6 +145,7 @@ void loadgobject()
     libraryBind(libgobject, cast(void**)&g_object_set, "g_object_set");
     libraryBind(libgobject, cast(void**)&g_object_unref, "g_object_unref");
     libraryBind(libgobject, cast(void**)&g_object_set_property, "g_object_set_property");
+    libraryBind(libgobject, cast(void**)&g_object_get_property, "g_object_get_property");
     libraryBind(libgobject, cast(void**)&g_object_class_install_property, "g_object_class_install_property");
     
     // gtype

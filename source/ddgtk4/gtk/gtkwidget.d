@@ -1,7 +1,7 @@
 module ddgtk4.gtk.gtkwidget;
 
 public import ddgtk4.glib.gtypes : gboolean;
-public import ddgtk4.gtk.gtkenums : GtkTextDirection;
+public import ddgtk4.gtk.gtkenums : GtkTextDirection, GtkAlign;
 
 struct GtkWidget;
 struct GtkSettings; // temp until its own module
@@ -41,4 +41,7 @@ __gshared
     void function(GtkTextDirection) gtk_widget_set_default_direction;
     void function(GtkWidget*, GtkTextDirection) gtk_widget_set_direction;
     GtkTextDirection function(GtkWidget*) gtk_widget_get_direction;
+    
+    GtkAlign function(GtkWidget*) gtk_widget_get_halign;
+    void function(GtkWidget*, GtkAlign) gtk_widget_set_halign;
 }
