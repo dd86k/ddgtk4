@@ -33,6 +33,15 @@ subPackage { # Example: HeaderBar
 	mainSourceFile "examples/header/main.d"
 }
 
+subPackage { # Example: ViewList
+	dependency "ddgtk4" path=".."
+	name "viewlist"
+	targetName "example-viewlist"
+	targetType "executable"
+	sourcePaths "examples/viewlist"
+	mainSourceFile "examples/viewlist/main.d"
+}
+
 subPackage { # Example: WebKit
 	dependency "ddgtk4" path=".."
 	name "webkit"
