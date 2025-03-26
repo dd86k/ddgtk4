@@ -42,6 +42,7 @@ Available examples:
 - `basic`: Features one button that prints "Hello" via from the command-line.
 - `form`: Features a few tabs in a NoteBook, and some controls.
 - `header`: Features a HeaderBar with a Button and MenuButton, and vertical Paned.
+- `viewlist`: Features a ViewList using a GListStore and single-clicked activated items.
 - `webkit`: Features an example with WebKitGTK.
   - By default, it connects to `https://example.org/`. You can specify a site using `--site=`.
 
@@ -66,3 +67,16 @@ JSON:
 
 In code, you will need to `import ddgtk4;` and call `loadgtk4all();` before
 using functions.
+
+## Availability
+
+GTK4 is generally available for most distros.
+
+- Debian 11: Unavailable in repositories.
+- Debian 12: GTK 4.8.
+- Ubuntu 20.04 LTS: Unavailable in repositories.
+- Ubuntu 22.04 LTS: GTK 4.6.
+- Ubuntu 24.04 LTS: GTK 4.14.
+- Fedora 40: GTK 4.14.
+- Fedora 41: GTK 4.16.
+- RHEL 9: 4.12.

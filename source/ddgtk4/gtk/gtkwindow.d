@@ -1,8 +1,9 @@
 module ddgtk4.gtk.gtkwindow;
 
 import ddgtk4.gtk.gtkwidget;
-public import ddgtk4.gio.glistmodel : GListModel;
-public import ddgtk4.glib.gtypes : gboolean;
+public import ddgtk4.gtk.gtkapplication : GtkApplication;
+public import ddgtk4.gio.glistmodel     : GListModel;
+public import ddgtk4.glib.gtypes        : gboolean;
 
 struct GtkWindow;
 
@@ -21,10 +22,11 @@ __gshared
     GtkWidget* function() gtk_window_new;
     
     void function(GtkWindow*, gboolean)     gtk_window_set_modal;
+    void function(GtkWindow*, gboolean)     gtk_window_set_resizable;
     void function(GtkWindow*, GtkWindow*)   gtk_window_set_transient_for;
     
     void function(GtkWindow*, GtkWidget*)   gtk_window_set_titlebar;
-    
+    void function(GtkWindow*, const(char)*) gtk_window_set_icon_name;
     void function(GtkWindow*, const(char)*) gtk_window_set_title;
     void function(GtkWindow*, int, int)     gtk_window_set_default_size;
     void function(GtkWindow*, GtkWidget*)   gtk_window_set_child;
@@ -33,4 +35,7 @@ __gshared
     GListModel* function()                  gtk_window_get_toplevels;
     
     void function(GtkWindow *window)        gtk_window_destroy;
+    void function(GtkWindow *window)        gtk_window_close;
+    
+    GtkApplication* function(GtkWindow*)    gtk_window_get_application;
 }

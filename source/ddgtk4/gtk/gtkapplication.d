@@ -1,6 +1,7 @@
 module ddgtk4.gtk.gtkapplication;
 
 import ddgtk4.glib;
+public import ddgtk4.gtk.gtkwindow : GtkWindow;
 
 struct GtkApplication;
 
@@ -37,4 +38,6 @@ GtkApplication * gtk_application_new           (const char        *application_i
     GtkApplication* function(
         const(char) *application_id,
         GApplicationFlags flags) gtk_application_new;
+    
+    void function(GtkApplication* application, GtkWindow* window) gtk_application_add_window;
 }

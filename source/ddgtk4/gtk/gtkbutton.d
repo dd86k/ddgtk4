@@ -22,6 +22,7 @@ __gshared
     GtkWidget* function(const(char)* label) gtk_button_new_with_label;
     GtkWidget* function(const(char)* label) gtk_button_new_from_icon_name;
     void function(GtkButton*, const(char)*) gtk_button_set_icon_name;
+    void function(GtkButton*, const(char)*) gtk_button_set_label;
     
     void function(GtkButton*, gboolean) gtk_button_set_has_frame;
 }

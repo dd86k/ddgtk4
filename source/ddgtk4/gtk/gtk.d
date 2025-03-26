@@ -75,18 +75,25 @@ void loadgtk4()
     
     // GtkApplication
     libraryBind(libgtk, cast(void**)&gtk_application_new, "gtk_application_new");
+    libraryBind(libgtk, cast(void**)&gtk_application_add_window, "gtk_application_add_window");
+    
+    // GtkApplicationWindow
     libraryBind(libgtk, cast(void**)&gtk_application_window_new, "gtk_application_window_new");
     
     // GtkWindow
     libraryBind(libgtk, cast(void**)&gtk_window_new, "gtk_window_new");
     libraryBind(libgtk, cast(void**)&gtk_window_set_modal, "gtk_window_set_modal");
+    libraryBind(libgtk, cast(void**)&gtk_window_set_resizable, "gtk_window_set_resizable");
     libraryBind(libgtk, cast(void**)&gtk_window_set_transient_for, "gtk_window_set_transient_for");
     libraryBind(libgtk, cast(void**)&gtk_window_set_title, "gtk_window_set_title");
     libraryBind(libgtk, cast(void**)&gtk_window_set_default_size, "gtk_window_set_default_size");
     libraryBind(libgtk, cast(void**)&gtk_window_set_child, "gtk_window_set_child");
     libraryBind(libgtk, cast(void**)&gtk_window_present, "gtk_window_present");
     libraryBind(libgtk, cast(void**)&gtk_window_destroy, "gtk_window_destroy");
+    libraryBind(libgtk, cast(void**)&gtk_window_close, "gtk_window_close");
     libraryBind(libgtk, cast(void**)&gtk_window_set_titlebar, "gtk_window_set_titlebar");
+    libraryBind(libgtk, cast(void**)&gtk_window_set_icon_name, "gtk_window_set_icon_name");
+    libraryBind(libgtk, cast(void**)&gtk_window_get_application, "gtk_window_get_application");
     
     // GtkGrid
     libraryBind(libgtk, cast(void**)&gtk_grid_new, "gtk_grid_new");
@@ -104,6 +111,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_button_new_from_icon_name, "gtk_button_new_from_icon_name");
     libraryBind(libgtk, cast(void**)&gtk_button_set_icon_name, "gtk_button_set_icon_name");
     libraryBind(libgtk, cast(void**)&gtk_button_set_has_frame, "gtk_button_set_has_frame");
+    libraryBind(libgtk, cast(void**)&gtk_button_set_label, "gtk_button_set_label");
     
     // GtkToggleButton
     libraryBind(libgtk, cast(void**)&gtk_toggle_button_new, "gtk_toggle_button_new");
@@ -199,6 +207,32 @@ void loadgtk4()
     
     // GtkSettings
     libraryBind(libgtk, cast(void**)&gtk_widget_get_settings, "gtk_widget_get_settings");
+    
+    // GtkSearchEntry
+    libraryBind(libgtk, cast(void**)&gtk_search_entry_new, "gtk_search_entry_new");
+    libraryBind(libgtk, cast(void**)&gtk_search_entry_get_key_capture_widget, "gtk_search_entry_get_key_capture_widget");
+    libraryBind(libgtk, cast(void**)&gtk_search_entry_set_key_capture_widget, "gtk_search_entry_set_key_capture_widget");
+    
+    // GtkEditable
+    libraryBind(libgtk, cast(void**)&gtk_editable_get_text, "gtk_editable_get_text");
+    libraryBind(libgtk, cast(void**)&gtk_editable_set_text, "gtk_editable_set_text");
+    libraryBind(libgtk, cast(void**)&gtk_editable_get_chars, "gtk_editable_get_chars");
+    libraryBind(libgtk, cast(void**)&gtk_editable_insert_text, "gtk_editable_insert_text");
+    libraryBind(libgtk, cast(void**)&gtk_editable_delete_text, "gtk_editable_delete_text");
+    libraryBind(libgtk, cast(void**)&gtk_editable_get_selection_bounds, "gtk_editable_get_selection_bounds");
+    libraryBind(libgtk, cast(void**)&gtk_editable_delete_selection, "gtk_editable_delete_selection");
+    libraryBind(libgtk, cast(void**)&gtk_editable_select_region, "gtk_editable_select_region");
+    libraryBind(libgtk, cast(void**)&gtk_editable_set_position, "gtk_editable_set_position");
+    libraryBind(libgtk, cast(void**)&gtk_editable_get_position, "gtk_editable_get_position");
+    libraryBind(libgtk, cast(void**)&gtk_editable_get_editable, "gtk_editable_get_editable");
+    libraryBind(libgtk, cast(void**)&gtk_editable_set_editable, "gtk_editable_set_editable");
+    libraryBind(libgtk, cast(void**)&gtk_editable_get_alignment, "gtk_editable_get_alignment");
+    libraryBind(libgtk, cast(void**)&gtk_editable_set_alignment, "gtk_editable_set_alignment");
+    libraryBind(libgtk, cast(void**)&gtk_editable_get_width_chars, "gtk_editable_get_width_chars");
+    libraryBind(libgtk, cast(void**)&gtk_editable_set_width_chars, "gtk_editable_set_width_chars");
+    libraryBind(libgtk, cast(void**)&gtk_editable_get_max_width_chars, "gtk_editable_get_max_width_chars");
+    libraryBind(libgtk, cast(void**)&gtk_editable_set_max_width_chars, "gtk_editable_set_max_width_chars");
+    libraryBind(libgtk, cast(void**)&gtk_editable_set_enable_undo, "gtk_editable_set_enable_undo");
     
     // GtkListView
     libraryBind(libgtk, cast(void**)&gtk_list_view_new, "gtk_list_view_new");
