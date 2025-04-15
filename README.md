@@ -1,6 +1,6 @@
 Minimal dynamic bindings for GLib, GObject, Gio, GTK4, and WebKitGTK.
 
-Support for Libadwaita sooner or later.
+Support for Libadwaita, Pango, GDK, and GSK later.
 
 Work in progress.
 
@@ -65,14 +65,14 @@ JSON:
 }
 ```
 
-In code, you will need to `import ddgtk4;` and call `loadgtk4all();` before
-using functions.
+In code, you will need to import the `ddgtk4` module
+and call `loadgtk4all()` before using functions.
 
 ## Availability
 
 GTK4 is generally available for most distros.
 
-- Debian 11: Unavailable in repositories.
+- Debian 11: Unavailable in repositories. (PureOS 10 has GTK 4.6)
 - Debian 12: GTK 4.8.
 - Ubuntu 20.04 LTS: Unavailable in repositories.
 - Ubuntu 22.04 LTS: GTK 4.6.
@@ -80,3 +80,5 @@ GTK4 is generally available for most distros.
 - Fedora 40: GTK 4.14.
 - Fedora 41: GTK 4.16.
 - RHEL 9: 4.12.
+
+For gtk4-icon-browser, install `gtk-4-examples`.
