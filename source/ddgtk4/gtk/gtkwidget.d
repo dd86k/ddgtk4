@@ -44,4 +44,11 @@ __gshared
     
     GtkAlign function(GtkWidget*) gtk_widget_get_halign;
     void function(GtkWidget*, GtkAlign) gtk_widget_set_halign;
+    
+    GtkAlign function(GtkWidget*) gtk_widget_get_valign;
+    void function(GtkWidget*, GtkAlign) gtk_widget_set_valign;
+    
+    void function(GtkWidget*, const(char)*) gtk_widget_add_css_class;
+    void function(GtkWidget*, const(char)*) gtk_widget_remove_css_class;
+
 }

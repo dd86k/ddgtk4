@@ -38,4 +38,6 @@ __gshared
     void function(GtkWindow *window)        gtk_window_close;
     
     GtkApplication* function(GtkWindow*)    gtk_window_get_application;
+    
+    void function(GtkWindow*, gboolean)     gtk_window_set_decorated;
 }

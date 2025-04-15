@@ -72,6 +72,10 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_widget_set_default_direction, "gtk_widget_set_default_direction");
     libraryBind(libgtk, cast(void**)&gtk_widget_get_halign, "gtk_widget_get_halign");
     libraryBind(libgtk, cast(void**)&gtk_widget_set_halign, "gtk_widget_set_halign");
+    libraryBind(libgtk, cast(void**)&gtk_widget_get_valign, "gtk_widget_get_valign");
+    libraryBind(libgtk, cast(void**)&gtk_widget_set_valign, "gtk_widget_set_valign");
+    libraryBind(libgtk, cast(void**)&gtk_widget_add_css_class, "gtk_widget_add_css_class");
+    libraryBind(libgtk, cast(void**)&gtk_widget_remove_css_class, "gtk_widget_remove_css_class");
     
     // GtkApplication
     libraryBind(libgtk, cast(void**)&gtk_application_new, "gtk_application_new");
@@ -94,6 +98,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_window_set_titlebar, "gtk_window_set_titlebar");
     libraryBind(libgtk, cast(void**)&gtk_window_set_icon_name, "gtk_window_set_icon_name");
     libraryBind(libgtk, cast(void**)&gtk_window_get_application, "gtk_window_get_application");
+    libraryBind(libgtk, cast(void**)&gtk_window_set_decorated, "gtk_window_set_decorated");
     
     // GtkGrid
     libraryBind(libgtk, cast(void**)&gtk_grid_new, "gtk_grid_new");
@@ -192,6 +197,13 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_header_bar_new, "gtk_header_bar_new");
     libraryBind(libgtk, cast(void**)&gtk_header_bar_pack_end, "gtk_header_bar_pack_end");
     libraryBind(libgtk, cast(void**)&gtk_header_bar_pack_start, "gtk_header_bar_pack_start");
+    libraryBind(libgtk, cast(void**)&gtk_header_bar_set_title_widget, "gtk_header_bar_set_title_widget");
+    libraryBind(libgtk, cast(void**)&gtk_header_bar_get_title_widget, "gtk_header_bar_get_title_widget");
+    libraryBind(libgtk, cast(void**)&gtk_header_bar_remove, "gtk_header_bar_remove");
+    libraryBind(libgtk, cast(void**)&gtk_header_bar_get_show_title_buttons, "gtk_header_bar_get_show_title_buttons");
+    libraryBind(libgtk, cast(void**)&gtk_header_bar_set_show_title_buttons, "gtk_header_bar_set_show_title_buttons");
+    libraryBind(libgtk, cast(void**)&gtk_header_bar_set_decoration_layout, "gtk_header_bar_set_decoration_layout");
+    libraryBind(libgtk, cast(void**)&gtk_header_bar_get_decoration_layout, "gtk_header_bar_get_decoration_layout");
     
     // GtkMenuButton
     libraryBind(libgtk, cast(void**)&gtk_menu_button_new, "gtk_menu_button_new");
