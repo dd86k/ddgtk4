@@ -27,6 +27,7 @@ version (Windows)
     private immutable string[] libNamesGTK4 = [
         "libgtk-4-1.dll", // MSYS2
         "gtk-4-4.1.dll",
+        "gtk-4-1.dll",
         "gtk-4.dll"
     ];
 }

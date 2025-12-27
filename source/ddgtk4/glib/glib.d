@@ -19,6 +19,7 @@ version (Windows)
 {
     private immutable string[] libNamesGLib = [
         "libglib-2.0-0.dll", // MSYS2
+        "glib-2.0-0.dll",
         "g-2.0-0.dll",
         "g-2.dll"
     ];

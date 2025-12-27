@@ -1,9 +1,10 @@
-
+/// WebKitGTK bindings.
+///
+/// Only supporst WebKitGTK-6.0 (2.40 and later for GTK 4).
+///
+/// Documentation: https://webkitgtk.org/reference/webkitgtk/stable/index.html
 module ddgtk4.webkitgtk.webkitgtk;
 
-/// Sources:
-/// - https://webkitgtk.org/reference/webkit2gtk/stable/index.html (4.1, relies on gtk3)
-/// - https://webkitgtk.org/reference/webkitgtk/stable/index.html (6.0, relies on gtk4)
 
 // While WebKitGTK itself depends on GObject, Gio, GTK, and Soup,
 // function definitions depend on GObject types (like gchar) and
@@ -15,6 +16,22 @@ public import ddgtk4.webkitgtk.settings;
 public import ddgtk4.webkitgtk.urirequest;
 public import ddgtk4.webkitgtk.webkitnavigationaction;
 public import ddgtk4.webkitgtk.webview;
+
+// NOTE: WebKitGTK versions
+//       https://blogs.gnome.org/mcatanzaro/2025/04/28/webkitgtk-api-versions/
+//
+//       webkitgtk-6.0
+//         This is WebKitGTK for GTK 4 and libsoup 3, introduced in WebKitGTK 2.40.
+//         This is what’s built by default if you build WebKit with -DPORT=GTK.
+//
+//       webkit2gtk-4.1
+//         This is WebKitGTK for GTK 3 and libsoup 3, introduced in WebKitGTK 2.32.
+//         Get this by building with -DPORT=GTK -DUSE_GTK3=ON.
+//
+//       webkit2gtk-4.0
+//         This is WebKitGTK for GTK 3 and libsoup 2, introduced in WebKitGTK 2.6.
+//         Get this by building with -DPORT=GTK -DUSE_GTK3=ON -DUSE_SOUP2=ON.
+
 
 version (Windows)
 {
@@ -30,10 +47,9 @@ else version (Posix)
 {
     private immutable string[] libNamesWebKitGTK = [
         "libwebkitgtk-6.0.so.4",    // Needs package libwebkitgtk-6.0-4 on Ubuntu
-        //"libwebkit2gtk-4.1.so.0", // Needs package libwebkit2gtk-4.1-0 on Ubuntu
     ];
 }
-else
+else // Allows compiling, but loader will error out at runtime
 {
     private immutable string[] libNamesWebKitGTK = [
     ];
