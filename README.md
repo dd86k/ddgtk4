@@ -21,8 +21,7 @@ Notes:
 - Does not offer OOP wrappers.
 - Does not (yet) offer static bindings.
 - GDK and GSK bindings are missing.
-- Windows dependencies are a bit messy, due to FFI.
-  - WebKitGTK is generally unavailable on Windows. MSYS2 does not offer binaries.
+- Windows dependencies are available under Gvsbuild.
 
 Requirements:
 - D compiler.
@@ -39,20 +38,22 @@ You can run and example using `dub run :EXAMPLE --compiler=COMPILER -- ARGS`, wh
 - `ARGS` are application arguments. Optional.
 
 Available examples:
-- `basic`: Features one button that prints "Hello" via from the command-line.
-- `form`: Features a few tabs in a NoteBook, and some controls.
-- `header`: Features a HeaderBar with a Button and MenuButton, and vertical Paned.
-- `viewlist`: Features a ViewList using a GListStore and single-clicked activated items.
-- `webkit`: Features an example with WebKitGTK.
+- `basic`: A button that prints "Hello" via from the command-line.
+- `form`: A few tabs in a NoteBook, and some controls.
+- `header`: HeaderBar with a Button and MenuButton, and vertical Paned.
+- `viewlist`: ViewList using a GListStore and single-clicked activated items.
+- `webkit`: Example with WebKitGTK.
   - By default, it connects to `https://example.org/`. You can specify a site using `--site=`.
 
 ## Usage
 
 Until a stable release comes out, you can import this repo as a DUB package by commit.
 
+In this example, replace `HASH` with the commit digest desired.
+
 SDL:
 ```sdl
-dependency "ddgtk4" repository="git+https://github.com/dd86k/ddgtk4.git" version="b733b6b24c6e56deafab608fd394ee4e0aaa2ef9"
+dependency "ddgtk4" repository="git+https://github.com/dd86k/ddgtk4.git" version="HASH"
 ```
 
 JSON:
@@ -60,25 +61,28 @@ JSON:
 "dependencies": {
   "ddgtk4": {
     "repository": "git+https://github.com/dd86k/ddgtk4.git",
-    "version": "b733b6b24c6e56deafab608fd394ee4e0aaa2ef9"
+    "version": "HASH"
   }
 }
 ```
 
-In code, you will need to import the `ddgtk4` module
+In your code, you will need to import the `ddgtk4` module
 and call `loadgtk4all()` before using functions.
 
 ## Availability
 
 GTK4 is generally available for most distros.
 
-- Debian 11: Unavailable in repositories. (PureOS 10 has GTK 4.6)
-- Debian 12: GTK 4.8.
-- Ubuntu 20.04 LTS: Unavailable in repositories.
-- Ubuntu 22.04 LTS: GTK 4.6.
-- Ubuntu 24.04 LTS: GTK 4.14.
-- Fedora 40: GTK 4.14.
-- Fedora 41: GTK 4.16.
-- RHEL 9: 4.12.
+- Debian 11: Unavailable (PureOS 10 has GTK 4.6)
+- Debian 12: GTK 4.8
+- Debian 13: GTK 4.18
+- Ubuntu 20.04 LTS: Unavailable
+- Ubuntu 22.04 LTS: GTK 4.6
+- Ubuntu 24.04 LTS: GTK 4.14
+- Fedora 40: GTK 4.14
+- Fedora 41: GTK 4.16
+- Fedora 42: GTK 4.18
+- RHEL 9: 4.12
+- RHEL 10: 4.16
 
 For gtk4-icon-browser, install `gtk-4-examples`.
