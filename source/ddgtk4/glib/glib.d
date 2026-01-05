@@ -38,6 +38,7 @@ else
 }
 
 private __gshared DynamicLibrary libglib;
+
 void loadglib()
 {
     // Let caller catch exceptions

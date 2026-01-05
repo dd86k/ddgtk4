@@ -32,10 +32,10 @@ Requirements:
 
 ## Examples
 
-You can run and example using `dub run :EXAMPLE --compiler=COMPILER -- ARGS`, where:
+You can compile and run examples using `dub :EXAMPLE --compiler=COMPILER -- ARGS`, where:
 - `EXAMPLE` is the name of the example.
 - `COMPILER` is the name of the compiler (currently works with `gdc` and `ldc2`).
-- `ARGS` are application arguments. Optional.
+- `ARGS` are application arguments. (Optional)
 
 Available examples:
 - `basic`: A button that prints "Hello" via from the command-line.
@@ -44,6 +44,7 @@ Available examples:
 - `viewlist`: ViewList using a GListStore and single-clicked activated items.
 - `webkit`: Example with WebKitGTK.
   - By default, it connects to `https://example.org/`. You can specify a site using `--site=`.
+- `adwaita`: Hello world example using libadwaita.
 
 ## Usage
 
@@ -76,13 +77,23 @@ GTK4 is generally available for most distros.
 - Debian 11: Unavailable (PureOS 10 has GTK 4.6)
 - Debian 12: GTK 4.8
 - Debian 13: GTK 4.18
-- Ubuntu 20.04 LTS: Unavailable
-- Ubuntu 22.04 LTS: GTK 4.6
-- Ubuntu 24.04 LTS: GTK 4.14
 - Fedora 40: GTK 4.14
 - Fedora 41: GTK 4.16
 - Fedora 42: GTK 4.18
 - RHEL 9: 4.12
 - RHEL 10: 4.16
+- Ubuntu 20.04 LTS: Unavailable
+- Ubuntu 22.04 LTS: GTK 4.6
+- Ubuntu 24.04 LTS: GTK 4.14
+
+Libadwaita.
+
+- Debian 12: 1.2
+- Debian 13: 1.7
+- Fedora 42: 1.7
+- RHEL 9: 1.4
+- RHEL 10: 1.6
+- Ubuntu 22.04 LTS: 1.1
+- Ubuntu 24.04 LTS: 1.5
 
 For gtk4-icon-browser, install `gtk-4-examples`.

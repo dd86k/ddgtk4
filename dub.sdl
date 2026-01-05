@@ -50,3 +50,12 @@ subPackage { # Example: WebKit
 	sourcePaths "examples/webkit"
 	mainSourceFile "examples/webkit/main.d"
 }
+
+subPackage { # Example: Adwaita
+	dependency "ddgtk4" path=".."
+	name "adwaita"
+	targetName "example-adwaita"
+	targetType "executable"
+	sourcePaths "examples/adwaita"
+	mainSourceFile "examples/adwaita/main.d"
+}
