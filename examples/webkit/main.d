@@ -12,9 +12,11 @@ extern (C)
 static void
 activate (GtkApplication *app, gpointer user_data)
 {
+    AppOptions *options = cast(AppOptions*)user_data;
+    
     GtkWidget *window = gtk_application_window_new( app );
     
-    gtk_window_set_title( GTK_WINDOW(window), "WebKitGTK 6.0 Demo" );
+    gtk_window_set_title( GTK_WINDOW(window), options.title );
     gtk_window_set_default_size( GTK_WINDOW(window), 800, 600 );
 
     GtkWidget *webview = webkit_web_view_new();
@@ -22,15 +24,33 @@ activate (GtkApplication *app, gpointer user_data)
 
     gtk_window_present( GTK_WINDOW(window) );
     
-    webkit_web_view_load_uri( WEBKIT_WEB_VIEW(webview), cast(const(gchar)*)user_data );
+    webkit_web_view_load_uri( WEBKIT_WEB_VIEW(webview), options.url );
+}
+
+struct AppOptions
+{
+    const(gchar) *title;
+    const(gchar) *url;
 }
 
 int main(string[] args)
 {
-    string osite = "https://example.org/";
+    __gshared AppOptions opts = AppOptions(
+        "WebKitGTK 6.0 Demo",
+        "https://example.org/"
+    );
     GetoptResult res = void;
     try res = getopt(args, config.caseSensitive,
-        "site", `Change default site (default="https://example.org/")`, &osite,
+        "title", `Change title (default="WebKitGTK 6.0 Demo")`,
+        (string _, string val)
+        {
+            opts.title = toStringz(val);
+        },
+        "site",  `Change site (default="https://example.org/")`,
+        (string _, string val)
+        {
+            opts.url = toStringz(val);
+        },
     );
     catch (Exception ex)
     {
@@ -41,8 +61,7 @@ int main(string[] args)
     loadwebkitgtk();
     
     GtkApplication *app = gtk_application_new( "org.gtk.example", G_APPLICATION_DEFAULT_FLAGS );
-    g_signal_connect( app, "activate", G_CALLBACK(&activate), cast(void*)toStringz(osite) );
+    g_signal_connect( app, "activate", G_CALLBACK(&activate), &opts );
     scope(exit) g_object_unref( app );
-    int status = g_application_run( G_APPLICATION(app), 0, null );
-    return status;
+    return g_application_run( G_APPLICATION(app), 0, null );
 }
