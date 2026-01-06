@@ -222,4 +222,19 @@ void loadgobject()
     libraryBind(libgobject, cast(void**)&g_param_spec_override, "g_param_spec_override");
     libraryBind(libgobject, cast(void**)&g_param_spec_gtype, "g_param_spec_gtype");
     libraryBind(libgobject, cast(void**)&g_param_spec_variant, "g_param_spec_variant");
+    
+    // gbinding
+    libraryBind(libgobject, cast(void**)&g_binding_flags_get_type, "g_binding_flags_get_type");
+    libraryBind(libgobject, cast(void**)&g_binding_get_type, "g_binding_get_type");
+    libraryBind(libgobject, cast(void**)&g_binding_get_flags, "g_binding_get_flags");
+    libraryBind(libgobject, cast(void**)&g_binding_get_source, "g_binding_get_source");
+    libraryBind(libgobject, cast(void**)&g_binding_dup_source, "g_binding_dup_source");
+    libraryBind(libgobject, cast(void**)&g_binding_get_target, "g_binding_get_target");
+    libraryBind(libgobject, cast(void**)&g_binding_dup_target, "g_binding_dup_target");
+    libraryBind(libgobject, cast(void**)&g_binding_get_source_property, "g_binding_get_source_property");
+    libraryBind(libgobject, cast(void**)&g_binding_get_target_property, "g_binding_get_target_property");
+    libraryBind(libgobject, cast(void**)&g_binding_unbind, "g_binding_unbind");
+    libraryBind(libgobject, cast(void**)&g_object_bind_property, "g_object_bind_property");
+    libraryBind(libgobject, cast(void**)&g_object_bind_property_full, "g_object_bind_property_full");
+    libraryBind(libgobject, cast(void**)&g_object_bind_property_with_closures, "g_object_bind_property_with_closures");
 }

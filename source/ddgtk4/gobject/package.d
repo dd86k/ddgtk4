@@ -6,4 +6,5 @@ public import
 	ddgtk4.gobject.gtype,
 	ddgtk4.gobject.gvalue,
 	ddgtk4.gobject.gparamspecs,
+	ddgtk4.gobject.gbinding,
 	ddgtk4.gobject.gsignal;
