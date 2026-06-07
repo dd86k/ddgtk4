@@ -6,15 +6,11 @@ module ddgtk4.adwaita.adwaita;
 
 import ddloader;
 
-public import ddgtk4.gobject.gsignal : g_signal_connect;
-public import ddgtk4.gobject.gclosure : G_CALLBACK;
-public import ddgtk4.gio.gapplication : G_APPLICATION, g_application_run;
-public import ddgtk4.gtk.gtkapplication : GtkApplication, gtk_application_add_window, G_APPLICATION_DEFAULT_FLAGS;
-public import ddgtk4.gtk.gtkapplicationwindow : gtk_application_window_new;
-public import ddgtk4.gtk.gtklabel : gtk_label_new;
-public import ddgtk4.gtk.gtkwidget : GtkWidget;
-public import ddgtk4.gtk.gtkwindow;
+public import ddgtk4.gobject;
+public import ddgtk4.gio;
+public import ddgtk4.gtk;
 
+public import ddgtk4.adwaita.applicationwindow;
 public import ddgtk4.adwaita.application;
 
 version (Windows)

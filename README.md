@@ -1,6 +1,6 @@
-Minimal dynamic bindings for GLib, GObject, Gio, GTK4, and WebKitGTK.
+Minimal dynamic bindings for GLib, GObject, Gio, GTK4, WebKitGTK, and Libadwaita.
 
-Support for Libadwaita, Pango, GDK, and GSK later.
+Support for Pango, GDK, and GSK later.
 
 Work in progress.
 
@@ -29,6 +29,7 @@ Requirements:
 - DUB, at least for building examples.
 - libgtk-4-1 (Ubuntu package) and dependencies for GTK4.
 - Optional: libwebkitgtk-6.0-4 (Ubuntu package) for WebKitGTK 6.0.
+- Optional: libadwaita-1-0 (Ubuntu package)
 
 ## Examples
 
@@ -43,7 +44,9 @@ Available examples:
 - `header`: HeaderBar with a Button and MenuButton, and vertical Paned.
 - `viewlist`: ViewList using a GListStore and single-clicked activated items.
 - `webkit`: Example with WebKitGTK.
-  - By default, it connects to `https://example.org/`. You can specify a site using `--site=`.
+  - Connects to `https://example.org/`.
+  - You can specify a site using `--site=`.
+  - You can specify a title using `--title=`.
 - `adwaita`: Hello world example using libadwaita.
 
 ## Usage
