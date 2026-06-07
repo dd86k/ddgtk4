@@ -5,6 +5,7 @@ import std.stdio;
 import std.string;
 
 // Setup (typically creating) the item for the list
+extern (C)
 static void
 factory_setup_item_cb(GtkListItemFactory *factory,
                       GtkListItem        *list_item)
@@ -23,6 +24,7 @@ factory_setup_item_cb(GtkListItemFactory *factory,
 }
 
 // Bind (update) the item for the list
+extern (C)
 static void
 factory_bind_item_cb(GtkListItemFactory *factory,
                      GtkListItem        *list_item)
@@ -34,6 +36,7 @@ factory_bind_item_cb(GtkListItemFactory *factory,
 }
 
 // GtkListView item is activated (typically double-click)
+extern (C)
 static void
 viewlist_activate_cb(GtkListView  *list,
                      guint         position,
