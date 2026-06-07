@@ -15,5 +15,6 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_g_action_map_add_action")
     void function(GActionMap*, GAction*) g_action_map_add_action;
 }

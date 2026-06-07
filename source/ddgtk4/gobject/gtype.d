@@ -154,10 +154,14 @@ enum G_TYPE_VARIANT     = G_TYPE_MAKE_FUNDAMENTAL! (21);
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_g_type_register_static")
     GType function(GType, const(gchar)*, const(GTypeInfo)*, GTypeFlags) g_type_register_static;
+    pragma(mangle, "ddgtk4_g_type_register_static_simple")
     GType function(GType, const(gchar)*, guint, GClassInitFunc, guint, GInstanceInitFunc, GTypeFlags)
         g_type_register_static_simple;
+    pragma(mangle, "ddgtk4_g_type_register_dynamic")
     GType function(GType, const(gchar)*, GTypePlugin*, GTypeFlags) g_type_register_dynamic;
+    pragma(mangle, "ddgtk4_g_type_register_fundamental")
     GType function(GType, const(gchar)*, const(GTypeInfo)*, const(GTypeFundamentalInfo)*, GTypeFlags)
         g_type_register_fundamental;
 }

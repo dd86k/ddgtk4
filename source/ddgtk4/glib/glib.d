@@ -12,6 +12,7 @@ __gshared
 {
     // gboolean g_main_context_iteration (GMainContext *context,
     //                                    gboolean      may_block);
+    pragma(mangle, "ddgtk4_g_main_context_iteration")
     gboolean function(GMainContext*, gboolean) g_main_context_iteration;
 }
 

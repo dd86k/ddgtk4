@@ -11,5 +11,6 @@ struct GAppLaunchContext;
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_g_app_info_launch")
     gboolean function(GAppInfo*, GList*, GAppLaunchContext*, GError**) g_app_info_launch;
 }

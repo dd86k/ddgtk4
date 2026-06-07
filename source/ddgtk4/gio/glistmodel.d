@@ -24,11 +24,16 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_g_list_model_get_item_type")
     //GIO_AVAILABLE_IN_2_44:
     
     GType function(GListModel*) g_list_model_get_item_type;
+    pragma(mangle, "ddgtk4_g_list_model_get_n_items")
     guint function(GListModel*) g_list_model_get_n_items;
+    pragma(mangle, "ddgtk4_g_list_model_get_item")
     gpointer function(GListModel*, guint) g_list_model_get_item;
+    pragma(mangle, "ddgtk4_g_list_model_get_object")
     GObject* function(GListModel*, guint) g_list_model_get_object;
+    pragma(mangle, "ddgtk4_g_list_model_items_changed")
     void function(GListModel*, guint, guint, guint) g_list_model_items_changed;
 }

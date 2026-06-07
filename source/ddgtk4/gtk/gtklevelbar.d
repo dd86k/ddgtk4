@@ -17,6 +17,8 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_level_bar_new")
     GtkWidget* function() gtk_level_bar_new;
+    pragma(mangle, "ddgtk4_gtk_level_bar_set_value")
     void function(GtkLevelBar*, double) gtk_level_bar_set_value;
 }

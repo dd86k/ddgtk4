@@ -8,6 +8,7 @@ struct WebKitURIRequest;
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_webkit_uri_request_new")
     // URIRequest
     WebKitURIRequest* function(const(gchar) *uri) webkit_uri_request_new;
 }

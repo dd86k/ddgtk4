@@ -18,11 +18,16 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_label_new")
     GtkWidget* function(const(char)*) gtk_label_new;
+    pragma(mangle, "ddgtk4_gtk_label_set_text")
     void function(GtkLabel*, const(char)*) gtk_label_set_text;
+    pragma(mangle, "ddgtk4_gtk_label_set_justify")
     void function(GtkLabel*, GtkJustification) gtk_label_set_justify;
+    pragma(mangle, "ddgtk4_gtk_label_get_justify")
     GtkJustification function(GtkLabel*) gtk_label_get_justify;
-    
+    pragma(mangle, "ddgtk4_gtk_label_get_xalign")
     float function(GtkLabel*) gtk_label_get_xalign;
+    pragma(mangle, "ddgtk4_gtk_label_set_xalign")
     void function(GtkLabel*, float) gtk_label_set_xalign;
 }

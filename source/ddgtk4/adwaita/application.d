@@ -7,6 +7,7 @@ struct AdwApplication;
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_adw_application_new")
     AdwApplication * function(
         const(char) *application_id,
         GApplicationFlags  flags)

@@ -19,14 +19,19 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_paned_new")
     GtkWidget *function(GtkOrientation) gtk_paned_new;
-    
+    pragma(mangle, "ddgtk4_gtk_paned_set_start_child")
     void function(GtkPaned*, GtkWidget*) gtk_paned_set_start_child;
+    pragma(mangle, "ddgtk4_gtk_paned_set_end_child")
     void function(GtkPaned*, GtkWidget*) gtk_paned_set_end_child;
-    
+    pragma(mangle, "ddgtk4_gtk_paned_set_shrink_start_child")
     void function(GtkPaned*, gboolean) gtk_paned_set_shrink_start_child;
+    pragma(mangle, "ddgtk4_gtk_paned_set_resize_start_child")
     void function(GtkPaned*, gboolean) gtk_paned_set_resize_start_child;
+    pragma(mangle, "ddgtk4_gtk_paned_set_shrink_end_child")
     void function(GtkPaned*, gboolean) gtk_paned_set_shrink_end_child;
+    pragma(mangle, "ddgtk4_gtk_paned_set_resize_end_child")
     void function(GtkPaned*, gboolean) gtk_paned_set_resize_end_child;
     
     

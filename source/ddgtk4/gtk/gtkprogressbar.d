@@ -17,6 +17,8 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_progress_bar_new")
     GtkWidget* function() gtk_progress_bar_new;
+    pragma(mangle, "ddgtk4_gtk_progress_bar_set_fraction")
     void function(GtkProgressBar*, double) gtk_progress_bar_set_fraction;
 }

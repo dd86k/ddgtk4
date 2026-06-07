@@ -20,10 +20,15 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_list_view_new")
     GtkWidget* function(GtkSelectionModel*, GtkListItemFactory*) gtk_list_view_new;
+    pragma(mangle, "ddgtk4_gtk_list_view_get_model")
     GtkSelectionModel* function(GtkListView*) gtk_list_view_get_model;
+    pragma(mangle, "ddgtk4_gtk_list_view_set_model")
     void function(GtkListView*, GtkSelectionModel*) gtk_list_view_set_model;
+    pragma(mangle, "ddgtk4_gtk_list_view_set_factory")
     void function(GtkListView*, GtkListItemFactory*) gtk_list_view_set_factory;
+    pragma(mangle, "ddgtk4_gtk_list_view_get_factory")
     GtkListItemFactory* function(GtkListView*) gtk_list_view_get_factory;
 /*
 GDK_AVAILABLE_IN_4_12
@@ -33,13 +38,17 @@ GDK_AVAILABLE_IN_4_12
 GtkListItemFactory *
                 gtk_list_view_get_header_factory                (GtkListView            *self);
 */
+    pragma(mangle, "ddgtk4_gtk_list_view_set_show_separators")
     void function(GtkListView*, gboolean) gtk_list_view_set_show_separators;
+    pragma(mangle, "ddgtk4_gtk_list_view_get_show_separators")
     gboolean function(GtkListView*) gtk_list_view_get_show_separators;
-    
+    pragma(mangle, "ddgtk4_gtk_list_view_set_single_click_activate")
     void function(GtkListView*, gboolean) gtk_list_view_set_single_click_activate;
+    pragma(mangle, "ddgtk4_gtk_list_view_get_single_click_activate")
     gboolean function(GtkListView*) gtk_list_view_get_single_click_activate;
-    
+    pragma(mangle, "ddgtk4_gtk_list_view_set_enable_rubberband")
     void function(GtkListView*, gboolean) gtk_list_view_set_enable_rubberband;
+    pragma(mangle, "ddgtk4_gtk_list_view_get_enable_rubberband")
     gboolean function(GtkListView*) gtk_list_view_get_enable_rubberband;
 /*
 GDK_AVAILABLE_IN_4_12

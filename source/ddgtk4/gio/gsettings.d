@@ -9,13 +9,16 @@ struct GSettings;
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_g_settings_set_value")
     gboolean function(GSettings    *settings,
                       const(gchar) *key,
                       GVariant     *value) g_settings_set_value;
+    pragma(mangle, "ddgtk4_g_settings_set")
     gboolean function(GSettings          *settings,
                       const gchar        *key,
                       const gchar        *format,
                       ...) g_settings_set;
+    pragma(mangle, "ddgtk4_g_settings_set_boolean")
     gboolean function(GSettings    *settings,
                       const(gchar) *key,
                       gboolean     value) g_settings_set_boolean;

@@ -49,23 +49,37 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_about_dialog_new")
     GtkWidget* function() gtk_about_dialog_new;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_comments")
     void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_comments;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_version")
     void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_version;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_website")
     void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_website;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_website_label")
     void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_website_label;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_copyright")
     void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_copyright;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_license")
     void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_license;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_authors")
     void function(GtkAboutDialog*, const(char)**) gtk_about_dialog_set_authors;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_documenters")
     void function(GtkAboutDialog*, const(char)**) gtk_about_dialog_set_documenters;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_artists")
     void function(GtkAboutDialog*, const(char)**) gtk_about_dialog_set_artists;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_translator_credits")
     void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_translator_credits;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_license_type")
     void function(GtkAboutDialog*, GtkLicense)   gtk_about_dialog_set_license_type;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_program_name")
     void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_program_name;
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_system_information")
     void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_system_information;
-    
+    pragma(mangle, "ddgtk4_gtk_about_dialog_set_wrap_license")
     void function(GtkAboutDialog*, gboolean)     gtk_about_dialog_set_wrap_license;
-    
+    pragma(mangle, "ddgtk4_gtk_show_about_dialog")
     // Convenience function
     void function(GtkWidget *parent, const(char) *first, ...) gtk_show_about_dialog;
 }

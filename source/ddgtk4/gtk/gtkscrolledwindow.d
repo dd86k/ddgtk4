@@ -53,10 +53,14 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_scrolled_window_new")
     GtkWidget* function() gtk_scrolled_window_new;
-    
+    pragma(mangle, "ddgtk4_gtk_scrolled_window_set_child")
     void function(GtkScrolledWindow*, GtkWidget*) gtk_scrolled_window_set_child;
+    pragma(mangle, "ddgtk4_gtk_scrolled_window_set_policy")
     void function(GtkScrolledWindow*, GtkPolicyType, GtkPolicyType) gtk_scrolled_window_set_policy;
+    pragma(mangle, "ddgtk4_gtk_scrolled_window_set_placement")
     void function(GtkScrolledWindow*, GtkCornerType) gtk_scrolled_window_set_placement;
+    pragma(mangle, "ddgtk4_gtk_scrolled_window_set_overlay_scrolling")
     void function(GtkScrolledWindow*, gboolean) gtk_scrolled_window_set_overlay_scrolling;
 }

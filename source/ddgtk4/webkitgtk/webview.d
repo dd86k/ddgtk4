@@ -93,13 +93,14 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_webkit_web_view_new")
     GtkWidget* function() webkit_web_view_new;
-    
+    pragma(mangle, "ddgtk4_webkit_web_view_set_settings")
     void function(WebKitWebView*, WebKitSettings*) webkit_web_view_set_settings;
-    
+    pragma(mangle, "ddgtk4_webkit_web_view_load_uri")
     void function(WebKitWebView*, const(gchar) *uri) webkit_web_view_load_uri;
-    
+    pragma(mangle, "ddgtk4_webkit_web_view_get_uri")
     const(gchar)* function(WebKitWebView*) webkit_web_view_get_uri;
-    
+    pragma(mangle, "ddgtk4_webkit_web_view_try_close")
     void function(WebKitWebView*) webkit_web_view_try_close;
 }

@@ -34,10 +34,12 @@ __gshared
 {
 /*GDK_AVAILABLE_IN_ALL
 GtkApplication * gtk_application_new           (const char        *application_id,
-                                                GApplicationFlags  flags);*/
+                                                GApplicationFlags  flags);
+*/
+    pragma(mangle, "ddgtk4_gtk_application_new")
     GtkApplication* function(
         const(char) *application_id,
         GApplicationFlags flags) gtk_application_new;
-    
+    pragma(mangle, "ddgtk4_gtk_application_add_window")
     void function(GtkApplication* application, GtkWindow* window) gtk_application_add_window;
 }

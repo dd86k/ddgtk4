@@ -20,9 +20,12 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_popover_menu_new_from_model")
     GtkWidget* function(GMenuModel*) gtk_popover_menu_new_from_model;
+    pragma(mangle, "ddgtk4_gtk_popover_menu_bar_new_from_model")
     GtkWidget* function(GMenuModel*) gtk_popover_menu_bar_new_from_model;
+    pragma(mangle, "ddgtk4_gtk_popover_menu_new_from_model_full")
     GtkWidget* function(GMenuModel*, GtkPopoverMenuFlags) gtk_popover_menu_new_from_model_full;
-    
+    pragma(mangle, "ddgtk4_gtk_popover_menu_add_child")
     gboolean function(GtkPopoverMenu*, GtkWidget*, const(char)*) gtk_popover_menu_add_child;
 }

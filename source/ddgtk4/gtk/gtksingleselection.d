@@ -18,14 +18,24 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_single_selection_new")
     GtkSingleSelection* function(GListModel*) gtk_single_selection_new;
+    pragma(mangle, "ddgtk4_gtk_single_selection_get_model")
     GListModel* function(GtkSingleSelection*) gtk_single_selection_get_model;
+    pragma(mangle, "ddgtk4_gtk_single_selection_set_model")
     void function(GtkSingleSelection*, GListModel*) gtk_single_selection_set_model;
+    pragma(mangle, "ddgtk4_gtk_single_selection_get_selected")
     guint function(GtkSingleSelection*) gtk_single_selection_get_selected;
+    pragma(mangle, "ddgtk4_gtk_single_selection_set_selected")
     void function(GtkSingleSelection*, guint) gtk_single_selection_set_selected;
+    pragma(mangle, "ddgtk4_gtk_single_selection_get_selected_item")
     gpointer function(GtkSingleSelection*) gtk_single_selection_get_selected_item;
+    pragma(mangle, "ddgtk4_gtk_single_selection_get_autoselect")
     gboolean function(GtkSingleSelection*) gtk_single_selection_get_autoselect;
+    pragma(mangle, "ddgtk4_gtk_single_selection_set_autoselect")
     void function(GtkSingleSelection*, gboolean) gtk_single_selection_set_autoselect;
+    pragma(mangle, "ddgtk4_gtk_single_selection_get_can_unselect")
     gboolean function(GtkSingleSelection*) gtk_single_selection_get_can_unselect;
+    pragma(mangle, "ddgtk4_gtk_single_selection_set_can_unselect")
     void function(GtkSingleSelection*, gboolean) gtk_single_selection_set_can_unselect;
 }

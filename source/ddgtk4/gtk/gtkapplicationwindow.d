@@ -7,5 +7,6 @@ public import ddgtk4.gtk.gtkwidget : GtkWidget;
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_application_window_new")
     GtkWidget* function(GtkApplication*) gtk_application_window_new;
 }

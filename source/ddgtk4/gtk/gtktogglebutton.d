@@ -18,12 +18,16 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_toggle_button_new")
     GtkWidget* function() gtk_toggle_button_new;
+    pragma(mangle, "ddgtk4_gtk_toggle_button_new_with_label")
     GtkWidget* function(const(char)*) gtk_toggle_button_new_with_label;
+    pragma(mangle, "ddgtk4_gtk_toggle_button_new_with_mnemonic")
     GtkWidget* function(const(char)*) gtk_toggle_button_new_with_mnemonic;
-    
+    pragma(mangle, "ddgtk4_gtk_toggle_button_set_active")
     void function(GtkToggleButton*, gboolean) gtk_toggle_button_set_active;
+    pragma(mangle, "ddgtk4_gtk_toggle_button_get_active")
     gboolean function(GtkToggleButton*)       gtk_toggle_button_get_active;
-    
+    pragma(mangle, "ddgtk4_gtk_toggle_button_set_group")
     void function(GtkToggleButton*, GtkToggleButton*) gtk_toggle_button_set_group;
 }

@@ -17,6 +17,7 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_g_application_run")
     int function(GApplication *application,
                  int           argc,
                  char        **argv) g_application_run;

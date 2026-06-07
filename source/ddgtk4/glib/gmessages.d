@@ -27,13 +27,16 @@ enum : GLogLevelFlags
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_g_print")
     void function(const(gchar) *fmt, ...) g_print;
+    pragma(mangle, "ddgtk4_g_printerr")
     void function(const(gchar) *fmt, ...) g_printerr;
-    
+    pragma(mangle, "ddgtk4_g_log")
     void function(const(gchar)   *log_domain,
                   GLogLevelFlags  log_level,
                   const(gchar)   *format,
                   ...) g_log;
+    pragma(mangle, "ddgtk4_g_logv")
     void function(const(gchar)   *log_domain,
                   GLogLevelFlags  log_level,
                   const(gchar)   *format,

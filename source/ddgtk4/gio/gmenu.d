@@ -12,18 +12,20 @@ struct GMenuItem;
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_g_menu_new")
     GMenu* function() g_menu_new;
-    
+    pragma(mangle, "ddgtk4_g_menu_insert_item")
     void function(GMenu       *menu,
                   gint         position,
                   GMenuItem   *item) g_menu_insert_item;
+    pragma(mangle, "ddgtk4_g_menu_append_item")
     void function(GMenu*, GMenuItem*) g_menu_append_item;
-    
+    pragma(mangle, "ddgtk4_g_menu_item_new")
     GMenuItem* function(const(gchar) *label,
                         const(gchar) *detailed_action) g_menu_item_new;
-    
+    pragma(mangle, "ddgtk4_g_menu_item_new_submenu")
     GMenuItem* function(const(gchar) *label,
                         GMenuModel   *submenu) g_menu_item_new_submenu;
-    
+    pragma(mangle, "ddgtk4_g_menu_item_set_icon")
     void function(GMenuItem*, GIcon*) g_menu_item_set_icon;
 }

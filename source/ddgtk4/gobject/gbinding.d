@@ -34,31 +34,39 @@ public
 extern (C)
 __gshared
 {
+	pragma(mangle, "ddgtk4_g_binding_flags_get_type")
 	GType function() g_binding_flags_get_type;
+	pragma(mangle, "ddgtk4_g_binding_get_type")
 	GType function() g_binding_get_type;
-
+	pragma(mangle, "ddgtk4_g_binding_get_flags")
 	GBindingFlags function(GBinding *binding) g_binding_get_flags;
+	pragma(mangle, "ddgtk4_g_binding_get_source")
 	//GOBJECT_DEPRECATED_IN_2_68_FOR(g_binding_dup_source)
 	GObject* function(GBinding *binding) g_binding_get_source;
+	pragma(mangle, "ddgtk4_g_binding_dup_source")
 	//GOBJECT_AVAILABLE_IN_2_68
 	GObject* function(GBinding *binding) g_binding_dup_source;
+	pragma(mangle, "ddgtk4_g_binding_get_target")
 	//GOBJECT_DEPRECATED_IN_2_68_FOR(g_binding_dup_target)
 	GObject* function(GBinding *binding) g_binding_get_target;
+	pragma(mangle, "ddgtk4_g_binding_dup_target")
 	//GOBJECT_AVAILABLE_IN_2_68
 	GObject* function(GBinding *binding) g_binding_dup_target;
-	
+	pragma(mangle, "ddgtk4_g_binding_get_source_property")
 	const(gchar)* function(GBinding *binding) g_binding_get_source_property;
+	pragma(mangle, "ddgtk4_g_binding_get_target_property")
 	const(gchar)* function(GBinding *binding) g_binding_get_target_property;
-	
+	pragma(mangle, "ddgtk4_g_binding_unbind")
 	//GOBJECT_AVAILABLE_IN_2_38
 	void function(GBinding *binding) g_binding_unbind;
-
+	pragma(mangle, "ddgtk4_g_object_bind_property")
 	GBinding* function(gpointer               source,
 			const(gchar)          *source_property,
 			gpointer               target,
 			const(gchar)          *target_property,
 			GBindingFlags          flags)
 			g_object_bind_property;
+	pragma(mangle, "ddgtk4_g_object_bind_property_full")
 	GBinding* function(gpointer               source,
 			const(gchar)          *source_property,
 			gpointer               target,
@@ -69,6 +77,7 @@ __gshared
 			gpointer               user_data,
 			GDestroyNotify         notify)
 			g_object_bind_property_full;
+	pragma(mangle, "ddgtk4_g_object_bind_property_with_closures")
 	GBinding* function(gpointer               source,
 			const(gchar)          *source_property,
 			gpointer               target,

@@ -21,11 +21,13 @@ pragma(inline, true)
 extern (C)
 __gshared
 {
+    pragma(mangle, "ddgtk4_gtk_drop_down_new")
     GtkWidget* function(GListModel* model, GtkExpression* expression) gtk_drop_down_new;
+    pragma(mangle, "ddgtk4_gtk_drop_down_new_from_strings")
     // const char* const*
     GtkWidget* function(const(char)**) gtk_drop_down_new_from_strings;
-    
+    pragma(mangle, "ddgtk4_gtk_drop_down_set_enable_search")
     void function(GtkDropDown*, gboolean) gtk_drop_down_set_enable_search;
-    
+    pragma(mangle, "ddgtk4_gtk_drop_down_get_selected")
     guint function(GtkDropDown*) gtk_drop_down_get_selected;
 }
