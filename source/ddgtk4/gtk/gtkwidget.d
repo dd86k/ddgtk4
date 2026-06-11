@@ -60,5 +60,7 @@ __gshared
     void function(GtkWidget*, const(char)*) gtk_widget_add_css_class;
     pragma(mangle, "ddgtk4_gtk_widget_remove_css_class")
     void function(GtkWidget*, const(char)*) gtk_widget_remove_css_class;
+    pragma(mangle, "ddgtk4_gtk_widget_grab_focus")
+    gboolean function(GtkWidget*) gtk_widget_grab_focus;
 
 }
