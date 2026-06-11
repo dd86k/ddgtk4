@@ -119,6 +119,10 @@ __gshared
     GObject* function(GType, guint, const(char*)*, const(GValue)*) g_object_new_with_properties;
     pragma(mangle, "ddgtk4_g_object_set")
     void function(gpointer, const(gchar)*, ...) g_object_set;
+    pragma(mangle, "ddgtk4_g_object_ref")
+    gpointer function(gpointer) g_object_ref;
+    pragma(mangle, "ddgtk4_g_object_ref_sink")
+    gpointer function(gpointer) g_object_ref_sink;
     pragma(mangle, "ddgtk4_g_object_unref")
     void function(gpointer) g_object_unref;
     pragma(mangle, "ddgtk4_g_object_set_property")
@@ -161,6 +165,8 @@ void loadgobject()
     libraryBind(libgobject, cast(void**)&g_object_new_valist, "g_object_new_valist");
     libraryBind(libgobject, cast(void**)&g_object_new_with_properties, "g_object_new_with_properties");
     libraryBind(libgobject, cast(void**)&g_object_set, "g_object_set");
+    libraryBind(libgobject, cast(void**)&g_object_ref, "g_object_ref");
+    libraryBind(libgobject, cast(void**)&g_object_ref_sink, "g_object_ref_sink");
     libraryBind(libgobject, cast(void**)&g_object_unref, "g_object_unref");
     libraryBind(libgobject, cast(void**)&g_object_set_property, "g_object_set_property");
     libraryBind(libgobject, cast(void**)&g_object_get_property, "g_object_get_property");

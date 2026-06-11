@@ -2,7 +2,10 @@
 module ddgtk4.glib.glib;
 
 import ddloader;
+import ddgtk4.glib.gerror;
+import ddgtk4.glib.gmem;
 import ddgtk4.glib.gmessages;
+import ddgtk4.glib.gstrfuncs;
 import ddgtk4.glib.gtypes;
 
 struct GMainContext;
@@ -45,6 +48,12 @@ void loadglib()
     // Let caller catch exceptions
     libglib = libraryLoad(libNamesGLib);
     
+    libraryBind(libglib, cast(void**)&g_free, "g_free");
+    libraryBind(libglib, cast(void**)&g_strdup, "g_strdup");
+    libraryBind(libglib, cast(void**)&g_strdup_printf, "g_strdup_printf");
+    libraryBind(libglib, cast(void**)&g_strfreev, "g_strfreev");
+    libraryBind(libglib, cast(void**)&g_error_free, "g_error_free");
+    libraryBind(libglib, cast(void**)&g_clear_error, "g_clear_error");
     libraryBind(libglib, cast(void**)&g_print, "g_print");
     libraryBind(libglib, cast(void**)&g_printerr, "g_printerr");
     libraryBind(libglib, cast(void**)&g_log, "g_log");
