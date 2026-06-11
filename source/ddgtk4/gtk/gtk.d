@@ -107,6 +107,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_window_set_icon_name, "gtk_window_set_icon_name");
     libraryBind(libgtk, cast(void**)&gtk_window_get_application, "gtk_window_get_application");
     libraryBind(libgtk, cast(void**)&gtk_window_set_decorated, "gtk_window_set_decorated");
+    libraryBind(libgtk, cast(void**)&gtk_window_get_toplevels, "gtk_window_get_toplevels");
     
     // GtkGrid
     libraryBind(libgtk, cast(void**)&gtk_grid_new, "gtk_grid_new");
@@ -180,6 +181,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_scrolled_window_set_child, "gtk_scrolled_window_set_child");
     libraryBind(libgtk, cast(void**)&gtk_scrolled_window_set_policy, "gtk_scrolled_window_set_policy");
     libraryBind(libgtk, cast(void**)&gtk_scrolled_window_set_overlay_scrolling, "gtk_scrolled_window_set_overlay_scrolling");
+    libraryBind(libgtk, cast(void**)&gtk_scrolled_window_set_placement, "gtk_scrolled_window_set_placement");
     
     // GtkBox
     libraryBind(libgtk, cast(void**)&gtk_box_new, "gtk_box_new");
@@ -253,6 +255,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_editable_get_max_width_chars, "gtk_editable_get_max_width_chars");
     libraryBind(libgtk, cast(void**)&gtk_editable_set_max_width_chars, "gtk_editable_set_max_width_chars");
     libraryBind(libgtk, cast(void**)&gtk_editable_set_enable_undo, "gtk_editable_set_enable_undo");
+    libraryBind(libgtk, cast(void**)&gtk_editable_get_enable_undo, "gtk_editable_get_enable_undo");
     
     // GtkListView
     libraryBind(libgtk, cast(void**)&gtk_list_view_new, "gtk_list_view_new");
@@ -310,7 +313,25 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_single_selection_set_autoselect, "gtk_single_selection_set_autoselect");
     libraryBind(libgtk, cast(void**)&gtk_single_selection_get_can_unselect, "gtk_single_selection_get_can_unselect");
     libraryBind(libgtk, cast(void**)&gtk_single_selection_set_can_unselect, "gtk_single_selection_set_can_unselect");
-    
+
+    // GtkTreeListModel
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_model_new, "gtk_tree_list_model_new");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_model_get_model, "gtk_tree_list_model_get_model");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_model_get_passthrough, "gtk_tree_list_model_get_passthrough");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_model_set_autoexpand, "gtk_tree_list_model_set_autoexpand");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_model_get_autoexpand, "gtk_tree_list_model_get_autoexpand");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_model_get_child_row, "gtk_tree_list_model_get_child_row");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_model_get_row, "gtk_tree_list_model_get_row");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_row_get_item, "gtk_tree_list_row_get_item");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_row_set_expanded, "gtk_tree_list_row_set_expanded");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_row_get_expanded, "gtk_tree_list_row_get_expanded");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_row_is_expandable, "gtk_tree_list_row_is_expandable");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_row_get_position, "gtk_tree_list_row_get_position");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_row_get_depth, "gtk_tree_list_row_get_depth");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_row_get_children, "gtk_tree_list_row_get_children");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_row_get_parent, "gtk_tree_list_row_get_parent");
+    libraryBind(libgtk, cast(void**)&gtk_tree_list_row_get_child_row, "gtk_tree_list_row_get_child_row");
+
     // GtkTextIter
     libraryBind(libgtk, cast(void**)&gtk_text_iter_get_buffer, "gtk_text_iter_get_buffer");
     libraryBind(libgtk, cast(void**)&gtk_text_iter_get_offset, "gtk_text_iter_get_offset");
