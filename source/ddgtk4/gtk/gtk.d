@@ -83,6 +83,8 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_widget_add_css_class, "gtk_widget_add_css_class");
     libraryBind(libgtk, cast(void**)&gtk_widget_remove_css_class, "gtk_widget_remove_css_class");
     libraryBind(libgtk, cast(void**)&gtk_widget_grab_focus, "gtk_widget_grab_focus");
+    libraryBind(libgtk, cast(void**)&gtk_widget_add_controller, "gtk_widget_add_controller");
+    libraryBind(libgtk, cast(void**)&gtk_widget_remove_controller, "gtk_widget_remove_controller");
     
     // GtkApplication
     libraryBind(libgtk, cast(void**)&gtk_application_new, "gtk_application_new");

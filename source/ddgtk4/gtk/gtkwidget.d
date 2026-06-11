@@ -3,6 +3,8 @@ module ddgtk4.gtk.gtkwidget;
 public import ddgtk4.glib.gtypes : gboolean;
 public import ddgtk4.gtk.gtkenums : GtkTextDirection, GtkAlign;
 
+public import ddgtk4.gtk.gtkeventcontroller : GtkEventController;
+
 struct GtkWidget;
 struct GtkSettings; // temp until its own module
 
@@ -62,5 +64,8 @@ __gshared
     void function(GtkWidget*, const(char)*) gtk_widget_remove_css_class;
     pragma(mangle, "ddgtk4_gtk_widget_grab_focus")
     gboolean function(GtkWidget*) gtk_widget_grab_focus;
-
+    pragma(mangle, "ddgtk4_gtk_widget_add_controller")
+    void function(GtkWidget*, GtkEventController*) gtk_widget_add_controller;
+    pragma(mangle, "ddgtk4_gtk_widget_remove_controller")
+    void function(GtkWidget*, GtkEventController*) gtk_widget_remove_controller;
 }
