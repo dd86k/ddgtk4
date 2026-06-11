@@ -30,6 +30,7 @@ public import
     ddgtk4.gtk.gtklistview,
     ddgtk4.gtk.gtkselectionmodel,
     ddgtk4.gtk.gtksingleselection,
+    ddgtk4.gtk.gtktreelistmodel,
     ddgtk4.gtk.gtksearchentry,
     ddgtk4.gtk.gtkeditable,
     ddgtk4.gtk.gtktextiter,
