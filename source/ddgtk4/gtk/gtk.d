@@ -309,6 +309,56 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_single_selection_get_can_unselect, "gtk_single_selection_get_can_unselect");
     libraryBind(libgtk, cast(void**)&gtk_single_selection_set_can_unselect, "gtk_single_selection_set_can_unselect");
     
+    // GtkTextIter
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_get_buffer, "gtk_text_iter_get_buffer");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_get_offset, "gtk_text_iter_get_offset");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_get_line, "gtk_text_iter_get_line");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_get_line_offset, "gtk_text_iter_get_line_offset");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_is_start, "gtk_text_iter_is_start");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_is_end, "gtk_text_iter_is_end");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_forward_char, "gtk_text_iter_forward_char");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_backward_char, "gtk_text_iter_backward_char");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_forward_chars, "gtk_text_iter_forward_chars");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_backward_chars, "gtk_text_iter_backward_chars");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_equal, "gtk_text_iter_equal");
+    libraryBind(libgtk, cast(void**)&gtk_text_iter_compare, "gtk_text_iter_compare");
+
+    // GtkTextBuffer
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_new, "gtk_text_buffer_new");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_get_char_count, "gtk_text_buffer_get_char_count");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_get_line_count, "gtk_text_buffer_get_line_count");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_set_text, "gtk_text_buffer_set_text");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_insert, "gtk_text_buffer_insert");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_insert_at_cursor, "gtk_text_buffer_insert_at_cursor");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_get_text, "gtk_text_buffer_get_text");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_get_slice, "gtk_text_buffer_get_slice");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_get_start_iter, "gtk_text_buffer_get_start_iter");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_get_end_iter, "gtk_text_buffer_get_end_iter");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_get_bounds, "gtk_text_buffer_get_bounds");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_get_modified, "gtk_text_buffer_get_modified");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_set_modified, "gtk_text_buffer_set_modified");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_delete, "gtk_text_buffer_delete");
+
+    // GtkTextView
+    libraryBind(libgtk, cast(void**)&gtk_text_view_new, "gtk_text_view_new");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_new_with_buffer, "gtk_text_view_new_with_buffer");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_set_buffer, "gtk_text_view_set_buffer");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_get_buffer, "gtk_text_view_get_buffer");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_set_editable, "gtk_text_view_set_editable");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_get_editable, "gtk_text_view_get_editable");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_set_wrap_mode, "gtk_text_view_set_wrap_mode");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_get_wrap_mode, "gtk_text_view_get_wrap_mode");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_set_monospace, "gtk_text_view_set_monospace");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_get_monospace, "gtk_text_view_get_monospace");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_set_cursor_visible, "gtk_text_view_set_cursor_visible");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_get_cursor_visible, "gtk_text_view_get_cursor_visible");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_set_justification, "gtk_text_view_set_justification");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_get_justification, "gtk_text_view_get_justification");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_set_left_margin, "gtk_text_view_set_left_margin");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_set_right_margin, "gtk_text_view_set_right_margin");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_set_top_margin, "gtk_text_view_set_top_margin");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_set_bottom_margin, "gtk_text_view_set_bottom_margin");
+
     // AboutDialog
     libraryBind(libgtk, cast(void**)&gtk_about_dialog_new, "gtk_about_dialog_new");
     libraryBind(libgtk, cast(void**)&gtk_about_dialog_set_comments, "gtk_about_dialog_set_comments");

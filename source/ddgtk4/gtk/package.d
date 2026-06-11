@@ -31,4 +31,7 @@ public import
     ddgtk4.gtk.gtksingleselection,
     ddgtk4.gtk.gtksearchentry,
     ddgtk4.gtk.gtkeditable,
+    ddgtk4.gtk.gtktextiter,
+    ddgtk4.gtk.gtktextbuffer,
+    ddgtk4.gtk.gtktextview,
     ddgtk4.gtk.gtkwindow;
