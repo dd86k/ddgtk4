@@ -161,6 +161,12 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_notebook_new, "gtk_notebook_new");
     libraryBind(libgtk, cast(void**)&gtk_notebook_append_page, "gtk_notebook_append_page");
     libraryBind(libgtk, cast(void**)&gtk_notebook_prepend_page, "gtk_notebook_prepend_page");
+    libraryBind(libgtk, cast(void**)&gtk_notebook_remove_page, "gtk_notebook_remove_page");
+    libraryBind(libgtk, cast(void**)&gtk_notebook_set_current_page, "gtk_notebook_set_current_page");
+    libraryBind(libgtk, cast(void**)&gtk_notebook_get_current_page, "gtk_notebook_get_current_page");
+    libraryBind(libgtk, cast(void**)&gtk_notebook_get_n_pages, "gtk_notebook_get_n_pages");
+    libraryBind(libgtk, cast(void**)&gtk_notebook_get_nth_page, "gtk_notebook_get_nth_page");
+    libraryBind(libgtk, cast(void**)&gtk_notebook_page_num, "gtk_notebook_page_num");
     
     // GtkFrame
     libraryBind(libgtk, cast(void**)&gtk_frame_new, "gtk_frame_new");
