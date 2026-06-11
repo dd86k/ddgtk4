@@ -1,8 +1,14 @@
 module ddgtk4.gio.giotypes;
 
+import ddgtk4.glib.gtypes : gpointer;
+import ddgtk4.gobject.gobject : GObject;
+
 struct GAppLaunchContext;
 //struct GAppInfo; /* Dummy typedef */
 struct GAsyncResult; /* Dummy typedef */
+alias GAsyncReadyCallback = void function(GObject *source_object,
+                                          GAsyncResult *res,
+                                          gpointer data);
 struct GAsyncInitable;
 struct GBufferedInputStream;
 struct GBufferedOutputStream;

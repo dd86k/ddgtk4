@@ -15,6 +15,7 @@ public import
     ddgtk4.gtk.gtkprogressbar,
     ddgtk4.gtk.gtklevelbar,
     ddgtk4.gtk.gtkaboutdialog,
+    ddgtk4.gtk.gtkfiledialog,
     ddgtk4.gtk.gtkspinner,
     ddgtk4.gtk.gtktogglebutton,
     ddgtk4.gtk.gtkswitch,

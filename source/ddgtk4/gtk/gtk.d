@@ -376,4 +376,33 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_about_dialog_set_system_information, "gtk_about_dialog_set_system_information");
     libraryBind(libgtk, cast(void**)&gtk_about_dialog_set_wrap_license, "gtk_about_dialog_set_wrap_license");
     libraryBind(libgtk, cast(void**)&gtk_show_about_dialog, "gtk_show_about_dialog");
+
+    // GtkFileDialog (4.10+)
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_new, "gtk_file_dialog_new");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_get_title, "gtk_file_dialog_get_title");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_set_title, "gtk_file_dialog_set_title");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_get_modal, "gtk_file_dialog_get_modal");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_set_modal, "gtk_file_dialog_set_modal");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_get_filters, "gtk_file_dialog_get_filters");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_set_filters, "gtk_file_dialog_set_filters");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_get_default_filter, "gtk_file_dialog_get_default_filter");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_set_default_filter, "gtk_file_dialog_set_default_filter");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_get_initial_folder, "gtk_file_dialog_get_initial_folder");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_set_initial_folder, "gtk_file_dialog_set_initial_folder");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_get_initial_name, "gtk_file_dialog_get_initial_name");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_set_initial_name, "gtk_file_dialog_set_initial_name");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_get_initial_file, "gtk_file_dialog_get_initial_file");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_set_initial_file, "gtk_file_dialog_set_initial_file");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_get_accept_label, "gtk_file_dialog_get_accept_label");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_set_accept_label, "gtk_file_dialog_set_accept_label");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_open, "gtk_file_dialog_open");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_open_finish, "gtk_file_dialog_open_finish");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_select_folder, "gtk_file_dialog_select_folder");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_select_folder_finish, "gtk_file_dialog_select_folder_finish");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_save, "gtk_file_dialog_save");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_save_finish, "gtk_file_dialog_save_finish");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_open_multiple, "gtk_file_dialog_open_multiple");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_open_multiple_finish, "gtk_file_dialog_open_multiple_finish");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_select_multiple_folders, "gtk_file_dialog_select_multiple_folders");
+    libraryBind(libgtk, cast(void**)&gtk_file_dialog_select_multiple_folders_finish, "gtk_file_dialog_select_multiple_folders_finish");
 }
