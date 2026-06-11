@@ -1,7 +1,8 @@
 module ddgtk4.gtk.gtkgestureclick;
 
+import ddgtk4.gtk.gtkgesture : GtkGesture;
+
 struct GtkGestureClick;
-struct GtkGesture;
 
 pragma(inline, true)
 {

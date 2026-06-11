@@ -1,9 +1,9 @@
 module ddgtk4.gtk.gtkgesturesingle;
 
 import ddgtk4.glib.gtypes : gboolean, guint;
+import ddgtk4.gtk.gtkeventcontroller : GdkEventSequence;
 
 struct GtkGestureSingle;
-struct GdkEventSequence;
 
 pragma(inline, true)
 {

@@ -452,6 +452,25 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_event_controller_get_current_event_device, "gtk_event_controller_get_current_event_device");
     libraryBind(libgtk, cast(void**)&gtk_event_controller_get_current_event_state, "gtk_event_controller_get_current_event_state");
 
+    // GtkGesture
+    libraryBind(libgtk, cast(void**)&gtk_gesture_get_device, "gtk_gesture_get_device");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_set_state, "gtk_gesture_set_state");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_get_sequence_state, "gtk_gesture_get_sequence_state");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_set_sequence_state, "gtk_gesture_set_sequence_state");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_get_sequences, "gtk_gesture_get_sequences");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_get_last_updated_sequence, "gtk_gesture_get_last_updated_sequence");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_handles_sequence, "gtk_gesture_handles_sequence");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_get_last_event, "gtk_gesture_get_last_event");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_get_point, "gtk_gesture_get_point");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_get_bounding_box, "gtk_gesture_get_bounding_box");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_get_bounding_box_center, "gtk_gesture_get_bounding_box_center");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_is_active, "gtk_gesture_is_active");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_is_recognized, "gtk_gesture_is_recognized");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_group, "gtk_gesture_group");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_ungroup, "gtk_gesture_ungroup");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_get_group, "gtk_gesture_get_group");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_is_grouped_with, "gtk_gesture_is_grouped_with");
+
     // GtkGestureSingle
     libraryBind(libgtk, cast(void**)&gtk_gesture_single_get_touch_only, "gtk_gesture_single_get_touch_only");
     libraryBind(libgtk, cast(void**)&gtk_gesture_single_set_touch_only, "gtk_gesture_single_set_touch_only");

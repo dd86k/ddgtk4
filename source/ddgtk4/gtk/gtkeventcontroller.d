@@ -7,6 +7,7 @@ import ddgtk4.glib.gtypes : guint32;
 struct GtkEventController;
 struct GdkEvent;
 struct GdkDevice;
+struct GdkEventSequence;
 alias GdkModifierType = uint;
 
 pragma(inline, true)
