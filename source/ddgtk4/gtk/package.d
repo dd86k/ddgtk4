@@ -36,4 +36,7 @@ public import
     ddgtk4.gtk.gtktextiter,
     ddgtk4.gtk.gtktextbuffer,
     ddgtk4.gtk.gtktextview,
-    ddgtk4.gtk.gtkwindow;
+    ddgtk4.gtk.gtkwindow,
+    ddgtk4.gtk.gtkeventcontroller,
+    ddgtk4.gtk.gtkgesturesingle,
+    ddgtk4.gtk.gtkgestureclick;

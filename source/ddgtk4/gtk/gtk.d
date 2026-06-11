@@ -434,4 +434,32 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_file_dialog_open_multiple_finish, "gtk_file_dialog_open_multiple_finish");
     libraryBind(libgtk, cast(void**)&gtk_file_dialog_select_multiple_folders, "gtk_file_dialog_select_multiple_folders");
     libraryBind(libgtk, cast(void**)&gtk_file_dialog_select_multiple_folders_finish, "gtk_file_dialog_select_multiple_folders_finish");
+
+    // GtkEventController
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_get_widget, "gtk_event_controller_get_widget");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_reset, "gtk_event_controller_reset");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_get_propagation_phase, "gtk_event_controller_get_propagation_phase");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_set_propagation_phase, "gtk_event_controller_set_propagation_phase");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_get_propagation_limit, "gtk_event_controller_get_propagation_limit");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_set_propagation_limit, "gtk_event_controller_set_propagation_limit");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_get_name, "gtk_event_controller_get_name");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_set_name, "gtk_event_controller_set_name");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_set_static_name, "gtk_event_controller_set_static_name");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_get_current_event, "gtk_event_controller_get_current_event");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_get_current_event_time, "gtk_event_controller_get_current_event_time");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_get_current_event_device, "gtk_event_controller_get_current_event_device");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_get_current_event_state, "gtk_event_controller_get_current_event_state");
+
+    // GtkGestureSingle
+    libraryBind(libgtk, cast(void**)&gtk_gesture_single_get_touch_only, "gtk_gesture_single_get_touch_only");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_single_set_touch_only, "gtk_gesture_single_set_touch_only");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_single_get_exclusive, "gtk_gesture_single_get_exclusive");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_single_set_exclusive, "gtk_gesture_single_set_exclusive");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_single_get_button, "gtk_gesture_single_get_button");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_single_set_button, "gtk_gesture_single_set_button");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_single_get_current_button, "gtk_gesture_single_get_current_button");
+    libraryBind(libgtk, cast(void**)&gtk_gesture_single_get_current_sequence, "gtk_gesture_single_get_current_sequence");
+
+    // GtkGestureClick
+    libraryBind(libgtk, cast(void**)&gtk_gesture_click_new, "gtk_gesture_click_new");
 }
