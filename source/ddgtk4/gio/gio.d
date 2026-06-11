@@ -67,6 +67,32 @@ void loadgio()
     libraryBind(libgio, cast(void**)&g_list_store_find_with_equal_func, "g_list_store_find_with_equal_func");
     libraryBind(libgio, cast(void**)&g_list_store_find_with_equal_func_full, "g_list_store_find_with_equal_func_full");
     
+    // GFile
+    libraryBind(libgio, cast(void**)&g_file_new_for_path, "g_file_new_for_path");
+    libraryBind(libgio, cast(void**)&g_file_new_for_uri, "g_file_new_for_uri");
+    libraryBind(libgio, cast(void**)&g_file_new_for_commandline_arg, "g_file_new_for_commandline_arg");
+    libraryBind(libgio, cast(void**)&g_file_parse_name, "g_file_parse_name");
+    libraryBind(libgio, cast(void**)&g_file_dup, "g_file_dup");
+    libraryBind(libgio, cast(void**)&g_file_equal, "g_file_equal");
+    libraryBind(libgio, cast(void**)&g_file_get_basename, "g_file_get_basename");
+    libraryBind(libgio, cast(void**)&g_file_get_path, "g_file_get_path");
+    libraryBind(libgio, cast(void**)&g_file_get_uri, "g_file_get_uri");
+    libraryBind(libgio, cast(void**)&g_file_get_parse_name, "g_file_get_parse_name");
+    libraryBind(libgio, cast(void**)&g_file_get_parent, "g_file_get_parent");
+    libraryBind(libgio, cast(void**)&g_file_has_parent, "g_file_has_parent");
+    libraryBind(libgio, cast(void**)&g_file_get_child, "g_file_get_child");
+    libraryBind(libgio, cast(void**)&g_file_query_exists, "g_file_query_exists");
+    libraryBind(libgio, cast(void**)&g_file_query_info, "g_file_query_info");
+    libraryBind(libgio, cast(void**)&g_file_monitor, "g_file_monitor");
+    libraryBind(libgio, cast(void**)&g_file_monitor_file, "g_file_monitor_file");
+    libraryBind(libgio, cast(void**)&g_file_monitor_directory, "g_file_monitor_directory");
+
+    // GFileMonitor
+    libraryBind(libgio, cast(void**)&g_file_monitor_cancel, "g_file_monitor_cancel");
+    libraryBind(libgio, cast(void**)&g_file_monitor_is_cancelled, "g_file_monitor_is_cancelled");
+    libraryBind(libgio, cast(void**)&g_file_monitor_set_rate_limit, "g_file_monitor_set_rate_limit");
+    libraryBind(libgio, cast(void**)&g_file_monitor_emit_event, "g_file_monitor_emit_event");
+
     // GMenu
     libraryBind(libgio, cast(void**)&g_menu_new, "g_menu_new");
     libraryBind(libgio, cast(void**)&g_menu_insert_item, "g_menu_insert_item");

@@ -12,4 +12,6 @@ public import
 	ddgtk4.gio.gmenumodel,
 	ddgtk4.gio.gsettings,
 	ddgtk4.gio.gliststore,
-	ddgtk4.gio.glistmodel;
+	ddgtk4.gio.glistmodel,
+	ddgtk4.gio.gfile,
+	ddgtk4.gio.gfilemonitor;
