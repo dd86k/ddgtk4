@@ -86,6 +86,7 @@ void loadgtk4()
     // GtkApplication
     libraryBind(libgtk, cast(void**)&gtk_application_new, "gtk_application_new");
     libraryBind(libgtk, cast(void**)&gtk_application_add_window, "gtk_application_add_window");
+    libraryBind(libgtk, cast(void**)&gtk_application_set_accels_for_action, "gtk_application_set_accels_for_action");
     
     // GtkApplicationWindow
     libraryBind(libgtk, cast(void**)&gtk_application_window_new, "gtk_application_window_new");

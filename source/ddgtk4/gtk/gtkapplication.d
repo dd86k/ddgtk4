@@ -42,4 +42,14 @@ GtkApplication * gtk_application_new           (const char        *application_i
         GApplicationFlags flags) gtk_application_new;
     pragma(mangle, "ddgtk4_gtk_application_add_window")
     void function(GtkApplication* application, GtkWindow* window) gtk_application_add_window;
+/*GDK_AVAILABLE_IN_ALL
+void gtk_application_set_accels_for_action (GtkApplication      *application,
+                                            const char          *detailed_action_name,
+                                            const char * const  *accels);
+*/
+    pragma(mangle, "ddgtk4_gtk_application_set_accels_for_action")
+    void function(
+        GtkApplication *application,
+        const(char) *detailed_action_name,
+        const(char*) *accels) gtk_application_set_accels_for_action;
 }

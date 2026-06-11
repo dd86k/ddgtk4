@@ -1,6 +1,7 @@
 module ddgtk4.gio.gmenu;
 
 import ddgtk4.glib.gtypes : gint, gchar;
+import ddgtk4.glib.gvariant : GVariant;
 import ddgtk4.gio.giotypes : GMenuModel, GIcon;
 
 struct GMenu;
@@ -28,4 +29,8 @@ __gshared
                         GMenuModel   *submenu) g_menu_item_new_submenu;
     pragma(mangle, "ddgtk4_g_menu_item_set_icon")
     void function(GMenuItem*, GIcon*) g_menu_item_set_icon;
+    pragma(mangle, "ddgtk4_g_menu_item_set_attribute_value")
+    void function(GMenuItem    *menu_item,
+                  const(gchar) *attribute,
+                  GVariant     *value) g_menu_item_set_attribute_value;
 }

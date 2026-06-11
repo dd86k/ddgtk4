@@ -100,4 +100,5 @@ void loadgio()
     libraryBind(libgio, cast(void**)&g_menu_item_new, "g_menu_item_new");
     libraryBind(libgio, cast(void**)&g_menu_item_new_submenu, "g_menu_item_new_submenu");
     libraryBind(libgio, cast(void**)&g_menu_item_set_icon, "g_menu_item_set_icon");
+    libraryBind(libgio, cast(void**)&g_menu_item_set_attribute_value, "g_menu_item_set_attribute_value");
 }
