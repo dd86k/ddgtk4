@@ -13,7 +13,6 @@ Why?
   - GtkD states supporting 3.24 while it loads gtk4, so I'm a little confused.
 
 Notes:
-- **Important**: Does not work with DMD (tested on 2.106.1+cc-13.3.0+linux64).
 - **Important**: Bindings are added incrementally by hand. There are a lot of missing bindings.
 - **Important**: Does not offer version target bindings.
   - e.g., stuff added/deprecated in certain versions, GTK 4.10 being rather a big update.
@@ -78,25 +77,25 @@ and call `loadgtk4all()` before using functions.
 GTK4 is generally available for most distros.
 
 - Debian 11: Unavailable (PureOS 10 has GTK 4.6)
-- Debian 12: GTK 4.8
+- Debian 12: GTK 4.8 (PureOS 11 has GTK 4.8)
 - Debian 13: GTK 4.18
-- Fedora 40: GTK 4.14
-- Fedora 41: GTK 4.16
-- Fedora 42: GTK 4.18
+- Fedora 44: GTK 4.22
 - RHEL 9: 4.12
 - RHEL 10: 4.16
 - Ubuntu 20.04 LTS: Unavailable
 - Ubuntu 22.04 LTS: GTK 4.6
 - Ubuntu 24.04 LTS: GTK 4.14
+- Ubuntu 26.04 LTS: GTK 4.22
 
 Libadwaita.
 
 - Debian 12: 1.2
 - Debian 13: 1.7
-- Fedora 42: 1.7
+- Fedora 44: 1.9
 - RHEL 9: 1.4
 - RHEL 10: 1.6
 - Ubuntu 22.04 LTS: 1.1
 - Ubuntu 24.04 LTS: 1.5
+- Ubuntu 26.04 LTS: 1.9
 
 For gtk4-icon-browser, install `gtk-4-examples`.
