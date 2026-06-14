@@ -42,6 +42,8 @@ __gshared
     void function(GtkWidget*, gboolean) gtk_widget_set_vexpand;
     pragma(mangle, "ddgtk4_gtk_widget_get_first_child")
     GtkWidget* function(GtkWidget*) gtk_widget_get_first_child;
+    pragma(mangle, "ddgtk4_gtk_widget_get_next_sibling")
+    GtkWidget* function(GtkWidget*) gtk_widget_get_next_sibling;
     pragma(mangle, "ddgtk4_gtk_widget_get_settings")
     GtkSettings* function(GtkWidget*) gtk_widget_get_settings;
     pragma(mangle, "ddgtk4_gtk_widget_set_default_direction")

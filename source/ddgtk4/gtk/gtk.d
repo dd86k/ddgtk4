@@ -73,6 +73,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_widget_set_hexpand, "gtk_widget_set_hexpand");
     libraryBind(libgtk, cast(void**)&gtk_widget_set_vexpand, "gtk_widget_set_vexpand");
     libraryBind(libgtk, cast(void**)&gtk_widget_get_first_child, "gtk_widget_get_first_child");
+    libraryBind(libgtk, cast(void**)&gtk_widget_get_next_sibling, "gtk_widget_get_next_sibling");
     libraryBind(libgtk, cast(void**)&gtk_widget_set_direction, "gtk_widget_set_direction");
     libraryBind(libgtk, cast(void**)&gtk_widget_get_direction, "gtk_widget_get_direction");
     libraryBind(libgtk, cast(void**)&gtk_widget_set_default_direction, "gtk_widget_set_default_direction");
