@@ -1,7 +1,7 @@
 module ddgtk4.gtk.gtktextview;
 
 public import ddgtk4.gtk.gtkwidget : GtkWidget;
-public import ddgtk4.gtk.gtktextbuffer : GtkTextBuffer;
+public import ddgtk4.gtk.gtktextbuffer : GtkTextBuffer, GtkTextIter;
 public import ddgtk4.gtk.gtkenums : GtkWrapMode, GtkJustification;
 import ddgtk4.glib.gtypes : gboolean, gint;
 
@@ -56,4 +56,6 @@ __gshared
     void function(GtkTextView*, gint) gtk_text_view_set_top_margin;
     pragma(mangle, "ddgtk4_gtk_text_view_set_bottom_margin")
     void function(GtkTextView*, gint) gtk_text_view_set_bottom_margin;
+    pragma(mangle, "ddgtk4_gtk_text_view_scroll_to_iter")
+    gboolean function(GtkTextView*, GtkTextIter*, double, gboolean, double, double) gtk_text_view_scroll_to_iter;
 }

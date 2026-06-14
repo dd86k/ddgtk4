@@ -49,4 +49,6 @@ __gshared
     GtkApplication* function(GtkWindow*)    gtk_window_get_application;
     pragma(mangle, "ddgtk4_gtk_window_set_decorated")
     void function(GtkWindow*, gboolean)     gtk_window_set_decorated;
+    pragma(mangle, "ddgtk4_gtk_window_set_hide_on_close")
+    void function(GtkWindow*, gboolean)     gtk_window_set_hide_on_close;
 }

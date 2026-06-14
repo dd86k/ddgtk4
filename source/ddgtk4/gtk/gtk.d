@@ -109,6 +109,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_window_set_icon_name, "gtk_window_set_icon_name");
     libraryBind(libgtk, cast(void**)&gtk_window_get_application, "gtk_window_get_application");
     libraryBind(libgtk, cast(void**)&gtk_window_set_decorated, "gtk_window_set_decorated");
+    libraryBind(libgtk, cast(void**)&gtk_window_set_hide_on_close, "gtk_window_set_hide_on_close");
     libraryBind(libgtk, cast(void**)&gtk_window_get_toplevels, "gtk_window_get_toplevels");
     
     // GtkGrid
@@ -369,6 +370,8 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_text_buffer_get_modified, "gtk_text_buffer_get_modified");
     libraryBind(libgtk, cast(void**)&gtk_text_buffer_set_modified, "gtk_text_buffer_set_modified");
     libraryBind(libgtk, cast(void**)&gtk_text_buffer_delete, "gtk_text_buffer_delete");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_get_iter_at_line, "gtk_text_buffer_get_iter_at_line");
+    libraryBind(libgtk, cast(void**)&gtk_text_buffer_place_cursor, "gtk_text_buffer_place_cursor");
 
     // GtkTextView
     libraryBind(libgtk, cast(void**)&gtk_text_view_new, "gtk_text_view_new");
@@ -389,6 +392,7 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_text_view_set_right_margin, "gtk_text_view_set_right_margin");
     libraryBind(libgtk, cast(void**)&gtk_text_view_set_top_margin, "gtk_text_view_set_top_margin");
     libraryBind(libgtk, cast(void**)&gtk_text_view_set_bottom_margin, "gtk_text_view_set_bottom_margin");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_scroll_to_iter, "gtk_text_view_scroll_to_iter");
 
     // AboutDialog
     libraryBind(libgtk, cast(void**)&gtk_about_dialog_new, "gtk_about_dialog_new");

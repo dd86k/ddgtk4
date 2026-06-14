@@ -46,4 +46,8 @@ __gshared
     void function(GtkTextBuffer*, gboolean) gtk_text_buffer_set_modified;
     pragma(mangle, "ddgtk4_gtk_text_buffer_delete")
     void function(GtkTextBuffer*, GtkTextIter*, GtkTextIter*) gtk_text_buffer_delete;
+    pragma(mangle, "ddgtk4_gtk_text_buffer_get_iter_at_line")
+    gboolean function(GtkTextBuffer*, GtkTextIter*, gint) gtk_text_buffer_get_iter_at_line;
+    pragma(mangle, "ddgtk4_gtk_text_buffer_place_cursor")
+    void function(GtkTextBuffer*, const(GtkTextIter)*) gtk_text_buffer_place_cursor;
 }
