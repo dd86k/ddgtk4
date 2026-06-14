@@ -22,6 +22,7 @@ public import
     ddgtk4.gtk.gtkdropdown,
     ddgtk4.gtk.gtkheaderbar,
     ddgtk4.gtk.gtkmenubutton,
+    ddgtk4.gtk.gtkpopover,
     ddgtk4.gtk.gtkpopovermenu,
     ddgtk4.gtk.gtkscrolledwindow,
     ddgtk4.gtk.gtkpaned,
@@ -40,4 +41,5 @@ public import
     ddgtk4.gtk.gtkeventcontroller,
     ddgtk4.gtk.gtkgesture,
     ddgtk4.gtk.gtkgesturesingle,
-    ddgtk4.gtk.gtkgestureclick;
+    ddgtk4.gtk.gtkgestureclick,
+    ddgtk4.gtk.gtkeventcontrollerkey;

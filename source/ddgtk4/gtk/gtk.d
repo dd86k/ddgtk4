@@ -230,7 +230,16 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_menu_button_set_direction, "gtk_menu_button_set_direction");
     libraryBind(libgtk, cast(void**)&gtk_menu_button_set_icon_name, "gtk_menu_button_set_icon_name");
     libraryBind(libgtk, cast(void**)&gtk_menu_button_set_menu_model, "gtk_menu_button_set_menu_model");
-    
+    libraryBind(libgtk, cast(void**)&gtk_menu_button_set_popover, "gtk_menu_button_set_popover");
+
+    // GtkPopover
+    libraryBind(libgtk, cast(void**)&gtk_popover_new, "gtk_popover_new");
+    libraryBind(libgtk, cast(void**)&gtk_popover_set_child, "gtk_popover_set_child");
+    libraryBind(libgtk, cast(void**)&gtk_popover_set_has_arrow, "gtk_popover_set_has_arrow");
+    libraryBind(libgtk, cast(void**)&gtk_popover_set_position, "gtk_popover_set_position");
+    libraryBind(libgtk, cast(void**)&gtk_popover_popup, "gtk_popover_popup");
+    libraryBind(libgtk, cast(void**)&gtk_popover_popdown, "gtk_popover_popdown");
+
     // GtkPopoverMenu
     libraryBind(libgtk, cast(void**)&gtk_popover_menu_new_from_model, "gtk_popover_menu_new_from_model");
     libraryBind(libgtk, cast(void**)&gtk_popover_menu_bar_new_from_model, "gtk_popover_menu_bar_new_from_model");
@@ -488,4 +497,5 @@ void loadgtk4()
 
     // GtkGestureClick
     libraryBind(libgtk, cast(void**)&gtk_gesture_click_new, "gtk_gesture_click_new");
+    libraryBind(libgtk, cast(void**)&gtk_event_controller_key_new, "gtk_event_controller_key_new");
 }
