@@ -761,6 +761,24 @@ enum : GtkFontRendering
     GTK_FONT_RENDERING_MANUAL,
 }
 
+alias GtkTextWindowType = int;
+enum : GtkTextWindowType
+{
+    GTK_TEXT_WINDOW_WIDGET = 1,
+    GTK_TEXT_WINDOW_TEXT,
+    GTK_TEXT_WINDOW_LEFT,
+    GTK_TEXT_WINDOW_RIGHT,
+    GTK_TEXT_WINDOW_TOP,
+    GTK_TEXT_WINDOW_BOTTOM
+}
+
+alias GtkTextViewLayer = int;
+enum : GtkTextViewLayer
+{
+    GTK_TEXT_VIEW_LAYER_BELOW_TEXT,
+    GTK_TEXT_VIEW_LAYER_ABOVE_TEXT
+}
+
 alias GtkTextBufferNotifyFlags = int;
 enum : GtkTextBufferNotifyFlags
 {

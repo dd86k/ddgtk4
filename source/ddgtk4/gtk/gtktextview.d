@@ -2,10 +2,24 @@ module ddgtk4.gtk.gtktextview;
 
 public import ddgtk4.gtk.gtkwidget : GtkWidget;
 public import ddgtk4.gtk.gtktextbuffer : GtkTextBuffer, GtkTextIter;
-public import ddgtk4.gtk.gtkenums : GtkWrapMode, GtkJustification;
-import ddgtk4.glib.gtypes : gboolean, gint;
+public import ddgtk4.gtk.gtkenums : GtkWrapMode, GtkJustification,
+    GtkTextWindowType, GtkTextViewLayer;
+public import ddgtk4.gtk.gtksnapshot : GtkSnapshot;
+import ddgtk4.glib.gtypes : gboolean, gint, gpointer;
 
 struct GtkTextView;
+
+struct GdkRectangle
+{
+    int x;
+    int y;
+    int width;
+    int height;
+}
+
+// Signal callback signature for "snapshot-layer"
+extern (C) alias GtkTextViewSnapshotLayerCallback =
+    void function(GtkTextView* self, GtkTextViewLayer layer, GtkSnapshot* snapshot, gpointer user_data);
 
 // Macros
 pragma(inline, true)
@@ -58,4 +72,8 @@ __gshared
     void function(GtkTextView*, gint) gtk_text_view_set_bottom_margin;
     pragma(mangle, "ddgtk4_gtk_text_view_scroll_to_iter")
     gboolean function(GtkTextView*, GtkTextIter*, double, gboolean, double, double) gtk_text_view_scroll_to_iter;
+    pragma(mangle, "ddgtk4_gtk_text_view_get_iter_location")
+    void function(GtkTextView*, const(GtkTextIter)*, GdkRectangle*) gtk_text_view_get_iter_location;
+    pragma(mangle, "ddgtk4_gtk_text_view_buffer_to_window_coords")
+    void function(GtkTextView*, GtkTextWindowType, gint, gint, gint*, gint*) gtk_text_view_buffer_to_window_coords;
 }

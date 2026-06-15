@@ -403,6 +403,11 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_text_view_set_top_margin, "gtk_text_view_set_top_margin");
     libraryBind(libgtk, cast(void**)&gtk_text_view_set_bottom_margin, "gtk_text_view_set_bottom_margin");
     libraryBind(libgtk, cast(void**)&gtk_text_view_scroll_to_iter, "gtk_text_view_scroll_to_iter");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_get_iter_location, "gtk_text_view_get_iter_location");
+    libraryBind(libgtk, cast(void**)&gtk_text_view_buffer_to_window_coords, "gtk_text_view_buffer_to_window_coords");
+
+    // GtkSnapshot
+    libraryBind(libgtk, cast(void**)&gtk_snapshot_append_color, "gtk_snapshot_append_color");
 
     // AboutDialog
     libraryBind(libgtk, cast(void**)&gtk_about_dialog_new, "gtk_about_dialog_new");
