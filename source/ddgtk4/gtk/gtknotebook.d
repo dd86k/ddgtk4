@@ -1,6 +1,7 @@
 module ddgtk4.gtk.gtknotebook;
 
 public import ddgtk4.gtk.gtkwidget : GtkWidget;
+public import ddgtk4.glib.gtypes : gboolean;
 
 struct GtkNotebook;
 
@@ -73,4 +74,16 @@ __gshared
             GtkWidget* child);
     pragma(mangle, "ddgtk4_gtk_notebook_page_num")
     A_gtk_notebook_page_num gtk_notebook_page_num;
+
+    alias A_gtk_notebook_set_scrollable =
+        void function(
+            GtkNotebook* notebook,
+            gboolean scrollable);
+    pragma(mangle, "ddgtk4_gtk_notebook_set_scrollable")
+    A_gtk_notebook_set_scrollable gtk_notebook_set_scrollable;
+
+    alias A_gtk_notebook_get_scrollable =
+        gboolean function(GtkNotebook* notebook);
+    pragma(mangle, "ddgtk4_gtk_notebook_get_scrollable")
+    A_gtk_notebook_get_scrollable gtk_notebook_get_scrollable;
 }

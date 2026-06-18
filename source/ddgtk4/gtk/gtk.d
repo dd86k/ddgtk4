@@ -171,6 +171,8 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_notebook_get_n_pages, "gtk_notebook_get_n_pages");
     libraryBind(libgtk, cast(void**)&gtk_notebook_get_nth_page, "gtk_notebook_get_nth_page");
     libraryBind(libgtk, cast(void**)&gtk_notebook_page_num, "gtk_notebook_page_num");
+    libraryBind(libgtk, cast(void**)&gtk_notebook_set_scrollable, "gtk_notebook_set_scrollable");
+    libraryBind(libgtk, cast(void**)&gtk_notebook_get_scrollable, "gtk_notebook_get_scrollable");
     
     // GtkFrame
     libraryBind(libgtk, cast(void**)&gtk_frame_new, "gtk_frame_new");
