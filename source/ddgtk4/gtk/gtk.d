@@ -132,7 +132,9 @@ void loadgtk4()
     libraryBind(libgtk, cast(void**)&gtk_button_set_icon_name, "gtk_button_set_icon_name");
     libraryBind(libgtk, cast(void**)&gtk_button_set_has_frame, "gtk_button_set_has_frame");
     libraryBind(libgtk, cast(void**)&gtk_button_set_label, "gtk_button_set_label");
-    
+    libraryBind(libgtk, cast(void**)&gtk_button_set_child, "gtk_button_set_child");
+    libraryBind(libgtk, cast(void**)&gtk_button_get_child, "gtk_button_get_child");
+
     // GtkToggleButton
     libraryBind(libgtk, cast(void**)&gtk_toggle_button_new, "gtk_toggle_button_new");
     libraryBind(libgtk, cast(void**)&gtk_toggle_button_new_with_label, "gtk_toggle_button_new_with_label");

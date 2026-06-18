@@ -23,6 +23,8 @@ extern (C)
     alias A_gtk_button_set_icon_name = void function(GtkButton*, const(char)*);
     alias A_gtk_button_set_label = void function(GtkButton*, const(char)*);
     alias A_gtk_button_set_has_frame = void function(GtkButton*, gboolean);
+    alias A_gtk_button_set_child = void function(GtkButton*, GtkWidget* child);
+    alias A_gtk_button_get_child = GtkWidget* function(GtkButton*);
 }
 
 __gshared
@@ -33,4 +35,6 @@ __gshared
     A_gtk_button_set_icon_name gtk_button_set_icon_name;
     A_gtk_button_set_label gtk_button_set_label;
     A_gtk_button_set_has_frame gtk_button_set_has_frame;
+    A_gtk_button_set_child gtk_button_set_child;
+    A_gtk_button_get_child gtk_button_get_child;
 }
