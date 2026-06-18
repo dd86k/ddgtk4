@@ -11,26 +11,23 @@ struct GMenuItem;
 
 // Functions
 extern (C)
+{
+    alias A_g_menu_new = GMenu* function();
+    alias A_g_menu_insert_item = void function(GMenu *menu, gint position, GMenuItem *item);
+    alias A_g_menu_append_item = void function(GMenu*, GMenuItem*);
+    alias A_g_menu_item_new = GMenuItem* function(const(gchar) *label, const(gchar) *detailed_action);
+    alias A_g_menu_item_new_submenu = GMenuItem* function(const(gchar) *label, GMenuModel *submenu);
+    alias A_g_menu_item_set_icon = void function(GMenuItem*, GIcon*);
+    alias A_g_menu_item_set_attribute_value = void function(GMenuItem *menu_item, const(gchar) *attribute, GVariant *value);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_g_menu_new")
-    GMenu* function() g_menu_new;
-    pragma(mangle, "ddgtk4_g_menu_insert_item")
-    void function(GMenu       *menu,
-                  gint         position,
-                  GMenuItem   *item) g_menu_insert_item;
-    pragma(mangle, "ddgtk4_g_menu_append_item")
-    void function(GMenu*, GMenuItem*) g_menu_append_item;
-    pragma(mangle, "ddgtk4_g_menu_item_new")
-    GMenuItem* function(const(gchar) *label,
-                        const(gchar) *detailed_action) g_menu_item_new;
-    pragma(mangle, "ddgtk4_g_menu_item_new_submenu")
-    GMenuItem* function(const(gchar) *label,
-                        GMenuModel   *submenu) g_menu_item_new_submenu;
-    pragma(mangle, "ddgtk4_g_menu_item_set_icon")
-    void function(GMenuItem*, GIcon*) g_menu_item_set_icon;
-    pragma(mangle, "ddgtk4_g_menu_item_set_attribute_value")
-    void function(GMenuItem    *menu_item,
-                  const(gchar) *attribute,
-                  GVariant     *value) g_menu_item_set_attribute_value;
+    A_g_menu_new g_menu_new;
+    A_g_menu_insert_item g_menu_insert_item;
+    A_g_menu_append_item g_menu_append_item;
+    A_g_menu_item_new g_menu_item_new;
+    A_g_menu_item_new_submenu g_menu_item_new_submenu;
+    A_g_menu_item_set_icon g_menu_item_set_icon;
+    A_g_menu_item_set_attribute_value g_menu_item_set_attribute_value;
 }

@@ -97,40 +97,42 @@ struct GObjectConstructParam;
 
 // Functions
 //
-// Every function pointer below is given a `pragma(mangle, "ddgtk4_*")`
-// linker name. Without it, DMD (which links with --export-dynamic by default)
-// puts these `__gshared` variables in the executable's dynamic symbol table,
-// where they share names with the real C functions in libgobject/libgtk/etc.
-// ELF symbol preemption then makes intra-library calls (e.g., libgio calling
-// g_type_register_static_simple) resolve to our pointer variable's address
-// rather than the real function, and crash when executed as code. LDC and GDC
-// don't pass --export-dynamic so they were unaffected; the mangle keeps the
-// fix uniform across compilers. The pragma only renames the linker symbol of
-// the variable itself; the string passed to dlsym still resolves the real
-// function from the loaded library.
+// The function pointer types are declared as `extern (C)` aliases (for the C
+// calling convention), while the pointer variables themselves are wrapped only
+// by `__gshared`, giving them D linkage. This keeps their symbols out of the
+// C namespace: an `extern (C)` variable named e.g. `g_object_new` would share
+// its name with the real C function, and since DMD links with --export-dynamic
+// by default, ELF symbol preemption would make intra-library calls resolve to
+// our pointer variable's address rather than the real function, and crash when
+// executed as code. The D-mangled variable name avoids that collision; the
+// string passed to dlsym still resolves the real function from the loaded
+// library.
 extern (C)
+{
+    alias A_g_object_new = GObject* function(GType, const(gchar)*, ...);
+    alias A_g_object_new_valist = GObject* function(GType, const(gchar)*, va_list);
+    alias A_g_object_new_with_properties = GObject* function(GType, guint, const(char*)*, const(GValue)*);
+    alias A_g_object_set = void function(gpointer, const(gchar)*, ...);
+    alias A_g_object_ref = gpointer function(gpointer);
+    alias A_g_object_ref_sink = gpointer function(gpointer);
+    alias A_g_object_unref = void function(gpointer);
+    alias A_g_object_set_property = void function(GObject*, const(gchar)*, const(GValue)*);
+    alias A_g_object_get_property = void function(GObject*, const(gchar)*, const(GValue)*);
+    alias A_g_object_class_install_property = void function(GObjectClass*, guint, GParamSpec*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_g_object_new")
-    GObject* function(GType, const(gchar)*, ...) g_object_new;
-    pragma(mangle, "ddgtk4_g_object_new_valist")
-    GObject* function(GType, const(gchar)*, va_list) g_object_new_valist;
-    pragma(mangle, "ddgtk4_g_object_new_with_properties")
-    GObject* function(GType, guint, const(char*)*, const(GValue)*) g_object_new_with_properties;
-    pragma(mangle, "ddgtk4_g_object_set")
-    void function(gpointer, const(gchar)*, ...) g_object_set;
-    pragma(mangle, "ddgtk4_g_object_ref")
-    gpointer function(gpointer) g_object_ref;
-    pragma(mangle, "ddgtk4_g_object_ref_sink")
-    gpointer function(gpointer) g_object_ref_sink;
-    pragma(mangle, "ddgtk4_g_object_unref")
-    void function(gpointer) g_object_unref;
-    pragma(mangle, "ddgtk4_g_object_set_property")
-    void function(GObject*, const(gchar)*, const(GValue)*) g_object_set_property;
-    pragma(mangle, "ddgtk4_g_object_get_property")
-    void function(GObject*, const(gchar)*, const(GValue)*) g_object_get_property;
-    pragma(mangle, "ddgtk4_g_object_class_install_property")
-    void function(GObjectClass*, guint, GParamSpec*) g_object_class_install_property;
+    A_g_object_new g_object_new;
+    A_g_object_new_valist g_object_new_valist;
+    A_g_object_new_with_properties g_object_new_with_properties;
+    A_g_object_set g_object_set;
+    A_g_object_ref g_object_ref;
+    A_g_object_ref_sink g_object_ref_sink;
+    A_g_object_unref g_object_unref;
+    A_g_object_set_property g_object_set_property;
+    A_g_object_get_property g_object_get_property;
+    A_g_object_class_install_property g_object_class_install_property;
 }
 
 version (Windows)

@@ -16,18 +16,21 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_button_new = GtkWidget* function();
+    alias A_gtk_button_new_with_label = GtkWidget* function(const(char)* label);
+    alias A_gtk_button_new_from_icon_name = GtkWidget* function(const(char)* label);
+    alias A_gtk_button_set_icon_name = void function(GtkButton*, const(char)*);
+    alias A_gtk_button_set_label = void function(GtkButton*, const(char)*);
+    alias A_gtk_button_set_has_frame = void function(GtkButton*, gboolean);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_button_new")
-    GtkWidget* function() gtk_button_new;
-    pragma(mangle, "ddgtk4_gtk_button_new_with_label")
-    GtkWidget* function(const(char)* label) gtk_button_new_with_label;
-    pragma(mangle, "ddgtk4_gtk_button_new_from_icon_name")
-    GtkWidget* function(const(char)* label) gtk_button_new_from_icon_name;
-    pragma(mangle, "ddgtk4_gtk_button_set_icon_name")
-    void function(GtkButton*, const(char)*) gtk_button_set_icon_name;
-    pragma(mangle, "ddgtk4_gtk_button_set_label")
-    void function(GtkButton*, const(char)*) gtk_button_set_label;
-    pragma(mangle, "ddgtk4_gtk_button_set_has_frame")
-    void function(GtkButton*, gboolean) gtk_button_set_has_frame;
+    A_gtk_button_new gtk_button_new;
+    A_gtk_button_new_with_label gtk_button_new_with_label;
+    A_gtk_button_new_from_icon_name gtk_button_new_from_icon_name;
+    A_gtk_button_set_icon_name gtk_button_set_icon_name;
+    A_gtk_button_set_label gtk_button_set_label;
+    A_gtk_button_set_has_frame gtk_button_set_has_frame;
 }

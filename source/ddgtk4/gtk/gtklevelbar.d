@@ -15,10 +15,13 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_level_bar_new = GtkWidget* function();
+    alias A_gtk_level_bar_set_value = void function(GtkLevelBar*, double);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_level_bar_new")
-    GtkWidget* function() gtk_level_bar_new;
-    pragma(mangle, "ddgtk4_gtk_level_bar_set_value")
-    void function(GtkLevelBar*, double) gtk_level_bar_set_value;
+    A_gtk_level_bar_new gtk_level_bar_new;
+    A_gtk_level_bar_set_value gtk_level_bar_set_value;
 }

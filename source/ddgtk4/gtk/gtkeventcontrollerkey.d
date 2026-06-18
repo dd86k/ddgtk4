@@ -13,8 +13,11 @@ pragma(inline, true)
 }
 
 extern (C)
+{
+    alias A_gtk_event_controller_key_new = GtkEventController* function();
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_event_controller_key_new")
-    GtkEventController* function() gtk_event_controller_key_new;
+    A_gtk_event_controller_key_new gtk_event_controller_key_new;
 }

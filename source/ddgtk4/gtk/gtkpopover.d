@@ -17,18 +17,21 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_popover_new = GtkWidget* function();
+    alias A_gtk_popover_set_child = void function(GtkPopover*, GtkWidget*);
+    alias A_gtk_popover_set_has_arrow = void function(GtkPopover*, gboolean);
+    alias A_gtk_popover_set_position = void function(GtkPopover*, GtkPositionType);
+    alias A_gtk_popover_popup = void function(GtkPopover*);
+    alias A_gtk_popover_popdown = void function(GtkPopover*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_popover_new")
-    GtkWidget* function() gtk_popover_new;
-    pragma(mangle, "ddgtk4_gtk_popover_set_child")
-    void function(GtkPopover*, GtkWidget*) gtk_popover_set_child;
-    pragma(mangle, "ddgtk4_gtk_popover_set_has_arrow")
-    void function(GtkPopover*, gboolean) gtk_popover_set_has_arrow;
-    pragma(mangle, "ddgtk4_gtk_popover_set_position")
-    void function(GtkPopover*, GtkPositionType) gtk_popover_set_position;
-    pragma(mangle, "ddgtk4_gtk_popover_popup")
-    void function(GtkPopover*) gtk_popover_popup;
-    pragma(mangle, "ddgtk4_gtk_popover_popdown")
-    void function(GtkPopover*) gtk_popover_popdown;
+    A_gtk_popover_new gtk_popover_new;
+    A_gtk_popover_set_child gtk_popover_set_child;
+    A_gtk_popover_set_has_arrow gtk_popover_set_has_arrow;
+    A_gtk_popover_set_position gtk_popover_set_position;
+    A_gtk_popover_popup gtk_popover_popup;
+    A_gtk_popover_popdown gtk_popover_popdown;
 }

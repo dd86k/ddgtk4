@@ -47,39 +47,42 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_about_dialog_new = GtkWidget* function();
+    alias A_gtk_about_dialog_set_comments = void function(GtkAboutDialog*, const(char)*);
+    alias A_gtk_about_dialog_set_version = void function(GtkAboutDialog*, const(char)*);
+    alias A_gtk_about_dialog_set_website = void function(GtkAboutDialog*, const(char)*);
+    alias A_gtk_about_dialog_set_website_label = void function(GtkAboutDialog*, const(char)*);
+    alias A_gtk_about_dialog_set_copyright = void function(GtkAboutDialog*, const(char)*);
+    alias A_gtk_about_dialog_set_license = void function(GtkAboutDialog*, const(char)*);
+    alias A_gtk_about_dialog_set_authors = void function(GtkAboutDialog*, const(char)**);
+    alias A_gtk_about_dialog_set_documenters = void function(GtkAboutDialog*, const(char)**);
+    alias A_gtk_about_dialog_set_artists = void function(GtkAboutDialog*, const(char)**);
+    alias A_gtk_about_dialog_set_translator_credits = void function(GtkAboutDialog*, const(char)*);
+    alias A_gtk_about_dialog_set_license_type = void function(GtkAboutDialog*, GtkLicense);
+    alias A_gtk_about_dialog_set_program_name = void function(GtkAboutDialog*, const(char)*);
+    alias A_gtk_about_dialog_set_system_information = void function(GtkAboutDialog*, const(char)*);
+    alias A_gtk_about_dialog_set_wrap_license = void function(GtkAboutDialog*, gboolean);
+    // Convenience function
+    alias A_gtk_show_about_dialog = void function(GtkWidget *parent, const(char) *first, ...);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_about_dialog_new")
-    GtkWidget* function() gtk_about_dialog_new;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_comments")
-    void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_comments;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_version")
-    void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_version;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_website")
-    void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_website;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_website_label")
-    void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_website_label;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_copyright")
-    void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_copyright;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_license")
-    void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_license;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_authors")
-    void function(GtkAboutDialog*, const(char)**) gtk_about_dialog_set_authors;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_documenters")
-    void function(GtkAboutDialog*, const(char)**) gtk_about_dialog_set_documenters;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_artists")
-    void function(GtkAboutDialog*, const(char)**) gtk_about_dialog_set_artists;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_translator_credits")
-    void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_translator_credits;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_license_type")
-    void function(GtkAboutDialog*, GtkLicense)   gtk_about_dialog_set_license_type;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_program_name")
-    void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_program_name;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_system_information")
-    void function(GtkAboutDialog*, const(char)*) gtk_about_dialog_set_system_information;
-    pragma(mangle, "ddgtk4_gtk_about_dialog_set_wrap_license")
-    void function(GtkAboutDialog*, gboolean)     gtk_about_dialog_set_wrap_license;
-    pragma(mangle, "ddgtk4_gtk_show_about_dialog")
-    // Convenience function
-    void function(GtkWidget *parent, const(char) *first, ...) gtk_show_about_dialog;
+    A_gtk_about_dialog_new gtk_about_dialog_new;
+    A_gtk_about_dialog_set_comments gtk_about_dialog_set_comments;
+    A_gtk_about_dialog_set_version gtk_about_dialog_set_version;
+    A_gtk_about_dialog_set_website gtk_about_dialog_set_website;
+    A_gtk_about_dialog_set_website_label gtk_about_dialog_set_website_label;
+    A_gtk_about_dialog_set_copyright gtk_about_dialog_set_copyright;
+    A_gtk_about_dialog_set_license gtk_about_dialog_set_license;
+    A_gtk_about_dialog_set_authors gtk_about_dialog_set_authors;
+    A_gtk_about_dialog_set_documenters gtk_about_dialog_set_documenters;
+    A_gtk_about_dialog_set_artists gtk_about_dialog_set_artists;
+    A_gtk_about_dialog_set_translator_credits gtk_about_dialog_set_translator_credits;
+    A_gtk_about_dialog_set_license_type gtk_about_dialog_set_license_type;
+    A_gtk_about_dialog_set_program_name gtk_about_dialog_set_program_name;
+    A_gtk_about_dialog_set_system_information gtk_about_dialog_set_system_information;
+    A_gtk_about_dialog_set_wrap_license gtk_about_dialog_set_wrap_license;
+    A_gtk_show_about_dialog gtk_show_about_dialog;
 }

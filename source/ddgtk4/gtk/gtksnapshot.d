@@ -40,8 +40,11 @@ struct graphene_rect_t
 
 // Functions
 extern (C)
+{
+    alias A_gtk_snapshot_append_color = void function(GtkSnapshot* snapshot, const(GdkRGBA)* color, const(graphene_rect_t)* bounds);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_snapshot_append_color")
-    void function(GtkSnapshot* snapshot, const(GdkRGBA)* color, const(graphene_rect_t)* bounds) gtk_snapshot_append_color;
+    A_gtk_snapshot_append_color gtk_snapshot_append_color;
 }

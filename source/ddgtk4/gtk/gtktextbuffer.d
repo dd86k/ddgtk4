@@ -16,38 +16,41 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_text_buffer_new = GtkTextBuffer* function(GtkTextTagTable*);
+    alias A_gtk_text_buffer_get_char_count = gint function(GtkTextBuffer*);
+    alias A_gtk_text_buffer_get_line_count = gint function(GtkTextBuffer*);
+    alias A_gtk_text_buffer_set_text = void function(GtkTextBuffer*, const(char)*, gint);
+    alias A_gtk_text_buffer_insert = void function(GtkTextBuffer*, GtkTextIter*, const(char)*, gint);
+    alias A_gtk_text_buffer_insert_at_cursor = void function(GtkTextBuffer*, const(char)*, gint);
+    alias A_gtk_text_buffer_get_text = char* function(GtkTextBuffer*, const(GtkTextIter)*, const(GtkTextIter)*, gboolean);
+    alias A_gtk_text_buffer_get_slice = char* function(GtkTextBuffer*, const(GtkTextIter)*, const(GtkTextIter)*, gboolean);
+    alias A_gtk_text_buffer_get_start_iter = void function(GtkTextBuffer*, GtkTextIter*);
+    alias A_gtk_text_buffer_get_end_iter = void function(GtkTextBuffer*, GtkTextIter*);
+    alias A_gtk_text_buffer_get_bounds = void function(GtkTextBuffer*, GtkTextIter*, GtkTextIter*);
+    alias A_gtk_text_buffer_get_modified = gboolean function(GtkTextBuffer*);
+    alias A_gtk_text_buffer_set_modified = void function(GtkTextBuffer*, gboolean);
+    alias A_gtk_text_buffer_delete = void function(GtkTextBuffer*, GtkTextIter*, GtkTextIter*);
+    alias A_gtk_text_buffer_get_iter_at_line = gboolean function(GtkTextBuffer*, GtkTextIter*, gint);
+    alias A_gtk_text_buffer_place_cursor = void function(GtkTextBuffer*, const(GtkTextIter)*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_text_buffer_new")
-    GtkTextBuffer* function(GtkTextTagTable*) gtk_text_buffer_new;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_get_char_count")
-    gint function(GtkTextBuffer*) gtk_text_buffer_get_char_count;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_get_line_count")
-    gint function(GtkTextBuffer*) gtk_text_buffer_get_line_count;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_set_text")
-    void function(GtkTextBuffer*, const(char)*, gint) gtk_text_buffer_set_text;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_insert")
-    void function(GtkTextBuffer*, GtkTextIter*, const(char)*, gint) gtk_text_buffer_insert;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_insert_at_cursor")
-    void function(GtkTextBuffer*, const(char)*, gint) gtk_text_buffer_insert_at_cursor;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_get_text")
-    char* function(GtkTextBuffer*, const(GtkTextIter)*, const(GtkTextIter)*, gboolean) gtk_text_buffer_get_text;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_get_slice")
-    char* function(GtkTextBuffer*, const(GtkTextIter)*, const(GtkTextIter)*, gboolean) gtk_text_buffer_get_slice;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_get_start_iter")
-    void function(GtkTextBuffer*, GtkTextIter*) gtk_text_buffer_get_start_iter;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_get_end_iter")
-    void function(GtkTextBuffer*, GtkTextIter*) gtk_text_buffer_get_end_iter;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_get_bounds")
-    void function(GtkTextBuffer*, GtkTextIter*, GtkTextIter*) gtk_text_buffer_get_bounds;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_get_modified")
-    gboolean function(GtkTextBuffer*) gtk_text_buffer_get_modified;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_set_modified")
-    void function(GtkTextBuffer*, gboolean) gtk_text_buffer_set_modified;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_delete")
-    void function(GtkTextBuffer*, GtkTextIter*, GtkTextIter*) gtk_text_buffer_delete;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_get_iter_at_line")
-    gboolean function(GtkTextBuffer*, GtkTextIter*, gint) gtk_text_buffer_get_iter_at_line;
-    pragma(mangle, "ddgtk4_gtk_text_buffer_place_cursor")
-    void function(GtkTextBuffer*, const(GtkTextIter)*) gtk_text_buffer_place_cursor;
+    A_gtk_text_buffer_new gtk_text_buffer_new;
+    A_gtk_text_buffer_get_char_count gtk_text_buffer_get_char_count;
+    A_gtk_text_buffer_get_line_count gtk_text_buffer_get_line_count;
+    A_gtk_text_buffer_set_text gtk_text_buffer_set_text;
+    A_gtk_text_buffer_insert gtk_text_buffer_insert;
+    A_gtk_text_buffer_insert_at_cursor gtk_text_buffer_insert_at_cursor;
+    A_gtk_text_buffer_get_text gtk_text_buffer_get_text;
+    A_gtk_text_buffer_get_slice gtk_text_buffer_get_slice;
+    A_gtk_text_buffer_get_start_iter gtk_text_buffer_get_start_iter;
+    A_gtk_text_buffer_get_end_iter gtk_text_buffer_get_end_iter;
+    A_gtk_text_buffer_get_bounds gtk_text_buffer_get_bounds;
+    A_gtk_text_buffer_get_modified gtk_text_buffer_get_modified;
+    A_gtk_text_buffer_set_modified gtk_text_buffer_set_modified;
+    A_gtk_text_buffer_delete gtk_text_buffer_delete;
+    A_gtk_text_buffer_get_iter_at_line gtk_text_buffer_get_iter_at_line;
+    A_gtk_text_buffer_place_cursor gtk_text_buffer_place_cursor;
 }

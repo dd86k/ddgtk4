@@ -17,14 +17,17 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_box_new = GtkWidget* function(GtkOrientation, int);
+    alias A_gtk_box_append = void function(GtkBox*, GtkWidget*);
+    alias A_gtk_box_set_homogeneous = void function(GtkBox*, gboolean);
+    alias A_gtk_box_remove = void function(GtkBox*, GtkWidget*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_box_new")
-    GtkWidget* function(GtkOrientation, int) gtk_box_new;
-    pragma(mangle, "ddgtk4_gtk_box_append")
-    void function(GtkBox*, GtkWidget*) gtk_box_append;
-    pragma(mangle, "ddgtk4_gtk_box_set_homogeneous")
-    void function(GtkBox*, gboolean) gtk_box_set_homogeneous;
-    pragma(mangle, "ddgtk4_gtk_box_remove")
-    void function(GtkBox*, GtkWidget*) gtk_box_remove;
+    A_gtk_box_new gtk_box_new;
+    A_gtk_box_append gtk_box_append;
+    A_gtk_box_set_homogeneous gtk_box_set_homogeneous;
+    A_gtk_box_remove gtk_box_remove;
 }

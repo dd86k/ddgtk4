@@ -15,12 +15,15 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_search_entry_new = GtkWidget* function();
+    alias A_gtk_search_entry_get_key_capture_widget = GtkWidget* function(GtkSearchEntry*);
+    alias A_gtk_search_entry_set_key_capture_widget = void function(GtkSearchEntry*, GtkWidget*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_search_entry_new")
-    GtkWidget* function() gtk_search_entry_new;
-    pragma(mangle, "ddgtk4_gtk_search_entry_get_key_capture_widget")
-    GtkWidget* function(GtkSearchEntry*) gtk_search_entry_get_key_capture_widget;
-    pragma(mangle, "ddgtk4_gtk_search_entry_set_key_capture_widget")
-    void function(GtkSearchEntry*, GtkWidget*) gtk_search_entry_set_key_capture_widget;
+    A_gtk_search_entry_new gtk_search_entry_new;
+    A_gtk_search_entry_get_key_capture_widget gtk_search_entry_get_key_capture_widget;
+    A_gtk_search_entry_set_key_capture_widget gtk_search_entry_set_key_capture_widget;
 }

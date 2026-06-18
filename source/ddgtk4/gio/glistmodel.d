@@ -22,18 +22,20 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    //GIO_AVAILABLE_IN_2_44:
+    alias A_g_list_model_get_item_type = GType function(GListModel*);
+    alias A_g_list_model_get_n_items = guint function(GListModel*);
+    alias A_g_list_model_get_item = gpointer function(GListModel*, guint);
+    alias A_g_list_model_get_object = GObject* function(GListModel*, guint);
+    alias A_g_list_model_items_changed = void function(GListModel*, guint, guint, guint);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_g_list_model_get_item_type")
-    //GIO_AVAILABLE_IN_2_44:
-    
-    GType function(GListModel*) g_list_model_get_item_type;
-    pragma(mangle, "ddgtk4_g_list_model_get_n_items")
-    guint function(GListModel*) g_list_model_get_n_items;
-    pragma(mangle, "ddgtk4_g_list_model_get_item")
-    gpointer function(GListModel*, guint) g_list_model_get_item;
-    pragma(mangle, "ddgtk4_g_list_model_get_object")
-    GObject* function(GListModel*, guint) g_list_model_get_object;
-    pragma(mangle, "ddgtk4_g_list_model_items_changed")
-    void function(GListModel*, guint, guint, guint) g_list_model_items_changed;
+    A_g_list_model_get_item_type g_list_model_get_item_type;
+    A_g_list_model_get_n_items g_list_model_get_n_items;
+    A_g_list_model_get_item g_list_model_get_item;
+    A_g_list_model_get_object g_list_model_get_object;
+    A_g_list_model_items_changed g_list_model_items_changed;
 }

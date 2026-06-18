@@ -9,8 +9,11 @@ struct GAppLaunchContext;
 
 // Functions
 extern (C)
+{
+    alias A_g_app_info_launch = gboolean function(GAppInfo*, GList*, GAppLaunchContext*, GError**);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_g_app_info_launch")
-    gboolean function(GAppInfo*, GList*, GAppLaunchContext*, GError**) g_app_info_launch;
+    A_g_app_info_launch g_app_info_launch;
 }

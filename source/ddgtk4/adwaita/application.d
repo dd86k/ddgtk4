@@ -5,11 +5,11 @@ public import ddgtk4.gio.gioenums : GApplicationFlags;
 struct AdwApplication;
 
 extern (C)
+{
+    alias A_adw_application_new = AdwApplication * function( const(char) *application_id, GApplicationFlags flags);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_adw_application_new")
-    AdwApplication * function(
-        const(char) *application_id,
-        GApplicationFlags  flags)
-        adw_application_new;
+    A_adw_application_new adw_application_new;
 }

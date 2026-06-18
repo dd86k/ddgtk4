@@ -12,9 +12,11 @@ pragma(inline, true)
 
 // Function
 extern (C)
+{
+    alias A_g_simple_action_new = GSimpleAction* function(const(gchar) *name, const(GVariantType) *parameter_type);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_g_simple_action_new")
-    GSimpleAction* function(const(gchar)        *name,
-                            const(GVariantType) *parameter_type) g_simple_action_new;
+    A_g_simple_action_new g_simple_action_new;
 }

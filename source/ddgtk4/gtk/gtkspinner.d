@@ -16,16 +16,19 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_spinner_new = GtkWidget* function();
+    alias A_gtk_spinner_get_spinning = gboolean function(GtkSpinner*);
+    alias A_gtk_spinner_set_spinning = void function(GtkSpinner*, gboolean);
+    alias A_gtk_spinner_start = void function(GtkSpinner*);
+    alias A_gtk_spinner_stop = void function(GtkSpinner*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_spinner_new")
-    GtkWidget* function() gtk_spinner_new;
-    pragma(mangle, "ddgtk4_gtk_spinner_get_spinning")
-    gboolean function(GtkSpinner*) gtk_spinner_get_spinning;
-    pragma(mangle, "ddgtk4_gtk_spinner_set_spinning")
-    void function(GtkSpinner*, gboolean) gtk_spinner_set_spinning;
-    pragma(mangle, "ddgtk4_gtk_spinner_start")
-    void function(GtkSpinner*) gtk_spinner_start;
-    pragma(mangle, "ddgtk4_gtk_spinner_stop")
-    void function(GtkSpinner*) gtk_spinner_stop;
+    A_gtk_spinner_new gtk_spinner_new;
+    A_gtk_spinner_get_spinning gtk_spinner_get_spinning;
+    A_gtk_spinner_set_spinning gtk_spinner_set_spinning;
+    A_gtk_spinner_start gtk_spinner_start;
+    A_gtk_spinner_stop gtk_spinner_stop;
 }

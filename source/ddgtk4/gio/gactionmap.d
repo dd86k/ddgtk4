@@ -13,8 +13,11 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_g_action_map_add_action = void function(GActionMap*, GAction*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_g_action_map_add_action")
-    void function(GActionMap*, GAction*) g_action_map_add_action;
+    A_g_action_map_add_action g_action_map_add_action;
 }

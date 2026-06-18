@@ -7,23 +7,25 @@ import ddgtk4.glib.gtypes : guint;
 // Functions
 // gtkmain.h
 extern (C)
-__gshared
 {
     // gtkmain.h
     alias A_gtk_init = void function();
-    pragma(mangle, "ddgtk4_gtk_init")
-    A_gtk_init gtk_init;
-    pragma(mangle, "ddgtk4_gtk_get_major_version")
     // gtkversion.h.in
-    guint function() gtk_get_major_version;
-    pragma(mangle, "ddgtk4_gtk_get_minor_version")
-    guint function() gtk_get_minor_version;
-    pragma(mangle, "ddgtk4_gtk_get_micro_version")
-    guint function() gtk_get_micro_version;
- pragma(mangle, "ddgtk4_gtk_check_version")
- // aka patch
+    alias A_gtk_get_major_version = guint function();
+    alias A_gtk_get_minor_version = guint function();
+    alias A_gtk_get_micro_version = guint function();
+    // aka patch
     // Returns, for example, "GTK version too old (major mismatch)" on error
-    const(char)* function() gtk_check_version; // gtkversion.c
+    alias A_gtk_check_version = const(char)* function(); // gtkversion.c
+}
+
+__gshared
+{
+    A_gtk_init gtk_init;
+    A_gtk_get_major_version gtk_get_major_version;
+    A_gtk_get_minor_version gtk_get_minor_version;
+    A_gtk_get_micro_version gtk_get_micro_version;
+    A_gtk_check_version gtk_check_version;
 }
 
 // TODO: Map dynamic library versions to groups of functions?

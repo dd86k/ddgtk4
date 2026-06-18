@@ -25,22 +25,19 @@ enum : GLogLevelFlags
 
 // Functions
 extern (C)
+{
+    alias A_g_print = void function(const(gchar) *fmt, ...);
+    alias A_g_printerr = void function(const(gchar) *fmt, ...);
+    alias A_g_log = void function(const(gchar) *log_domain, GLogLevelFlags log_level, const(gchar) *format, ...);
+    alias A_g_logv = void function(const(gchar) *log_domain, GLogLevelFlags log_level, const(gchar) *format, va_list);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_g_print")
-    void function(const(gchar) *fmt, ...) g_print;
-    pragma(mangle, "ddgtk4_g_printerr")
-    void function(const(gchar) *fmt, ...) g_printerr;
-    pragma(mangle, "ddgtk4_g_log")
-    void function(const(gchar)   *log_domain,
-                  GLogLevelFlags  log_level,
-                  const(gchar)   *format,
-                  ...) g_log;
-    pragma(mangle, "ddgtk4_g_logv")
-    void function(const(gchar)   *log_domain,
-                  GLogLevelFlags  log_level,
-                  const(gchar)   *format,
-                  va_list) g_logv;
+    A_g_print g_print;
+    A_g_printerr g_printerr;
+    A_g_log g_log;
+    A_g_logv g_logv;
 }
 
 // Inlined functions

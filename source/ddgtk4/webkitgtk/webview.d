@@ -91,16 +91,19 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_webkit_web_view_new = GtkWidget* function();
+    alias A_webkit_web_view_set_settings = void function(WebKitWebView*, WebKitSettings*);
+    alias A_webkit_web_view_load_uri = void function(WebKitWebView*, const(gchar) *uri);
+    alias A_webkit_web_view_get_uri = const(gchar)* function(WebKitWebView*);
+    alias A_webkit_web_view_try_close = void function(WebKitWebView*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_webkit_web_view_new")
-    GtkWidget* function() webkit_web_view_new;
-    pragma(mangle, "ddgtk4_webkit_web_view_set_settings")
-    void function(WebKitWebView*, WebKitSettings*) webkit_web_view_set_settings;
-    pragma(mangle, "ddgtk4_webkit_web_view_load_uri")
-    void function(WebKitWebView*, const(gchar) *uri) webkit_web_view_load_uri;
-    pragma(mangle, "ddgtk4_webkit_web_view_get_uri")
-    const(gchar)* function(WebKitWebView*) webkit_web_view_get_uri;
-    pragma(mangle, "ddgtk4_webkit_web_view_try_close")
-    void function(WebKitWebView*) webkit_web_view_try_close;
+    A_webkit_web_view_new webkit_web_view_new;
+    A_webkit_web_view_set_settings webkit_web_view_set_settings;
+    A_webkit_web_view_load_uri webkit_web_view_load_uri;
+    A_webkit_web_view_get_uri webkit_web_view_get_uri;
+    A_webkit_web_view_try_close webkit_web_view_try_close;
 }

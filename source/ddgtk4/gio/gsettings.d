@@ -7,19 +7,15 @@ struct GSettings;
 
 // Functions
 extern (C)
+{
+    alias A_g_settings_set_value = gboolean function(GSettings *settings, const(gchar) *key, GVariant *value);
+    alias A_g_settings_set = gboolean function(GSettings *settings, const gchar *key, const gchar *format, ...);
+    alias A_g_settings_set_boolean = gboolean function(GSettings *settings, const(gchar) *key, gboolean value);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_g_settings_set_value")
-    gboolean function(GSettings    *settings,
-                      const(gchar) *key,
-                      GVariant     *value) g_settings_set_value;
-    pragma(mangle, "ddgtk4_g_settings_set")
-    gboolean function(GSettings          *settings,
-                      const gchar        *key,
-                      const gchar        *format,
-                      ...) g_settings_set;
-    pragma(mangle, "ddgtk4_g_settings_set_boolean")
-    gboolean function(GSettings    *settings,
-                      const(gchar) *key,
-                      gboolean     value) g_settings_set_boolean;
+    A_g_settings_set_value g_settings_set_value;
+    A_g_settings_set g_settings_set;
+    A_g_settings_set_boolean g_settings_set_boolean;
 }

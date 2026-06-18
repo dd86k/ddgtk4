@@ -29,15 +29,11 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_g_signal_connect_data = gulong function (gpointer instance, const(gchar) *detailed_signal, GCallback c_handler, gpointer data, GClosureNotify destroy_data, GConnectFlags connect_flags);
+}
+
 __gshared
 {
-    alias A_g_signal_connect_data =
-        gulong function (gpointer       instance,
-                         const(gchar)   *detailed_signal,
-                         GCallback      c_handler,
-                         gpointer       data,
-                         GClosureNotify destroy_data,
-                         GConnectFlags  connect_flags);
-    pragma(mangle, "ddgtk4_g_signal_connect_data")
     A_g_signal_connect_data g_signal_connect_data;
 }

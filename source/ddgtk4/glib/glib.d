@@ -11,12 +11,15 @@ import ddgtk4.glib.gtypes;
 struct GMainContext;
 
 extern (C)
-__gshared
 {
     // gboolean g_main_context_iteration (GMainContext *context,
     //                                    gboolean      may_block);
-    pragma(mangle, "ddgtk4_g_main_context_iteration")
-    gboolean function(GMainContext*, gboolean) g_main_context_iteration;
+    alias A_g_main_context_iteration = gboolean function(GMainContext*, gboolean);
+}
+
+__gshared
+{
+    A_g_main_context_iteration g_main_context_iteration;
 }
 
 version (Windows)

@@ -13,8 +13,11 @@ pragma(inline, true)
 }
 
 extern (C)
+{
+    alias A_gtk_gesture_click_new = GtkGesture* function();
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_gesture_click_new")
-    GtkGesture* function() gtk_gesture_click_new;
+    A_gtk_gesture_click_new gtk_gesture_click_new;
 }

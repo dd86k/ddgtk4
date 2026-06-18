@@ -15,12 +15,15 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_frame_new = GtkWidget* function(const(char)*);
+    alias A_gtk_frame_set_label = void function(GtkFrame*, const(char)*);
+    alias A_gtk_frame_set_child = void function(GtkFrame*, GtkWidget*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_frame_new")
-    GtkWidget* function(const(char)*)      gtk_frame_new;
-    pragma(mangle, "ddgtk4_gtk_frame_set_label")
-    void function(GtkFrame*, const(char)*) gtk_frame_set_label;
-    pragma(mangle, "ddgtk4_gtk_frame_set_child")
-    void function(GtkFrame*, GtkWidget*)   gtk_frame_set_child;
+    A_gtk_frame_new gtk_frame_new;
+    A_gtk_frame_set_label gtk_frame_set_label;
+    A_gtk_frame_set_child gtk_frame_set_child;
 }

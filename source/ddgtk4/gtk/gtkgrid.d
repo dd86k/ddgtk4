@@ -15,27 +15,25 @@ pragma(inline, true)
 }
 
 extern (C)
+{
+    alias A_gtk_grid_new = GtkWidget* function();
+    alias A_gtk_grid_insert_row = void function(GtkGrid*, int);
+    alias A_gtk_grid_insert_column = void function(GtkGrid*, int);
+    alias A_gtk_grid_attach = void function(GtkGrid *grid, GtkWidget *child, int column, int row, int width, int height);
+    alias A_gtk_grid_set_column_homogeneous = void function(GtkGrid*, gboolean);
+    alias A_gtk_grid_set_row_homogeneous = void function(GtkGrid*, gboolean);
+    alias A_gtk_grid_set_column_spacing = void function(GtkGrid*, guint);
+    alias A_gtk_grid_set_row_spacing = void function(GtkGrid*, guint);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_grid_new")
-    GtkWidget* function() gtk_grid_new;
-    pragma(mangle, "ddgtk4_gtk_grid_insert_row")
-    void function(GtkGrid*, int) gtk_grid_insert_row;
-    pragma(mangle, "ddgtk4_gtk_grid_insert_column")
-    void function(GtkGrid*, int) gtk_grid_insert_column;
-    pragma(mangle, "ddgtk4_gtk_grid_attach")
-    void function(GtkGrid    *grid,
-                  GtkWidget  *child,
-                  int         column,
-                  int         row,
-                  int         width,
-                  int         height) gtk_grid_attach;
-    pragma(mangle, "ddgtk4_gtk_grid_set_column_homogeneous")
-    void function(GtkGrid*, gboolean) gtk_grid_set_column_homogeneous;
-    pragma(mangle, "ddgtk4_gtk_grid_set_row_homogeneous")
-    void function(GtkGrid*, gboolean) gtk_grid_set_row_homogeneous;
-    pragma(mangle, "ddgtk4_gtk_grid_set_column_spacing")
-    void function(GtkGrid*, guint) gtk_grid_set_column_spacing;
-    pragma(mangle, "ddgtk4_gtk_grid_set_row_spacing")
-    void function(GtkGrid*, guint) gtk_grid_set_row_spacing;
+    A_gtk_grid_new gtk_grid_new;
+    A_gtk_grid_insert_row gtk_grid_insert_row;
+    A_gtk_grid_insert_column gtk_grid_insert_column;
+    A_gtk_grid_attach gtk_grid_attach;
+    A_gtk_grid_set_column_homogeneous gtk_grid_set_column_homogeneous;
+    A_gtk_grid_set_row_homogeneous gtk_grid_set_row_homogeneous;
+    A_gtk_grid_set_column_spacing gtk_grid_set_column_spacing;
+    A_gtk_grid_set_row_spacing gtk_grid_set_row_spacing;
 }

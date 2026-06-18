@@ -19,15 +19,18 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_drop_down_new = GtkWidget* function(GListModel* model, GtkExpression* expression);
+    // const char* const*
+    alias A_gtk_drop_down_new_from_strings = GtkWidget* function(const(char)**);
+    alias A_gtk_drop_down_set_enable_search = void function(GtkDropDown*, gboolean);
+    alias A_gtk_drop_down_get_selected = guint function(GtkDropDown*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_drop_down_new")
-    GtkWidget* function(GListModel* model, GtkExpression* expression) gtk_drop_down_new;
-    pragma(mangle, "ddgtk4_gtk_drop_down_new_from_strings")
-    // const char* const*
-    GtkWidget* function(const(char)**) gtk_drop_down_new_from_strings;
-    pragma(mangle, "ddgtk4_gtk_drop_down_set_enable_search")
-    void function(GtkDropDown*, gboolean) gtk_drop_down_set_enable_search;
-    pragma(mangle, "ddgtk4_gtk_drop_down_get_selected")
-    guint function(GtkDropDown*) gtk_drop_down_get_selected;
+    A_gtk_drop_down_new gtk_drop_down_new;
+    A_gtk_drop_down_new_from_strings gtk_drop_down_new_from_strings;
+    A_gtk_drop_down_set_enable_search gtk_drop_down_set_enable_search;
+    A_gtk_drop_down_get_selected gtk_drop_down_get_selected;
 }

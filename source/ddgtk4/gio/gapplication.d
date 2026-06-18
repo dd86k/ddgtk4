@@ -15,10 +15,11 @@ pragma(inline, true)
 }
 
 extern (C)
+{
+    alias A_g_application_run = int function(GApplication *application, int argc, char **argv);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_g_application_run")
-    int function(GApplication *application,
-                 int           argc,
-                 char        **argv) g_application_run;
+    A_g_application_run g_application_run;
 }

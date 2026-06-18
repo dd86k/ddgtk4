@@ -32,48 +32,51 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_text_view_new = GtkWidget* function();
+    alias A_gtk_text_view_new_with_buffer = GtkWidget* function(GtkTextBuffer*);
+    alias A_gtk_text_view_set_buffer = void function(GtkTextView*, GtkTextBuffer*);
+    alias A_gtk_text_view_get_buffer = GtkTextBuffer* function(GtkTextView*);
+    alias A_gtk_text_view_set_editable = void function(GtkTextView*, gboolean);
+    alias A_gtk_text_view_get_editable = gboolean function(GtkTextView*);
+    alias A_gtk_text_view_set_wrap_mode = void function(GtkTextView*, GtkWrapMode);
+    alias A_gtk_text_view_get_wrap_mode = GtkWrapMode function(GtkTextView*);
+    alias A_gtk_text_view_set_monospace = void function(GtkTextView*, gboolean);
+    alias A_gtk_text_view_get_monospace = gboolean function(GtkTextView*);
+    alias A_gtk_text_view_set_cursor_visible = void function(GtkTextView*, gboolean);
+    alias A_gtk_text_view_get_cursor_visible = gboolean function(GtkTextView*);
+    alias A_gtk_text_view_set_justification = void function(GtkTextView*, GtkJustification);
+    alias A_gtk_text_view_get_justification = GtkJustification function(GtkTextView*);
+    alias A_gtk_text_view_set_left_margin = void function(GtkTextView*, gint);
+    alias A_gtk_text_view_set_right_margin = void function(GtkTextView*, gint);
+    alias A_gtk_text_view_set_top_margin = void function(GtkTextView*, gint);
+    alias A_gtk_text_view_set_bottom_margin = void function(GtkTextView*, gint);
+    alias A_gtk_text_view_scroll_to_iter = gboolean function(GtkTextView*, GtkTextIter*, double, gboolean, double, double);
+    alias A_gtk_text_view_get_iter_location = void function(GtkTextView*, const(GtkTextIter)*, GdkRectangle*);
+    alias A_gtk_text_view_buffer_to_window_coords = void function(GtkTextView*, GtkTextWindowType, gint, gint, gint*, gint*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_text_view_new")
-    GtkWidget* function() gtk_text_view_new;
-    pragma(mangle, "ddgtk4_gtk_text_view_new_with_buffer")
-    GtkWidget* function(GtkTextBuffer*) gtk_text_view_new_with_buffer;
-    pragma(mangle, "ddgtk4_gtk_text_view_set_buffer")
-    void function(GtkTextView*, GtkTextBuffer*) gtk_text_view_set_buffer;
-    pragma(mangle, "ddgtk4_gtk_text_view_get_buffer")
-    GtkTextBuffer* function(GtkTextView*) gtk_text_view_get_buffer;
-    pragma(mangle, "ddgtk4_gtk_text_view_set_editable")
-    void function(GtkTextView*, gboolean) gtk_text_view_set_editable;
-    pragma(mangle, "ddgtk4_gtk_text_view_get_editable")
-    gboolean function(GtkTextView*) gtk_text_view_get_editable;
-    pragma(mangle, "ddgtk4_gtk_text_view_set_wrap_mode")
-    void function(GtkTextView*, GtkWrapMode) gtk_text_view_set_wrap_mode;
-    pragma(mangle, "ddgtk4_gtk_text_view_get_wrap_mode")
-    GtkWrapMode function(GtkTextView*) gtk_text_view_get_wrap_mode;
-    pragma(mangle, "ddgtk4_gtk_text_view_set_monospace")
-    void function(GtkTextView*, gboolean) gtk_text_view_set_monospace;
-    pragma(mangle, "ddgtk4_gtk_text_view_get_monospace")
-    gboolean function(GtkTextView*) gtk_text_view_get_monospace;
-    pragma(mangle, "ddgtk4_gtk_text_view_set_cursor_visible")
-    void function(GtkTextView*, gboolean) gtk_text_view_set_cursor_visible;
-    pragma(mangle, "ddgtk4_gtk_text_view_get_cursor_visible")
-    gboolean function(GtkTextView*) gtk_text_view_get_cursor_visible;
-    pragma(mangle, "ddgtk4_gtk_text_view_set_justification")
-    void function(GtkTextView*, GtkJustification) gtk_text_view_set_justification;
-    pragma(mangle, "ddgtk4_gtk_text_view_get_justification")
-    GtkJustification function(GtkTextView*) gtk_text_view_get_justification;
-    pragma(mangle, "ddgtk4_gtk_text_view_set_left_margin")
-    void function(GtkTextView*, gint) gtk_text_view_set_left_margin;
-    pragma(mangle, "ddgtk4_gtk_text_view_set_right_margin")
-    void function(GtkTextView*, gint) gtk_text_view_set_right_margin;
-    pragma(mangle, "ddgtk4_gtk_text_view_set_top_margin")
-    void function(GtkTextView*, gint) gtk_text_view_set_top_margin;
-    pragma(mangle, "ddgtk4_gtk_text_view_set_bottom_margin")
-    void function(GtkTextView*, gint) gtk_text_view_set_bottom_margin;
-    pragma(mangle, "ddgtk4_gtk_text_view_scroll_to_iter")
-    gboolean function(GtkTextView*, GtkTextIter*, double, gboolean, double, double) gtk_text_view_scroll_to_iter;
-    pragma(mangle, "ddgtk4_gtk_text_view_get_iter_location")
-    void function(GtkTextView*, const(GtkTextIter)*, GdkRectangle*) gtk_text_view_get_iter_location;
-    pragma(mangle, "ddgtk4_gtk_text_view_buffer_to_window_coords")
-    void function(GtkTextView*, GtkTextWindowType, gint, gint, gint*, gint*) gtk_text_view_buffer_to_window_coords;
+    A_gtk_text_view_new gtk_text_view_new;
+    A_gtk_text_view_new_with_buffer gtk_text_view_new_with_buffer;
+    A_gtk_text_view_set_buffer gtk_text_view_set_buffer;
+    A_gtk_text_view_get_buffer gtk_text_view_get_buffer;
+    A_gtk_text_view_set_editable gtk_text_view_set_editable;
+    A_gtk_text_view_get_editable gtk_text_view_get_editable;
+    A_gtk_text_view_set_wrap_mode gtk_text_view_set_wrap_mode;
+    A_gtk_text_view_get_wrap_mode gtk_text_view_get_wrap_mode;
+    A_gtk_text_view_set_monospace gtk_text_view_set_monospace;
+    A_gtk_text_view_get_monospace gtk_text_view_get_monospace;
+    A_gtk_text_view_set_cursor_visible gtk_text_view_set_cursor_visible;
+    A_gtk_text_view_get_cursor_visible gtk_text_view_get_cursor_visible;
+    A_gtk_text_view_set_justification gtk_text_view_set_justification;
+    A_gtk_text_view_get_justification gtk_text_view_get_justification;
+    A_gtk_text_view_set_left_margin gtk_text_view_set_left_margin;
+    A_gtk_text_view_set_right_margin gtk_text_view_set_right_margin;
+    A_gtk_text_view_set_top_margin gtk_text_view_set_top_margin;
+    A_gtk_text_view_set_bottom_margin gtk_text_view_set_bottom_margin;
+    A_gtk_text_view_scroll_to_iter gtk_text_view_scroll_to_iter;
+    A_gtk_text_view_get_iter_location gtk_text_view_get_iter_location;
+    A_gtk_text_view_buffer_to_window_coords gtk_text_view_buffer_to_window_coords;
 }

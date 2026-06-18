@@ -6,9 +6,12 @@ struct WebKitURIRequest;
 
 // Functions
 extern (C)
+{
+    // URIRequest
+    alias A_webkit_uri_request_new = WebKitURIRequest* function(const(gchar) *uri);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_webkit_uri_request_new")
-    // URIRequest
-    WebKitURIRequest* function(const(gchar) *uri) webkit_uri_request_new;
+    A_webkit_uri_request_new webkit_uri_request_new;
 }

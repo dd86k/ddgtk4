@@ -5,8 +5,11 @@ public import ddgtk4.gtk.gtkwidget : GtkWidget;
 
 // Functions
 extern (C)
+{
+    alias A_gtk_application_window_new = GtkWidget* function(GtkApplication*);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_application_window_new")
-    GtkWidget* function(GtkApplication*) gtk_application_window_new;
+    A_gtk_application_window_new gtk_application_window_new;
 }

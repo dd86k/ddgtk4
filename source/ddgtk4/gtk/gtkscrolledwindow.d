@@ -51,16 +51,19 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_scrolled_window_new = GtkWidget* function();
+    alias A_gtk_scrolled_window_set_child = void function(GtkScrolledWindow*, GtkWidget*);
+    alias A_gtk_scrolled_window_set_policy = void function(GtkScrolledWindow*, GtkPolicyType, GtkPolicyType);
+    alias A_gtk_scrolled_window_set_placement = void function(GtkScrolledWindow*, GtkCornerType);
+    alias A_gtk_scrolled_window_set_overlay_scrolling = void function(GtkScrolledWindow*, gboolean);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_scrolled_window_new")
-    GtkWidget* function() gtk_scrolled_window_new;
-    pragma(mangle, "ddgtk4_gtk_scrolled_window_set_child")
-    void function(GtkScrolledWindow*, GtkWidget*) gtk_scrolled_window_set_child;
-    pragma(mangle, "ddgtk4_gtk_scrolled_window_set_policy")
-    void function(GtkScrolledWindow*, GtkPolicyType, GtkPolicyType) gtk_scrolled_window_set_policy;
-    pragma(mangle, "ddgtk4_gtk_scrolled_window_set_placement")
-    void function(GtkScrolledWindow*, GtkCornerType) gtk_scrolled_window_set_placement;
-    pragma(mangle, "ddgtk4_gtk_scrolled_window_set_overlay_scrolling")
-    void function(GtkScrolledWindow*, gboolean) gtk_scrolled_window_set_overlay_scrolling;
+    A_gtk_scrolled_window_new gtk_scrolled_window_new;
+    A_gtk_scrolled_window_set_child gtk_scrolled_window_set_child;
+    A_gtk_scrolled_window_set_policy gtk_scrolled_window_set_policy;
+    A_gtk_scrolled_window_set_placement gtk_scrolled_window_set_placement;
+    A_gtk_scrolled_window_set_overlay_scrolling gtk_scrolled_window_set_overlay_scrolling;
 }

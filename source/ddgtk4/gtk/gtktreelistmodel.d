@@ -24,39 +24,42 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_tree_list_model_new = GtkTreeListModel* function(GListModel*, gboolean, gboolean, GtkTreeListModelCreateModelFunc, gpointer, GDestroyNotify);
+    alias A_gtk_tree_list_model_get_model = GListModel* function(GtkTreeListModel*);
+    alias A_gtk_tree_list_model_get_passthrough = gboolean function(GtkTreeListModel*);
+    alias A_gtk_tree_list_model_set_autoexpand = void function(GtkTreeListModel*, gboolean);
+    alias A_gtk_tree_list_model_get_autoexpand = gboolean function(GtkTreeListModel*);
+    alias A_gtk_tree_list_model_get_child_row = GtkTreeListRow* function(GtkTreeListModel*, guint);
+    alias A_gtk_tree_list_model_get_row = GtkTreeListRow* function(GtkTreeListModel*, guint);
+
+    alias A_gtk_tree_list_row_get_item = gpointer function(GtkTreeListRow*);
+    alias A_gtk_tree_list_row_set_expanded = void function(GtkTreeListRow*, gboolean);
+    alias A_gtk_tree_list_row_get_expanded = gboolean function(GtkTreeListRow*);
+    alias A_gtk_tree_list_row_is_expandable = gboolean function(GtkTreeListRow*);
+    alias A_gtk_tree_list_row_get_position = guint function(GtkTreeListRow*);
+    alias A_gtk_tree_list_row_get_depth = guint function(GtkTreeListRow*);
+    alias A_gtk_tree_list_row_get_children = GListModel* function(GtkTreeListRow*);
+    alias A_gtk_tree_list_row_get_parent = GtkTreeListRow* function(GtkTreeListRow*);
+    alias A_gtk_tree_list_row_get_child_row = GtkTreeListRow* function(GtkTreeListRow*, guint);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_tree_list_model_new")
-    GtkTreeListModel* function(GListModel*, gboolean, gboolean, GtkTreeListModelCreateModelFunc, gpointer, GDestroyNotify) gtk_tree_list_model_new;
-    pragma(mangle, "ddgtk4_gtk_tree_list_model_get_model")
-    GListModel* function(GtkTreeListModel*) gtk_tree_list_model_get_model;
-    pragma(mangle, "ddgtk4_gtk_tree_list_model_get_passthrough")
-    gboolean function(GtkTreeListModel*) gtk_tree_list_model_get_passthrough;
-    pragma(mangle, "ddgtk4_gtk_tree_list_model_set_autoexpand")
-    void function(GtkTreeListModel*, gboolean) gtk_tree_list_model_set_autoexpand;
-    pragma(mangle, "ddgtk4_gtk_tree_list_model_get_autoexpand")
-    gboolean function(GtkTreeListModel*) gtk_tree_list_model_get_autoexpand;
-    pragma(mangle, "ddgtk4_gtk_tree_list_model_get_child_row")
-    GtkTreeListRow* function(GtkTreeListModel*, guint) gtk_tree_list_model_get_child_row;
-    pragma(mangle, "ddgtk4_gtk_tree_list_model_get_row")
-    GtkTreeListRow* function(GtkTreeListModel*, guint) gtk_tree_list_model_get_row;
-
-    pragma(mangle, "ddgtk4_gtk_tree_list_row_get_item")
-    gpointer function(GtkTreeListRow*) gtk_tree_list_row_get_item;
-    pragma(mangle, "ddgtk4_gtk_tree_list_row_set_expanded")
-    void function(GtkTreeListRow*, gboolean) gtk_tree_list_row_set_expanded;
-    pragma(mangle, "ddgtk4_gtk_tree_list_row_get_expanded")
-    gboolean function(GtkTreeListRow*) gtk_tree_list_row_get_expanded;
-    pragma(mangle, "ddgtk4_gtk_tree_list_row_is_expandable")
-    gboolean function(GtkTreeListRow*) gtk_tree_list_row_is_expandable;
-    pragma(mangle, "ddgtk4_gtk_tree_list_row_get_position")
-    guint function(GtkTreeListRow*) gtk_tree_list_row_get_position;
-    pragma(mangle, "ddgtk4_gtk_tree_list_row_get_depth")
-    guint function(GtkTreeListRow*) gtk_tree_list_row_get_depth;
-    pragma(mangle, "ddgtk4_gtk_tree_list_row_get_children")
-    GListModel* function(GtkTreeListRow*) gtk_tree_list_row_get_children;
-    pragma(mangle, "ddgtk4_gtk_tree_list_row_get_parent")
-    GtkTreeListRow* function(GtkTreeListRow*) gtk_tree_list_row_get_parent;
-    pragma(mangle, "ddgtk4_gtk_tree_list_row_get_child_row")
-    GtkTreeListRow* function(GtkTreeListRow*, guint) gtk_tree_list_row_get_child_row;
+    A_gtk_tree_list_model_new gtk_tree_list_model_new;
+    A_gtk_tree_list_model_get_model gtk_tree_list_model_get_model;
+    A_gtk_tree_list_model_get_passthrough gtk_tree_list_model_get_passthrough;
+    A_gtk_tree_list_model_set_autoexpand gtk_tree_list_model_set_autoexpand;
+    A_gtk_tree_list_model_get_autoexpand gtk_tree_list_model_get_autoexpand;
+    A_gtk_tree_list_model_get_child_row gtk_tree_list_model_get_child_row;
+    A_gtk_tree_list_model_get_row gtk_tree_list_model_get_row;
+    A_gtk_tree_list_row_get_item gtk_tree_list_row_get_item;
+    A_gtk_tree_list_row_set_expanded gtk_tree_list_row_set_expanded;
+    A_gtk_tree_list_row_get_expanded gtk_tree_list_row_get_expanded;
+    A_gtk_tree_list_row_is_expandable gtk_tree_list_row_is_expandable;
+    A_gtk_tree_list_row_get_position gtk_tree_list_row_get_position;
+    A_gtk_tree_list_row_get_depth gtk_tree_list_row_get_depth;
+    A_gtk_tree_list_row_get_children gtk_tree_list_row_get_children;
+    A_gtk_tree_list_row_get_parent gtk_tree_list_row_get_parent;
+    A_gtk_tree_list_row_get_child_row gtk_tree_list_row_get_child_row;
 }

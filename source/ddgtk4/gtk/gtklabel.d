@@ -16,18 +16,21 @@ pragma(inline, true)
 
 // Functions
 extern (C)
+{
+    alias A_gtk_label_new = GtkWidget* function(const(char)*);
+    alias A_gtk_label_set_text = void function(GtkLabel*, const(char)*);
+    alias A_gtk_label_set_justify = void function(GtkLabel*, GtkJustification);
+    alias A_gtk_label_get_justify = GtkJustification function(GtkLabel*);
+    alias A_gtk_label_get_xalign = float function(GtkLabel*);
+    alias A_gtk_label_set_xalign = void function(GtkLabel*, float);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_label_new")
-    GtkWidget* function(const(char)*) gtk_label_new;
-    pragma(mangle, "ddgtk4_gtk_label_set_text")
-    void function(GtkLabel*, const(char)*) gtk_label_set_text;
-    pragma(mangle, "ddgtk4_gtk_label_set_justify")
-    void function(GtkLabel*, GtkJustification) gtk_label_set_justify;
-    pragma(mangle, "ddgtk4_gtk_label_get_justify")
-    GtkJustification function(GtkLabel*) gtk_label_get_justify;
-    pragma(mangle, "ddgtk4_gtk_label_get_xalign")
-    float function(GtkLabel*) gtk_label_get_xalign;
-    pragma(mangle, "ddgtk4_gtk_label_set_xalign")
-    void function(GtkLabel*, float) gtk_label_set_xalign;
+    A_gtk_label_new gtk_label_new;
+    A_gtk_label_set_text gtk_label_set_text;
+    A_gtk_label_set_justify gtk_label_set_justify;
+    A_gtk_label_get_justify gtk_label_get_justify;
+    A_gtk_label_get_xalign gtk_label_get_xalign;
+    A_gtk_label_set_xalign gtk_label_set_xalign;
 }

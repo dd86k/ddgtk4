@@ -17,38 +17,41 @@ pragma(inline, true)
 }
 
 extern (C)
+{
+    alias A_gtk_window_new = GtkWidget* function();
+    alias A_gtk_window_set_modal = void function(GtkWindow*, gboolean);
+    alias A_gtk_window_set_resizable = void function(GtkWindow*, gboolean);
+    alias A_gtk_window_set_transient_for = void function(GtkWindow*, GtkWindow*);
+    alias A_gtk_window_set_titlebar = void function(GtkWindow*, GtkWidget*);
+    alias A_gtk_window_set_icon_name = void function(GtkWindow*, const(char)*);
+    alias A_gtk_window_set_title = void function(GtkWindow*, const(char)*);
+    alias A_gtk_window_set_default_size = void function(GtkWindow*, int, int);
+    alias A_gtk_window_set_child = void function(GtkWindow*, GtkWidget*);
+    alias A_gtk_window_present = void function(GtkWindow*);
+    alias A_gtk_window_get_toplevels = GListModel* function();
+    alias A_gtk_window_destroy = void function(GtkWindow *window);
+    alias A_gtk_window_close = void function(GtkWindow *window);
+    alias A_gtk_window_get_application = GtkApplication* function(GtkWindow*);
+    alias A_gtk_window_set_decorated = void function(GtkWindow*, gboolean);
+    alias A_gtk_window_set_hide_on_close = void function(GtkWindow*, gboolean);
+}
+
 __gshared
 {
-    pragma(mangle, "ddgtk4_gtk_window_new")
-    GtkWidget* function() gtk_window_new;
-    pragma(mangle, "ddgtk4_gtk_window_set_modal")
-    void function(GtkWindow*, gboolean)     gtk_window_set_modal;
-    pragma(mangle, "ddgtk4_gtk_window_set_resizable")
-    void function(GtkWindow*, gboolean)     gtk_window_set_resizable;
-    pragma(mangle, "ddgtk4_gtk_window_set_transient_for")
-    void function(GtkWindow*, GtkWindow*)   gtk_window_set_transient_for;
-    pragma(mangle, "ddgtk4_gtk_window_set_titlebar")
-    void function(GtkWindow*, GtkWidget*)   gtk_window_set_titlebar;
-    pragma(mangle, "ddgtk4_gtk_window_set_icon_name")
-    void function(GtkWindow*, const(char)*) gtk_window_set_icon_name;
-    pragma(mangle, "ddgtk4_gtk_window_set_title")
-    void function(GtkWindow*, const(char)*) gtk_window_set_title;
-    pragma(mangle, "ddgtk4_gtk_window_set_default_size")
-    void function(GtkWindow*, int, int)     gtk_window_set_default_size;
-    pragma(mangle, "ddgtk4_gtk_window_set_child")
-    void function(GtkWindow*, GtkWidget*)   gtk_window_set_child;
-    pragma(mangle, "ddgtk4_gtk_window_present")
-    void function(GtkWindow*)               gtk_window_present;
-    pragma(mangle, "ddgtk4_gtk_window_get_toplevels")
-    GListModel* function()                  gtk_window_get_toplevels;
-    pragma(mangle, "ddgtk4_gtk_window_destroy")
-    void function(GtkWindow *window)        gtk_window_destroy;
-    pragma(mangle, "ddgtk4_gtk_window_close")
-    void function(GtkWindow *window)        gtk_window_close;
-    pragma(mangle, "ddgtk4_gtk_window_get_application")
-    GtkApplication* function(GtkWindow*)    gtk_window_get_application;
-    pragma(mangle, "ddgtk4_gtk_window_set_decorated")
-    void function(GtkWindow*, gboolean)     gtk_window_set_decorated;
-    pragma(mangle, "ddgtk4_gtk_window_set_hide_on_close")
-    void function(GtkWindow*, gboolean)     gtk_window_set_hide_on_close;
+    A_gtk_window_new gtk_window_new;
+    A_gtk_window_set_modal gtk_window_set_modal;
+    A_gtk_window_set_resizable gtk_window_set_resizable;
+    A_gtk_window_set_transient_for gtk_window_set_transient_for;
+    A_gtk_window_set_titlebar gtk_window_set_titlebar;
+    A_gtk_window_set_icon_name gtk_window_set_icon_name;
+    A_gtk_window_set_title gtk_window_set_title;
+    A_gtk_window_set_default_size gtk_window_set_default_size;
+    A_gtk_window_set_child gtk_window_set_child;
+    A_gtk_window_present gtk_window_present;
+    A_gtk_window_get_toplevels gtk_window_get_toplevels;
+    A_gtk_window_destroy gtk_window_destroy;
+    A_gtk_window_close gtk_window_close;
+    A_gtk_window_get_application gtk_window_get_application;
+    A_gtk_window_set_decorated gtk_window_set_decorated;
+    A_gtk_window_set_hide_on_close gtk_window_set_hide_on_close;
 }
