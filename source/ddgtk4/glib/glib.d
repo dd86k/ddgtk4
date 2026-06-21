@@ -30,6 +30,17 @@ extern (C)
 
     // gboolean g_source_remove (guint tag);
     alias A_g_source_remove = gboolean function(guint);
+
+    // gboolean g_setenv (const gchar *variable,
+    //                    const gchar *value,
+    //                    gboolean     overwrite);
+    alias A_g_setenv = gboolean function(const(gchar)*, const(gchar)*, gboolean);
+
+    // void g_unsetenv (const gchar *variable);
+    alias A_g_unsetenv = void function(const(gchar)*);
+
+    // const gchar *g_getenv (const gchar *variable);
+    alias A_g_getenv = const(gchar)* function(const(gchar)*);
 }
 
 __gshared
@@ -37,6 +48,9 @@ __gshared
     A_g_main_context_iteration g_main_context_iteration;
     A_g_timeout_add g_timeout_add;
     A_g_source_remove g_source_remove;
+    A_g_setenv g_setenv;
+    A_g_unsetenv g_unsetenv;
+    A_g_getenv g_getenv;
 }
 
 version (Windows)
@@ -81,4 +95,7 @@ void loadglib()
     libraryBind(libglib, cast(void**)&g_main_context_iteration, "g_main_context_iteration");
     libraryBind(libglib, cast(void**)&g_timeout_add, "g_timeout_add");
     libraryBind(libglib, cast(void**)&g_source_remove, "g_source_remove");
+    libraryBind(libglib, cast(void**)&g_setenv, "g_setenv");
+    libraryBind(libglib, cast(void**)&g_unsetenv, "g_unsetenv");
+    libraryBind(libglib, cast(void**)&g_getenv, "g_getenv");
 }
