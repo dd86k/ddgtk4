@@ -10,16 +10,33 @@ import ddgtk4.glib.gtypes;
 
 struct GMainContext;
 
+// Return values for GSourceFunc.
+enum G_SOURCE_REMOVE   = false; // FALSE
+enum G_SOURCE_CONTINUE = true;  // TRUE
+
 extern (C)
 {
     // gboolean g_main_context_iteration (GMainContext *context,
     //                                    gboolean      may_block);
     alias A_g_main_context_iteration = gboolean function(GMainContext*, gboolean);
+
+    // typedef gboolean (*GSourceFunc) (gpointer user_data);
+    alias GSourceFunc = gboolean function(gpointer user_data);
+
+    // guint g_timeout_add (guint        interval,
+    //                      GSourceFunc  function,
+    //                      gpointer     data);
+    alias A_g_timeout_add = guint function(guint, GSourceFunc, gpointer);
+
+    // gboolean g_source_remove (guint tag);
+    alias A_g_source_remove = gboolean function(guint);
 }
 
 __gshared
 {
     A_g_main_context_iteration g_main_context_iteration;
+    A_g_timeout_add g_timeout_add;
+    A_g_source_remove g_source_remove;
 }
 
 version (Windows)
@@ -62,4 +79,6 @@ void loadglib()
     libraryBind(libglib, cast(void**)&g_log, "g_log");
     libraryBind(libglib, cast(void**)&g_logv, "g_logv");
     libraryBind(libglib, cast(void**)&g_main_context_iteration, "g_main_context_iteration");
+    libraryBind(libglib, cast(void**)&g_timeout_add, "g_timeout_add");
+    libraryBind(libglib, cast(void**)&g_source_remove, "g_source_remove");
 }
